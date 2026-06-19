@@ -199,4 +199,62 @@ const tags = computed(() =>
   border: 0.3mm solid var(--accent);
   color: #161616;
 }
+
+/* --- NOIR (тёмный + serif) --- */
+.label--noir {
+  background: radial-gradient(125% 140% at 50% 0%, #26222b 0%, #131115 68%);
+  color: #efe9dd;
+  font-family: var(--font-serif);
+  box-shadow: inset 0 0 0 0.4mm color-mix(in srgb, var(--accent) 70%, #000);
+}
+.label--noir .label__name {
+  color: #f4eee2;
+  font-weight: 600;
+  letter-spacing: 0;
+  text-shadow: 0 0.3mm 0.8mm rgba(0, 0, 0, 0.5);
+}
+.label--noir .label__meta {
+  font-family: var(--font-body);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-weight: 600;
+  font-size: 2mm;
+  color: color-mix(in srgb, var(--accent) 55%, #c7bfae);
+}
+.label--noir .label__tag {
+  background: rgba(255, 255, 255, 0.07);
+  color: #cdc6b7;
+}
+.label--noir .label__strength {
+  background: var(--accent);
+  color: #15120c;
+}
+
+/* --- ONYX (тёмный + строгий гротеск) --- */
+.label--onyx {
+  background: #15151a;
+  color: #f3f3f5;
+  border: 0.4mm solid #2d2d36;
+}
+.label--onyx .label__name {
+  color: #f5f5f7;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+.label--onyx .label__meta {
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-weight: 700;
+  font-size: 1.9mm;
+  color: var(--accent);
+}
+.label--onyx .label__tag {
+  background: transparent;
+  border: 0.2mm solid #3a3a44;
+  color: #b8b8c0;
+}
+.label--onyx .label__strength {
+  background: var(--accent);
+  color: #15151a;
+}
 </style>

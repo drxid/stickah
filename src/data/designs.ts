@@ -1,7 +1,7 @@
 // Реестр дизайн-вариантов наклейки (см. SPEC.md §8.2).
 // Дизайн — это данные/стратегия: один вариант на всю генерацию.
 
-export type DesignId = 'clean' | 'holo' | 'mono'
+export type DesignId = 'clean' | 'holo' | 'mono' | 'noir' | 'onyx'
 
 export interface DesignVariant {
   id: DesignId
@@ -29,6 +29,18 @@ export const DESIGNS: DesignVariant[] = [
     label: 'Mono',
     description: 'Один цвет, контурный стиль. Экономит чернила.',
     printNote: 'Подходит для ч/б и бюджетной печати.',
+  },
+  {
+    id: 'noir',
+    label: 'Noir',
+    description: 'Тёмный фон, элегантный serif, тонкое акцентное кольцо. Премиум-этикетка.',
+    printNote: 'Тёмный фон расходует много чернил при печати.',
+  },
+  {
+    id: 'onyx',
+    label: 'Onyx',
+    description: 'Тёмный фон, строгий гротеск, акцентная подпись капсом. Минимализм.',
+    printNote: 'Тёмный фон расходует много чернил при печати.',
   },
 ]
 

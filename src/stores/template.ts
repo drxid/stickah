@@ -38,7 +38,7 @@ function load(): TemplateState {
     const parsed = JSON.parse(raw)
     return {
       sizeId: typeof parsed.sizeId === 'string' ? parsed.sizeId : DEFAULTS.sizeId,
-      designId: ['clean', 'holo', 'mono'].includes(parsed.designId)
+      designId: ['clean', 'holo', 'mono', 'noir', 'onyx'].includes(parsed.designId)
         ? parsed.designId
         : DEFAULTS.designId,
       options: { ...DEFAULTS.options, ...(parsed.options ?? {}) },

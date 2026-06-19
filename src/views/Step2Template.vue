@@ -227,6 +227,14 @@ const optionList = [
   background: #fff;
   border: 3px solid var(--holo-1);
 }
+.design__swatch--noir {
+  background: radial-gradient(125% 140% at 50% 0%, #26222b, #131115 70%);
+  box-shadow: inset 0 0 0 2px var(--holo-5);
+}
+.design__swatch--onyx {
+  background: #15151a;
+  border: 2px solid #3a3a44;
+}
 .design__body {
   display: flex;
   flex-direction: column;
