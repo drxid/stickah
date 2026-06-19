@@ -1,42 +1,303 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-06-19T00:00:00.000Z",
+  "generatedAt": "2026-06-19T17:55:13.994Z",
   "manufacturers": [
-    { "id": "musthave", "name": "MustHave", "country": "RU" },
-    { "id": "darkside", "name": "Darkside", "country": "RU" },
-    { "id": "element", "name": "Element", "country": "RU" },
-    { "id": "blackburn", "name": "BlackBurn", "country": "RU" },
-    { "id": "tangiers", "name": "Tangiers", "country": "US" }
+    {
+      "id": "musthave",
+      "name": "MustHave"
+    },
+    {
+      "id": "darkside",
+      "name": "Darkside"
+    },
+    {
+      "id": "element",
+      "name": "Element"
+    },
+    {
+      "id": "blackburn",
+      "name": "BlackBurn"
+    },
+    {
+      "id": "tangiers",
+      "name": "Tangiers"
+    }
   ],
   "lines": [
-    { "id": "musthave--classic", "manufacturerId": "musthave", "name": "Classic" },
-    { "id": "musthave--limited", "manufacturerId": "musthave", "name": "Limited" },
-    { "id": "darkside--core", "manufacturerId": "darkside", "name": "Core" },
-    { "id": "darkside--base", "manufacturerId": "darkside", "name": "Base" },
-    { "id": "element--earth", "manufacturerId": "element", "name": "Земля" },
-    { "id": "element--water", "manufacturerId": "element", "name": "Вода" },
-    { "id": "element--air", "manufacturerId": "element", "name": "Воздух" },
-    { "id": "blackburn--classic", "manufacturerId": "blackburn", "name": "Classic" },
-    { "id": "tangiers--noir", "manufacturerId": "tangiers", "name": "Noir" }
+    {
+      "id": "musthave--classic",
+      "manufacturerId": "musthave",
+      "name": "Classic"
+    },
+    {
+      "id": "musthave--limited",
+      "manufacturerId": "musthave",
+      "name": "Limited"
+    },
+    {
+      "id": "darkside--core",
+      "manufacturerId": "darkside",
+      "name": "Core"
+    },
+    {
+      "id": "darkside--base",
+      "manufacturerId": "darkside",
+      "name": "Base"
+    },
+    {
+      "id": "element--zemlya",
+      "manufacturerId": "element",
+      "name": "Земля"
+    },
+    {
+      "id": "element--voda",
+      "manufacturerId": "element",
+      "name": "Вода"
+    },
+    {
+      "id": "element--vozduh",
+      "manufacturerId": "element",
+      "name": "Воздух"
+    },
+    {
+      "id": "blackburn--classic",
+      "manufacturerId": "blackburn",
+      "name": "Classic"
+    },
+    {
+      "id": "tangiers--noir",
+      "manufacturerId": "tangiers",
+      "name": "Noir"
+    }
   ],
   "flavors": [
-    { "id": "mh-lemon-mint", "manufacturerId": "musthave", "lineId": "musthave--classic", "name": "Лимон-Мята", "nameOriginal": "Lemon Mint", "strength": 6, "profile": ["цитрус", "холодок"], "accent": "#9BE8E0" },
-    { "id": "mh-melon", "manufacturerId": "musthave", "lineId": "musthave--classic", "name": "Дыня", "nameOriginal": "Melon", "strength": 6, "profile": ["сладкий", "бахчевые"], "accent": "#FFE7A3" },
-    { "id": "mh-pinklemon", "manufacturerId": "musthave", "lineId": "musthave--limited", "name": "Розовый Лимонад", "nameOriginal": "Pink Lemonade", "strength": 5, "profile": ["цитрус", "ягоды"], "accent": "#FFC2E2" },
-    { "id": "mh-blueberry", "manufacturerId": "musthave", "lineId": "musthave--classic", "name": "Черника", "nameOriginal": "Blueberry", "strength": 6, "profile": ["ягоды"], "accent": "#B8A6FF" },
-    { "id": "ds-cola", "manufacturerId": "darkside", "lineId": "darkside--core", "name": "Cola", "nameOriginal": "Cola", "strength": 8, "profile": ["напитки"], "accent": "#C9A36B" },
-    { "id": "ds-bananapapa", "manufacturerId": "darkside", "lineId": "darkside--core", "name": "Banana Papa", "nameOriginal": "Banana Papa", "strength": 8, "profile": ["сладкий", "тропик"], "accent": "#FFE7A3" },
-    { "id": "ds-supernova", "manufacturerId": "darkside", "lineId": "darkside--core", "name": "Supernova", "nameOriginal": "Supernova", "strength": 7, "profile": ["холодок", "ментол"], "accent": "#A9D5FF" },
-    { "id": "ds-darkberry", "manufacturerId": "darkside", "lineId": "darkside--base", "name": "Dark Berry", "nameOriginal": "Dark Berry", "strength": 5, "profile": ["ягоды"], "accent": "#B8A6FF" },
-    { "id": "el-blackberry", "manufacturerId": "element", "lineId": "element--earth", "name": "Ежевика", "nameOriginal": "Blackberry", "strength": 5, "profile": ["ягоды"], "accent": "#8E7BD6" },
-    { "id": "el-peach", "manufacturerId": "element", "lineId": "element--water", "name": "Персик", "nameOriginal": "Peach", "strength": 5, "profile": ["фрукты"], "accent": "#FFC9A3" },
-    { "id": "el-grapefruit", "manufacturerId": "element", "lineId": "element--air", "name": "Грейпфрут", "nameOriginal": "Grapefruit", "strength": 5, "profile": ["цитрус"], "accent": "#FF9BB0" },
-    { "id": "el-mint", "manufacturerId": "element", "lineId": "element--air", "name": "Мята", "nameOriginal": "Mint", "strength": 5, "profile": ["холодок", "ментол"], "accent": "#9BE8E0" },
-    { "id": "bb-doubleapple", "manufacturerId": "blackburn", "lineId": "blackburn--classic", "name": "Двойное Яблоко", "nameOriginal": "Double Apple", "strength": 9, "profile": ["классика", "анис"], "accent": "#C75B5B" },
-    { "id": "bb-grapemint", "manufacturerId": "blackburn", "lineId": "blackburn--classic", "name": "Виноград-Мята", "nameOriginal": "Grape Mint", "strength": 9, "profile": ["ягоды", "холодок"], "accent": "#B8A6FF" },
-    { "id": "bb-lemon", "manufacturerId": "blackburn", "lineId": "blackburn--classic", "name": "Лимонный Пирог", "nameOriginal": "Lemon Pie", "strength": 8, "profile": ["цитрус", "десерт"], "accent": "#FFE7A3" },
-    { "id": "tg-cane-mint", "manufacturerId": "tangiers", "lineId": "tangiers--noir", "name": "Cane Mint", "nameOriginal": "Cane Mint", "strength": 10, "profile": ["холодок", "ментол"], "accent": "#9BE8E0" },
-    { "id": "tg-orange-soda", "manufacturerId": "tangiers", "lineId": "tangiers--noir", "name": "Orange Soda", "nameOriginal": "Orange Soda", "strength": 9, "profile": ["цитрус", "напитки"], "accent": "#FFC9A3" },
-    { "id": "tg-kashmir-peach", "manufacturerId": "tangiers", "lineId": "tangiers--noir", "name": "Kashmir Peach", "nameOriginal": "Kashmir Peach", "strength": 9, "profile": ["фрукты", "специи"], "accent": "#FFC2A0" }
+    {
+      "id": "musthave--classic--limon-myata",
+      "manufacturerId": "musthave",
+      "lineId": "musthave--classic",
+      "name": "Лимон-Мята",
+      "nameOriginal": "Lemon Mint",
+      "strength": 6,
+      "profile": [
+        "цитрус",
+        "холодок"
+      ],
+      "accent": "#9BE8E0"
+    },
+    {
+      "id": "musthave--classic--dynya",
+      "manufacturerId": "musthave",
+      "lineId": "musthave--classic",
+      "name": "Дыня",
+      "nameOriginal": "Melon",
+      "strength": 6,
+      "profile": [
+        "сладкий",
+        "бахчевые"
+      ],
+      "accent": "#FFE7A3"
+    },
+    {
+      "id": "musthave--limited--rozovyy-limonad",
+      "manufacturerId": "musthave",
+      "lineId": "musthave--limited",
+      "name": "Розовый Лимонад",
+      "nameOriginal": "Pink Lemonade",
+      "strength": 5,
+      "profile": [
+        "цитрус",
+        "ягоды"
+      ],
+      "accent": "#FFC2E2"
+    },
+    {
+      "id": "musthave--classic--chernika",
+      "manufacturerId": "musthave",
+      "lineId": "musthave--classic",
+      "name": "Черника",
+      "nameOriginal": "Blueberry",
+      "strength": 6,
+      "profile": [
+        "ягоды"
+      ],
+      "accent": "#B8A6FF"
+    },
+    {
+      "id": "darkside--core--cola",
+      "manufacturerId": "darkside",
+      "lineId": "darkside--core",
+      "name": "Cola",
+      "nameOriginal": "Cola",
+      "strength": 8,
+      "profile": [
+        "напитки"
+      ],
+      "accent": "#C9A36B"
+    },
+    {
+      "id": "darkside--core--banana-papa",
+      "manufacturerId": "darkside",
+      "lineId": "darkside--core",
+      "name": "Banana Papa",
+      "nameOriginal": "Banana Papa",
+      "strength": 8,
+      "profile": [
+        "сладкий",
+        "тропик"
+      ],
+      "accent": "#FFE7A3"
+    },
+    {
+      "id": "darkside--core--supernova",
+      "manufacturerId": "darkside",
+      "lineId": "darkside--core",
+      "name": "Supernova",
+      "nameOriginal": "Supernova",
+      "strength": 7,
+      "profile": [
+        "холодок",
+        "ментол"
+      ],
+      "accent": "#A9D5FF"
+    },
+    {
+      "id": "darkside--base--dark-berry",
+      "manufacturerId": "darkside",
+      "lineId": "darkside--base",
+      "name": "Dark Berry",
+      "nameOriginal": "Dark Berry",
+      "strength": 5,
+      "profile": [
+        "ягоды"
+      ],
+      "accent": "#B8A6FF"
+    },
+    {
+      "id": "element--zemlya--ezhevika",
+      "manufacturerId": "element",
+      "lineId": "element--zemlya",
+      "name": "Ежевика",
+      "nameOriginal": "Blackberry",
+      "strength": 5,
+      "profile": [
+        "ягоды"
+      ],
+      "accent": "#8E7BD6"
+    },
+    {
+      "id": "element--voda--persik",
+      "manufacturerId": "element",
+      "lineId": "element--voda",
+      "name": "Персик",
+      "nameOriginal": "Peach",
+      "strength": 5,
+      "profile": [
+        "фрукты"
+      ],
+      "accent": "#FFC9A3"
+    },
+    {
+      "id": "element--vozduh--greypfrut",
+      "manufacturerId": "element",
+      "lineId": "element--vozduh",
+      "name": "Грейпфрут",
+      "nameOriginal": "Grapefruit",
+      "strength": 5,
+      "profile": [
+        "цитрус"
+      ],
+      "accent": "#FF9BB0"
+    },
+    {
+      "id": "element--vozduh--myata",
+      "manufacturerId": "element",
+      "lineId": "element--vozduh",
+      "name": "Мята",
+      "nameOriginal": "Mint",
+      "strength": 5,
+      "profile": [
+        "холодок",
+        "ментол"
+      ],
+      "accent": "#9BE8E0"
+    },
+    {
+      "id": "blackburn--classic--dvoynoe-yabloko",
+      "manufacturerId": "blackburn",
+      "lineId": "blackburn--classic",
+      "name": "Двойное Яблоко",
+      "nameOriginal": "Double Apple",
+      "strength": 9,
+      "profile": [
+        "классика",
+        "анис"
+      ],
+      "accent": "#C75B5B"
+    },
+    {
+      "id": "blackburn--classic--vinograd-myata",
+      "manufacturerId": "blackburn",
+      "lineId": "blackburn--classic",
+      "name": "Виноград-Мята",
+      "nameOriginal": "Grape Mint",
+      "strength": 9,
+      "profile": [
+        "ягоды",
+        "холодок"
+      ],
+      "accent": "#B8A6FF"
+    },
+    {
+      "id": "blackburn--classic--limonnyy-pirog",
+      "manufacturerId": "blackburn",
+      "lineId": "blackburn--classic",
+      "name": "Лимонный Пирог",
+      "nameOriginal": "Lemon Pie",
+      "strength": 8,
+      "profile": [
+        "цитрус",
+        "десерт"
+      ],
+      "accent": "#FFE7A3"
+    },
+    {
+      "id": "tangiers--noir--cane-mint",
+      "manufacturerId": "tangiers",
+      "lineId": "tangiers--noir",
+      "name": "Cane Mint",
+      "nameOriginal": "Cane Mint",
+      "strength": 10,
+      "profile": [
+        "холодок",
+        "ментол"
+      ],
+      "accent": "#9BE8E0"
+    },
+    {
+      "id": "tangiers--noir--orange-soda",
+      "manufacturerId": "tangiers",
+      "lineId": "tangiers--noir",
+      "name": "Orange Soda",
+      "nameOriginal": "Orange Soda",
+      "strength": 9,
+      "profile": [
+        "цитрус",
+        "напитки"
+      ],
+      "accent": "#FFC9A3"
+    },
+    {
+      "id": "tangiers--noir--kashmir-peach",
+      "manufacturerId": "tangiers",
+      "lineId": "tangiers--noir",
+      "name": "Kashmir Peach",
+      "nameOriginal": "Kashmir Peach",
+      "strength": 9,
+      "profile": [
+        "фрукты",
+        "специи"
+      ],
+      "accent": "#FFC2A0"
+    }
   ]
 }

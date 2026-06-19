@@ -30,8 +30,28 @@ npm run typecheck  # только проверка типов
 ## Данные
 
 Каталог лежит в [public/data/catalog.json](public/data/catalog.json) в нормализованном виде
-(производитель → линейка → вкус). Сейчас это заглушка. Реальные данные будут готовиться
-оффлайн-парсером в `scripts/` под конкретный источник (см. SPEC.md §6) — приложение менять не нужно.
+(производитель → линейка → вкус) и **собирается оффлайн-конвейером** в `scripts/`:
+
+```
+adapter (источник) → normalize (slug-id, дедуп, акценты) → validate → public/data/catalog.json
+```
+
+```bash
+npm run catalog:build      # собрать каталог из адаптера (по умолчанию sample)
+npm run catalog:validate   # проверить целостность готового catalog.json
+```
+
+Сейчас источник — заглушка [scripts/raw/sample.json](scripts/raw/sample.json) через `sampleAdapter`.
+Когда появится реальный источник: добавить новый адаптер (`{ id, fetchAll() }`) в
+[scripts/adapters](scripts/adapters) и зарегистрировать его в
+[scripts/build-catalog.ts](scripts/build-catalog.ts). Приложение менять не нужно (см. SPEC.md §6).
+
+## Деплой
+
+Пуш в `main` собирает и публикует сайт на GitHub Pages
+([workflow](.github/workflows/deploy.yml)). Один раз нужно включить в репозитории
+**Settings → Pages → Source: GitHub Actions**. Сайт будет доступен по адресу
+`https://drxid.github.io/stickah/` (под этот путь в `vite.config.ts` включается `base`).
 
 ## Структура
 

@@ -1,0 +1,20 @@
+[
+  { "manufacturer": "MustHave", "line": "Classic", "flavor": "Лимон-Мята", "nameOriginal": "Lemon Mint", "strength": 6, "profile": ["цитрус", "холодок"], "accent": "#9BE8E0" },
+  { "manufacturer": "MustHave", "line": "Classic", "flavor": "Дыня", "nameOriginal": "Melon", "strength": 6, "profile": ["сладкий", "бахчевые"], "accent": "#FFE7A3" },
+  { "manufacturer": "MustHave", "line": "Limited", "flavor": "Розовый Лимонад", "nameOriginal": "Pink Lemonade", "strength": 5, "profile": ["цитрус", "ягоды"], "accent": "#FFC2E2" },
+  { "manufacturer": "MustHave", "line": "Classic", "flavor": "Черника", "nameOriginal": "Blueberry", "strength": 6, "profile": ["ягоды"], "accent": "#B8A6FF" },
+  { "manufacturer": "Darkside", "line": "Core", "flavor": "Cola", "nameOriginal": "Cola", "strength": 8, "profile": ["напитки"], "accent": "#C9A36B" },
+  { "manufacturer": "Darkside", "line": "Core", "flavor": "Banana Papa", "nameOriginal": "Banana Papa", "strength": 8, "profile": ["сладкий", "тропик"], "accent": "#FFE7A3" },
+  { "manufacturer": "Darkside", "line": "Core", "flavor": "Supernova", "nameOriginal": "Supernova", "strength": 7, "profile": ["холодок", "ментол"], "accent": "#A9D5FF" },
+  { "manufacturer": "Darkside", "line": "Base", "flavor": "Dark Berry", "nameOriginal": "Dark Berry", "strength": 5, "profile": ["ягоды"], "accent": "#B8A6FF" },
+  { "manufacturer": "Element", "line": "Земля", "flavor": "Ежевика", "nameOriginal": "Blackberry", "strength": 5, "profile": ["ягоды"], "accent": "#8E7BD6" },
+  { "manufacturer": "Element", "line": "Вода", "flavor": "Персик", "nameOriginal": "Peach", "strength": 5, "profile": ["фрукты"], "accent": "#FFC9A3" },
+  { "manufacturer": "Element", "line": "Воздух", "flavor": "Грейпфрут", "nameOriginal": "Grapefruit", "strength": 5, "profile": ["цитрус"], "accent": "#FF9BB0" },
+  { "manufacturer": "Element", "line": "Воздух", "flavor": "Мята", "nameOriginal": "Mint", "strength": 5, "profile": ["холодок", "ментол"], "accent": "#9BE8E0" },
+  { "manufacturer": "BlackBurn", "line": "Classic", "flavor": "Двойное Яблоко", "nameOriginal": "Double Apple", "strength": 9, "profile": ["классика", "анис"], "accent": "#C75B5B" },
+  { "manufacturer": "BlackBurn", "line": "Classic", "flavor": "Виноград-Мята", "nameOriginal": "Grape Mint", "strength": 9, "profile": ["ягоды", "холодок"], "accent": "#B8A6FF" },
+  { "manufacturer": "BlackBurn", "line": "Classic", "flavor": "Лимонный Пирог", "nameOriginal": "Lemon Pie", "strength": 8, "profile": ["цитрус", "десерт"], "accent": "#FFE7A3" },
+  { "manufacturer": "Tangiers", "line": "Noir", "flavor": "Cane Mint", "nameOriginal": "Cane Mint", "strength": 10, "profile": ["холодок", "ментол"], "accent": "#9BE8E0" },
+  { "manufacturer": "Tangiers", "line": "Noir", "flavor": "Orange Soda", "nameOriginal": "Orange Soda", "strength": 9, "profile": ["цитрус", "напитки"], "accent": "#FFC9A3" },
+  { "manufacturer": "Tangiers", "line": "Noir", "flavor": "Kashmir Peach", "nameOriginal": "Kashmir Peach", "strength": 9, "profile": ["фрукты", "специи"], "accent": "#FFC2A0" }
+]
