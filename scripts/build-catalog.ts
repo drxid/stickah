@@ -5,6 +5,7 @@ import { writeFile } from 'node:fs/promises'
 import { fileURLToPath } from 'node:url'
 import { dirname, join } from 'node:path'
 import { sampleAdapter } from './adapters/sample'
+import { htreviewsAdapter } from './adapters/htreviews'
 import { normalize } from './normalize'
 import { validateCatalog } from './validate'
 import type { SourceAdapter } from './adapters/types'
@@ -14,6 +15,7 @@ const here = dirname(fileURLToPath(import.meta.url))
 // Реестр адаптеров. Новый источник = новая запись здесь.
 const adapters: Record<string, SourceAdapter> = {
   sample: sampleAdapter,
+  htreviews: htreviewsAdapter,
 }
 
 async function main() {
