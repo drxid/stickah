@@ -50,8 +50,8 @@
   --font-display: 'Clash Display', 'Hanken Grotesk', system-ui, sans-serif;
   --font-body: 'Hanken Grotesk', system-ui, -apple-system, 'Segoe UI', sans-serif;
   --font-mono: 'Space Mono', ui-monospace, 'Cascadia Code', monospace;
-  /* Элегантный serif для тёмных наклеек (вариант Noir). Меняется одной строкой. */
-  --font-serif: 'Fraunces', 'Georgia', 'Times New Roman', serif;
+  /* Элегантный serif для тёмных наклеек (вариант Noir). С кириллицей. Меняется одной строкой. */
+  --font-serif: 'Spectral', 'Georgia', 'Times New Roman', serif;
 
   /* Радиусы */
   --r-sm: 8px;
