@@ -46,11 +46,12 @@
   );
 
   /* Типографика */
-  --font-logo: 'Bagel Fat One', 'Clash Display', system-ui, sans-serif;
-  --font-display: 'Clash Display', 'Hanken Grotesk', system-ui, sans-serif;
-  --font-body: 'Hanken Grotesk', system-ui, -apple-system, 'Segoe UI', sans-serif;
-  --font-mono: 'Space Mono', ui-monospace, 'Cascadia Code', monospace;
-  /* Элегантный serif для тёмных наклеек (вариант Noir). С кириллицей. Меняется одной строкой. */
+  /* Все шрифты с поддержкой кириллицы (кроме лого — латинское «Stickah»). */
+  --font-logo: 'Bagel Fat One', 'Unbounded', system-ui, sans-serif;
+  --font-display: 'Unbounded', 'Manrope', system-ui, sans-serif;
+  --font-body: 'Manrope', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'Cascadia Code', monospace;
+  /* Элегантный serif для тёмных наклеек (вариант Noir). */
   --font-serif: 'Spectral', 'Georgia', 'Times New Roman', serif;
 
   /* Радиусы */
