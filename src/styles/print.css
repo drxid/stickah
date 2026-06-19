@@ -1,0 +1,66 @@
+/* Печать листа A4 (см. SPEC.md §5).
+   Ключевое: физические мм, точная печать цвета, скрытие UI приложения. */
+
+@media print {
+  @page {
+    size: A4;
+    margin: 0;
+  }
+
+  html,
+  body {
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #fff !important;
+  }
+
+  /* Прячем весь интерфейс, кроме документа печати */
+  .no-print {
+    display: none !important;
+  }
+
+  .app-shell,
+  .app-main,
+  .step {
+    display: block !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    max-width: none !important;
+    height: auto !important;
+    overflow: visible !important;
+    background: none !important;
+  }
+
+  /* Сцена превью на печати разворачивается в натуральный размер */
+  .preview-stage {
+    display: block !important;
+    overflow: visible !important;
+    max-height: none !important;
+    height: auto !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    background: none !important;
+    border: 0 !important;
+  }
+  .preview-scaler {
+    transform: none !important;
+    width: auto !important;
+    margin: 0 !important;
+  }
+
+  .print-sheet {
+    box-shadow: none !important;
+    margin: 0 !important;
+    break-after: page;
+  }
+  .print-sheet:last-child {
+    break-after: auto;
+  }
+}
+
+/* Заставляем браузер печатать фоновые заливки и градиенты наклеек */
+.print-sheet,
+.print-sheet * {
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
