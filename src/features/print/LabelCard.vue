@@ -108,7 +108,7 @@ const tags = computed(() =>
   overflow: hidden;
 }
 .label__meta {
-  margin-top: 1mm;
+  margin-top: 2.5mm;
   font-size: 2.4mm;
   font-weight: 600;
   letter-spacing: 0.01em;
