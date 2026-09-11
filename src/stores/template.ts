@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import { DEFAULT_DESIGN_ID, getDesign, type DesignId } from '@/data/designs'
+import { DEFAULT_DESIGN_ID, DESIGNS, getDesign, type DesignId } from '@/data/designs'
 import { DEFAULT_SIZE_ID, getSize } from '@/data/sizes'
 
 export interface LabelOptions {
@@ -36,11 +36,13 @@ function load(): TemplateState {
     const raw = localStorage.getItem(STORAGE_KEY)
     if (!raw) return structuredClone(DEFAULTS)
     const parsed = JSON.parse(raw)
+    const designId: DesignId = DESIGNS.some((d) => d.id === parsed.designId)
+      ? parsed.designId
+      : DEFAULTS.designId
+    const sizeId = typeof parsed.sizeId === 'string' ? parsed.sizeId : DEFAULTS.sizeId
     return {
-      sizeId: typeof parsed.sizeId === 'string' ? parsed.sizeId : DEFAULTS.sizeId,
-      designId: ['clean', 'holo', 'mono', 'noir', 'onyx'].includes(parsed.designId)
-        ? parsed.designId
-        : DEFAULTS.designId,
+      sizeId: getDesign(designId).sizeId ?? sizeId,
+      designId,
       options: { ...DEFAULTS.options, ...(parsed.options ?? {}) },
     }
   } catch {
@@ -58,11 +60,15 @@ export const useTemplateStore = defineStore('template', {
 
   actions: {
     setSize(id: string) {
+      // Размер зафиксирован выбранным дизайном.
+      if (this.design.sizeId) return
       this.sizeId = id
       this.persist()
     },
     setDesign(id: DesignId) {
       this.designId = id
+      const fixedSizeId = getDesign(id).sizeId
+      if (fixedSizeId) this.sizeId = fixedSizeId
       this.persist()
     },
     persist() {

@@ -1,7 +1,7 @@
 // Реестр дизайн-вариантов наклейки (см. SPEC.md §8.2).
 // Дизайн — это данные/стратегия: один вариант на всю генерацию.
 
-export type DesignId = 'clean' | 'holo' | 'mono' | 'noir' | 'onyx'
+export type DesignId = 'clean' | 'holo' | 'mono' | 'noir' | 'onyx' | 'grove'
 
 export interface DesignVariant {
   id: DesignId
@@ -9,6 +9,8 @@ export interface DesignVariant {
   description: string
   /** Заметка про печать, показывается в UI выбора. */
   printNote?: string
+  /** Дизайн свёрстан под один размер — при выборе размер фиксируется. */
+  sizeId?: string
 }
 
 export const DESIGNS: DesignVariant[] = [
@@ -41,6 +43,13 @@ export const DESIGNS: DesignVariant[] = [
     label: 'Onyx',
     description: 'Тёмный фон, строгий гротеск, акцентная подпись капсом. Минимализм.',
     printNote: 'Тёмный фон расходует много чернил при печати.',
+  },
+  {
+    id: 'grove',
+    label: 'Grove',
+    description: 'Тёмный фон с гравюрой ветвей, теги вкуса в пилюлях и логотип бренда.',
+    printNote: 'Только 120×45 мм. Тёмный фон расходует много чернил при печати.',
+    sizeId: 'rect-120x45',
   },
 ]
 

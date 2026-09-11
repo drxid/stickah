@@ -233,6 +233,10 @@
     {
       "id": "aircraft",
       "name": "Aircraft"
+    },
+    {
+      "id": "baza",
+      "name": "База"
     }
   ],
   "lines": [
@@ -324,7 +328,7 @@
     {
       "id": "kraken--kraken-line-caviar",
       "manufacturerId": "kraken",
-      "name": "Kraken Line Caviar"
+      "name": "Line Caviar"
     },
     {
       "id": "kraken--cigar-for-hookah",
@@ -444,32 +448,32 @@
     {
       "id": "tangiers--tangiers-birquq",
       "manufacturerId": "tangiers",
-      "name": "Tangiers Birquq"
+      "name": "Birquq"
     },
     {
       "id": "tangiers--tangiers-burley",
       "manufacturerId": "tangiers",
-      "name": "Tangiers Burley"
+      "name": "Burley"
     },
     {
       "id": "tangiers--tangiers-special-edition",
       "manufacturerId": "tangiers",
-      "name": "Tangiers Special Edition"
+      "name": "Special Edition"
     },
     {
       "id": "tangiers--tangiers-noir",
       "manufacturerId": "tangiers",
-      "name": "Tangiers Noir"
+      "name": "Noir"
     },
     {
       "id": "tangiers--tangiers-f-line",
       "manufacturerId": "tangiers",
-      "name": "Tangiers F-Line"
+      "name": "F-Line"
     },
     {
       "id": "tangiers--tangiers-x-alkonost",
       "manufacturerId": "tangiers",
-      "name": "Tangiers x Alkonost"
+      "name": "Alkonost"
     },
     {
       "id": "deus--cigar",
@@ -599,7 +603,7 @@
     {
       "id": "jent--jent-x-sarko-zy",
       "manufacturerId": "jent",
-      "name": "Jent x Sarko Zy"
+      "name": "Sarko Zy"
     },
     {
       "id": "nash--cigar-product",
@@ -644,17 +648,17 @@
     {
       "id": "sebero--sebero-arctic-mix",
       "manufacturerId": "sebero",
-      "name": "Sebero Arctic Mix"
+      "name": "Arctic Mix"
     },
     {
       "id": "sebero--sebero-black",
       "manufacturerId": "sebero",
-      "name": "Sebero Black"
+      "name": "Black"
     },
     {
       "id": "sebero--sebero-classic",
       "manufacturerId": "sebero",
-      "name": "Sebero Classic"
+      "name": "Classic"
     },
     {
       "id": "sebero--gid",
@@ -684,12 +688,12 @@
     {
       "id": "chabacco--chabacco-mix",
       "manufacturerId": "chabacco",
-      "name": "Chabacco MIX"
+      "name": "MIX"
     },
     {
       "id": "chabacco--chabacco-tea-collection",
       "manufacturerId": "chabacco",
-      "name": "Chabacco Tea Collection"
+      "name": "Tea Collection"
     },
     {
       "id": "chabacco--medium",
@@ -874,22 +878,22 @@
     {
       "id": "cobra--cobra-virgin",
       "manufacturerId": "cobra",
-      "name": "Cobra Virgin"
+      "name": "Virgin"
     },
     {
       "id": "cobra--cobra-la-muerte",
       "manufacturerId": "cobra",
-      "name": "Cobra La Muerte"
+      "name": "La Muerte"
     },
     {
       "id": "cobra--cobra-select",
       "manufacturerId": "cobra",
-      "name": "Cobra Select"
+      "name": "Select"
     },
     {
       "id": "cobra--cobra-origins",
       "manufacturerId": "cobra",
-      "name": "Cobra Origins"
+      "name": "Origins"
     },
     {
       "id": "ready--osnovnaya",
@@ -924,47 +928,47 @@
     {
       "id": "duft--duft-checkmate",
       "manufacturerId": "duft",
-      "name": "Duft Checkmate"
+      "name": "Checkmate"
     },
     {
       "id": "duft--duft-solo",
       "manufacturerId": "duft",
-      "name": "Duft Solo"
+      "name": "Solo"
     },
     {
       "id": "duft--duft-intro",
       "manufacturerId": "duft",
-      "name": "Duft Intro"
+      "name": "Intro"
     },
     {
       "id": "duft--duft-all-in",
       "manufacturerId": "duft",
-      "name": "Duft All-in"
+      "name": "All-in"
     },
     {
       "id": "duft--duft-x-the-hatters",
       "manufacturerId": "duft",
-      "name": "Duft x The Hatters"
+      "name": "The Hatters"
     },
     {
       "id": "duft--duft-x-cobra",
       "manufacturerId": "duft",
-      "name": "Duft x Cobra"
+      "name": "Cobra"
     },
     {
       "id": "duft--duft-pheromone",
       "manufacturerId": "duft",
-      "name": "Duft Pheromone"
+      "name": "Pheromone"
     },
     {
       "id": "duft--duft-strong",
       "manufacturerId": "duft",
-      "name": "Duft Strong"
+      "name": "Strong"
     },
     {
       "id": "duft--duft-x-morgenshtern",
       "manufacturerId": "duft",
-      "name": "Duft x Morgenshtern"
+      "name": "Morgenshtern"
     },
     {
       "id": "duft--2025-reborn",
@@ -1034,7 +1038,7 @@
     {
       "id": "afzal--afzal-strong",
       "manufacturerId": "afzal",
-      "name": "Afzal Strong"
+      "name": "Strong"
     },
     {
       "id": "burn--osnovnaya",
@@ -1064,7 +1068,7 @@
     {
       "id": "adalya--adalya-black",
       "manufacturerId": "adalya",
-      "name": "Adalya Black"
+      "name": "Black"
     },
     {
       "id": "malaysian-mix--malaysian-mix",
@@ -1095,6 +1099,21 @@
       "id": "aircraft--medium",
       "manufacturerId": "aircraft",
       "name": "Medium"
+    },
+    {
+      "id": "baza--polegche",
+      "manufacturerId": "baza",
+      "name": "Полегче"
+    },
+    {
+      "id": "baza--pokrepche",
+      "manufacturerId": "baza",
+      "name": "Покрепче"
+    },
+    {
+      "id": "overdose--no-aroma",
+      "manufacturerId": "overdose",
+      "name": "No Aroma"
     }
   ],
   "flavors": [
@@ -7893,7 +7912,7 @@
       "manufacturerId": "trofimoff-s",
       "lineId": "trofimoff-s--burley",
       "name": "Regan",
-      "strength": 5,
+      "strength": 7,
       "profile": [
         "Базилик"
       ],
@@ -8027,7 +8046,7 @@
       "lineId": "trofimoff-s--burley",
       "name": "Passion Fruit",
       "nameOriginal": "Сочная маракуйя",
-      "strength": 5,
+      "strength": 7,
       "profile": [
         "Маракуйя"
       ],
@@ -8087,7 +8106,7 @@
       "lineId": "trofimoff-s--burley",
       "name": "Gingerbread",
       "nameOriginal": "Имбирный пряник",
-      "strength": 5,
+      "strength": 7,
       "profile": [
         "Корица",
         "Имбирь",
@@ -8149,7 +8168,7 @@
       "lineId": "trofimoff-s--burley",
       "name": "Pera",
       "nameOriginal": "Китайская груша",
-      "strength": 5,
+      "strength": 7,
       "profile": [
         "Груша"
       ],
@@ -8161,7 +8180,7 @@
       "lineId": "trofimoff-s--burley",
       "name": "Cantalupo",
       "nameOriginal": "Мускусная дыня",
-      "strength": 5,
+      "strength": 7,
       "profile": [
         "Дыня"
       ],
@@ -8305,7 +8324,7 @@
       "lineId": "trofimoff-s--burley",
       "name": "Hazel hut",
       "nameOriginal": "Грецкий орех",
-      "strength": 5,
+      "strength": 7,
       "profile": [
         "Орех"
       ],
@@ -8386,7 +8405,7 @@
       "lineId": "trofimoff-s--burley",
       "name": "Jasminum",
       "nameOriginal": "Жасмин",
-      "strength": 5,
+      "strength": 7,
       "profile": [
         "Жасмин"
       ],
@@ -8493,7 +8512,7 @@
       "lineId": "trofimoff-s--burley",
       "name": "Opuntia Pear",
       "nameOriginal": "Кактусовая груша",
-      "strength": 5,
+      "strength": 7,
       "profile": [
         "Кактус"
       ],
@@ -8602,7 +8621,7 @@
       "lineId": "trofimoff-s--burley",
       "name": "Bellini",
       "nameOriginal": "x Hookahmarket",
-      "strength": 5,
+      "strength": 7,
       "profile": [
         "Персик",
         "Шампанское"
@@ -8710,7 +8729,7 @@
       "lineId": "trofimoff-s--burley",
       "name": "Cocos",
       "nameOriginal": "Кокос",
-      "strength": 5,
+      "strength": 7,
       "profile": [
         "Кокос"
       ],
@@ -8782,7 +8801,7 @@
       "lineId": "trofimoff-s--burley",
       "name": "Baileys",
       "nameOriginal": "Бейлис",
-      "strength": 5,
+      "strength": 7,
       "profile": [
         "Бейлис"
       ],
@@ -8915,7 +8934,7 @@
       "lineId": "trofimoff-s--burley",
       "name": "Limonata",
       "nameOriginal": "Лимоната",
-      "strength": 5,
+      "strength": 7,
       "profile": [
         "Лимон"
       ],
@@ -8984,7 +9003,7 @@
       "lineId": "trofimoff-s--burley",
       "name": "Ron",
       "nameOriginal": "Ром",
-      "strength": 5,
+      "strength": 7,
       "profile": [
         "Ром"
       ],
@@ -9008,7 +9027,7 @@
       "lineId": "trofimoff-s--burley",
       "name": "Cashmere Guava",
       "nameOriginal": "Кашмир Гуава",
-      "strength": 5,
+      "strength": 7,
       "profile": [
         "Гуава",
         "Кашмир"
@@ -9057,7 +9076,7 @@
       "lineId": "trofimoff-s--burley",
       "name": "Watermelon",
       "nameOriginal": "Арбуз",
-      "strength": 5,
+      "strength": 7,
       "profile": [
         "Арбуз"
       ],
@@ -9174,7 +9193,7 @@
       "manufacturerId": "tangiers",
       "lineId": "tangiers--tangiers-noir",
       "name": "Cookie Dough",
-      "strength": 5,
+      "strength": 7,
       "profile": [
         "Выпечка",
         "Шоколад",
@@ -9187,7 +9206,7 @@
       "manufacturerId": "tangiers",
       "lineId": "tangiers--tangiers-noir",
       "name": "Sunset",
-      "strength": 5,
+      "strength": 7,
       "profile": [
         "Черника",
         "Цветочный",
@@ -9200,7 +9219,7 @@
       "manufacturerId": "tangiers",
       "lineId": "tangiers--tangiers-noir",
       "name": "Root Beer",
-      "strength": 5,
+      "strength": 7,
       "profile": [
         "Рутбир"
       ],
@@ -9283,7 +9302,7 @@
       "lineId": "tangiers--tangiers-noir",
       "name": "Kashmir Plum",
       "nameOriginal": "Кашмир слива",
-      "strength": 5,
+      "strength": 7,
       "profile": [
         "Слива",
         "Кашмир"
@@ -9332,7 +9351,7 @@
       "lineId": "tangiers--tangiers-noir",
       "name": "Blueberry Grapefruit",
       "nameOriginal": "Грейпфрут, лимон, черника",
-      "strength": 5,
+      "strength": 7,
       "profile": [
         "Черника",
         "Лимон",
@@ -9346,7 +9365,7 @@
       "lineId": "tangiers--tangiers-noir",
       "name": "Tasty Peach",
       "nameOriginal": "Вкусный персик",
-      "strength": 5,
+      "strength": 7,
       "profile": [
         "Персик"
       ],
@@ -9369,6 +9388,7 @@
       "lineId": "tangiers--tangiers-noir",
       "name": "Mango Fling",
       "nameOriginal": "Манго, маракуйя, роза",
+      "strength": 7,
       "profile": [
         "Манго",
         "Маракуйя",
@@ -9382,7 +9402,7 @@
       "lineId": "tangiers--tangiers-noir",
       "name": "Kosmik",
       "nameOriginal": "Двойное яблоко",
-      "strength": 9,
+      "strength": 7,
       "profile": [
         "Двойное яблоко",
         "Анис"
@@ -9457,7 +9477,7 @@
       "lineId": "tangiers--tangiers-noir",
       "name": "Bananas Foster",
       "nameOriginal": "Десерт \"банановый фостер\"",
-      "strength": 5,
+      "strength": 7,
       "profile": [
         "Ваниль",
         "Карамель",
@@ -9497,6 +9517,7 @@
       "strength": 7,
       "profile": [
         "Ананас",
+        "Кинза",
         "Специи"
       ],
       "accent": "#d4870f"
@@ -9530,7 +9551,7 @@
       "lineId": "tangiers--tangiers-noir",
       "name": "Regal Flower",
       "nameOriginal": "Царственный цветок",
-      "strength": 2,
+      "strength": 7,
       "profile": [
         "Роза"
       ],
@@ -9541,6 +9562,7 @@
       "manufacturerId": "tangiers",
       "lineId": "tangiers--tangiers-noir",
       "name": "Indigo Flower",
+      "strength": 7,
       "profile": [
         "Чай",
         "Цветочный",
@@ -9553,7 +9575,7 @@
       "manufacturerId": "tangiers",
       "lineId": "tangiers--tangiers-noir",
       "name": "Liquorice",
-      "strength": 5,
+      "strength": 7,
       "profile": [
         "Лакрица"
       ],
@@ -9670,6 +9692,7 @@
       "manufacturerId": "tangiers",
       "lineId": "tangiers--tangiers-noir",
       "name": "Papa's Foreplay",
+      "strength": 7,
       "profile": [
         "Манго",
         "Персик"
@@ -9697,7 +9720,8 @@
       "nameOriginal": "Винтергрин",
       "strength": 7,
       "profile": [
-        "Ягоды"
+        "Рутбир",
+        "Мята"
       ],
       "accent": "#dd283a"
     },
@@ -9802,7 +9826,7 @@
       "lineId": "tangiers--tangiers-noir",
       "name": "Key Lime Pie",
       "nameOriginal": "Лаймовый пирог",
-      "strength": 5,
+      "strength": 7,
       "profile": [
         "Лайм",
         "Сливочный",
@@ -9852,7 +9876,7 @@
       "manufacturerId": "tangiers",
       "lineId": "tangiers--tangiers-noir",
       "name": "Orange Soda",
-      "strength": 9,
+      "strength": 7,
       "profile": [
         "Апельсин",
         "Газировка"
@@ -9889,7 +9913,7 @@
       "lineId": "tangiers--tangiers-noir",
       "name": "Horchata",
       "nameOriginal": "Орчата",
-      "strength": 9,
+      "strength": 7,
       "profile": [
         "Орчата"
       ],
@@ -9901,7 +9925,7 @@
       "lineId": "tangiers--tangiers-noir",
       "name": "Eric's Mango",
       "nameOriginal": "Манго Эрика",
-      "strength": 5,
+      "strength": 7,
       "profile": [
         "Манго"
       ],
@@ -9913,7 +9937,7 @@
       "lineId": "tangiers--tangiers-noir",
       "name": "Summer Solstice Celebration",
       "nameOriginal": "Празднование летнего солнцестояния",
-      "strength": 9,
+      "strength": 7,
       "profile": [
         "Арбуз",
         "Гуава"
@@ -9936,7 +9960,7 @@
       "manufacturerId": "tangiers",
       "lineId": "tangiers--tangiers-noir",
       "name": "New Lemon-Lime",
-      "strength": 5,
+      "strength": 7,
       "profile": [
         "Лайм",
         "Лимон"
@@ -9959,7 +9983,7 @@
       "manufacturerId": "tangiers",
       "lineId": "tangiers--tangiers-noir",
       "name": "Sevilla Orange",
-      "strength": 5,
+      "strength": 7,
       "profile": [
         "Апельсин"
       ],
@@ -9983,7 +10007,7 @@
       "manufacturerId": "tangiers",
       "lineId": "tangiers--tangiers-noir",
       "name": "New Lime",
-      "strength": 5,
+      "strength": 7,
       "profile": [
         "Лайм"
       ],
@@ -9995,7 +10019,7 @@
       "lineId": "tangiers--tangiers-noir",
       "name": "Rasfruit",
       "nameOriginal": "Расфрут",
-      "strength": 5,
+      "strength": 7,
       "profile": [
         "Ананас",
         "Манго",
@@ -10008,6 +10032,7 @@
       "manufacturerId": "tangiers",
       "lineId": "tangiers--tangiers-noir",
       "name": "Atmosphere",
+      "strength": 7,
       "profile": [
         "Лайм",
         "Клубника",
@@ -10021,7 +10046,7 @@
       "lineId": "tangiers--tangiers-noir",
       "name": "Old School Watermelon",
       "nameOriginal": "Классический арбуз",
-      "strength": 5,
+      "strength": 7,
       "profile": [
         "Арбуз"
       ],
@@ -10142,7 +10167,7 @@
       "manufacturerId": "tangiers",
       "lineId": "tangiers--tangiers-noir",
       "name": "Brambleberry",
-      "strength": 9,
+      "strength": 7,
       "profile": [
         "Малина",
         "Ежевика"
@@ -10154,7 +10179,7 @@
       "manufacturerId": "tangiers",
       "lineId": "tangiers--tangiers-noir",
       "name": "Schnozzberry",
-      "strength": 5,
+      "strength": 7,
       "profile": [
         "Клубника",
         "Малина",
@@ -10181,7 +10206,7 @@
       "lineId": "tangiers--tangiers-noir",
       "name": "Bubble Gum",
       "nameOriginal": "Бабл-гам",
-      "strength": 5,
+      "strength": 7,
       "profile": [
         "Жвачка"
       ],
@@ -10192,7 +10217,7 @@
       "manufacturerId": "tangiers",
       "lineId": "tangiers--tangiers-noir",
       "name": "Surfer's delight",
-      "strength": 5,
+      "strength": 7,
       "profile": [
         "Фрукты",
         "Апельсин",
@@ -10256,7 +10281,7 @@
       "manufacturerId": "tangiers",
       "lineId": "tangiers--tangiers-noir",
       "name": "Passionfruit",
-      "strength": 5,
+      "strength": 7,
       "profile": [
         "Маракуйя"
       ],
@@ -10268,7 +10293,7 @@
       "lineId": "tangiers--tangiers-noir",
       "name": "Mexican Mocha",
       "nameOriginal": "Мексиканский мокко",
-      "strength": 5,
+      "strength": 7,
       "profile": [
         "Шоколад",
         "Кофе"
@@ -10281,7 +10306,7 @@
       "lineId": "tangiers--tangiers-noir",
       "name": "Pear",
       "nameOriginal": "Груша",
-      "strength": 5,
+      "strength": 7,
       "profile": [
         "Груша"
       ],
@@ -10293,7 +10318,7 @@
       "lineId": "tangiers--tangiers-noir",
       "name": "Kashmir Lime",
       "nameOriginal": "Лайм-кашемир",
-      "strength": 5,
+      "strength": 7,
       "profile": [
         "Лайм",
         "Кашмир"
@@ -10305,7 +10330,7 @@
       "manufacturerId": "tangiers",
       "lineId": "tangiers--tangiers-noir",
       "name": "Little Purple Stuff",
-      "strength": 5,
+      "strength": 7,
       "profile": [
         "Виноград"
       ],
@@ -10317,7 +10342,7 @@
       "lineId": "tangiers--tangiers-noir",
       "name": "Lime",
       "nameOriginal": "Лайм",
-      "strength": 5,
+      "strength": 7,
       "profile": [
         "Лайм"
       ],
@@ -10350,7 +10375,7 @@
       "manufacturerId": "tangiers",
       "lineId": "tangiers--tangiers-noir",
       "name": "Blue Flower",
-      "strength": 5,
+      "strength": 7,
       "profile": [
         "Цветочный"
       ],
@@ -10362,7 +10387,7 @@
       "lineId": "tangiers--tangiers-noir",
       "name": "Passionfruit Lemonade",
       "nameOriginal": "Лимонад из маракуйи (ТК 15)",
-      "strength": 5,
+      "strength": 7,
       "profile": [
         "Маракуйя",
         "Лимонад"
@@ -10410,7 +10435,7 @@
       "lineId": "tangiers--tangiers-noir",
       "name": "Chocolate Cherry",
       "nameOriginal": "Шоколадная вишня",
-      "strength": 5,
+      "strength": 7,
       "profile": [
         "Шоколад",
         "Вишня"
@@ -10422,7 +10447,7 @@
       "manufacturerId": "tangiers",
       "lineId": "tangiers--tangiers-noir",
       "name": "Pumpkin",
-      "strength": 9,
+      "strength": 7,
       "profile": [
         "Тыква"
       ],
@@ -10433,7 +10458,7 @@
       "manufacturerId": "tangiers",
       "lineId": "tangiers--tangiers-noir",
       "name": "Kiwi",
-      "strength": 5,
+      "strength": 7,
       "profile": [
         "Киви"
       ],
@@ -10445,7 +10470,7 @@
       "lineId": "tangiers--tangiers-noir",
       "name": "Jamaica",
       "nameOriginal": "Ямайка",
-      "strength": 5,
+      "strength": 7,
       "profile": [
         "Фрукты",
         "Цветочный"
@@ -10471,7 +10496,7 @@
       "lineId": "tangiers--tangiers-noir",
       "name": "Blackberry lime",
       "nameOriginal": "Ежевика лайм",
-      "strength": 5,
+      "strength": 7,
       "profile": [
         "Лайм",
         "Ежевика"
@@ -10484,7 +10509,7 @@
       "lineId": "tangiers--tangiers-noir",
       "name": "Raspberry",
       "nameOriginal": "Малина",
-      "strength": 5,
+      "strength": 7,
       "profile": [
         "Малина"
       ],
@@ -10496,7 +10521,7 @@
       "lineId": "tangiers--tangiers-noir",
       "name": "Double Orange",
       "nameOriginal": "Двойной апельсин",
-      "strength": 5,
+      "strength": 7,
       "profile": [
         "Апельсин"
       ],
@@ -10532,7 +10557,7 @@
       "lineId": "tangiers--tangiers-noir",
       "name": "Green tea",
       "nameOriginal": "Зеленый чай",
-      "strength": 5,
+      "strength": 7,
       "profile": [
         "Чай",
         "Зеленый чай"
@@ -10555,7 +10580,7 @@
       "lineId": "tangiers--tangiers-noir",
       "name": "Strawberry Lemonade",
       "nameOriginal": "Клубничный лимонад",
-      "strength": 5,
+      "strength": 7,
       "profile": [
         "Клубника",
         "Газировка"
@@ -10603,7 +10628,7 @@
       "manufacturerId": "tangiers",
       "lineId": "tangiers--tangiers-noir",
       "name": "Jackfruit",
-      "strength": 5,
+      "strength": 7,
       "profile": [
         "Джекфрут"
       ],
@@ -10614,7 +10639,7 @@
       "manufacturerId": "tangiers",
       "lineId": "tangiers--tangiers-noir",
       "name": "Kashmir Black",
-      "strength": 5,
+      "strength": 7,
       "profile": [
         "Ежевика",
         "Кашмир"
@@ -10626,7 +10651,7 @@
       "manufacturerId": "tangiers",
       "lineId": "tangiers--tangiers-noir",
       "name": "Grapefruit",
-      "strength": 5,
+      "strength": 7,
       "profile": [
         "Грейпфрут"
       ],
@@ -10637,7 +10662,7 @@
       "manufacturerId": "tangiers",
       "lineId": "tangiers--tangiers-noir",
       "name": "Cool Strawberry",
-      "strength": 9,
+      "strength": 7,
       "profile": [
         "Клубника"
       ],
@@ -10659,7 +10684,7 @@
       "manufacturerId": "tangiers",
       "lineId": "tangiers--tangiers-noir",
       "name": "Lemnado",
-      "strength": 2,
+      "strength": 7,
       "profile": [
         "Шоколад",
         "Лимон"
@@ -10696,7 +10721,7 @@
       "lineId": "tangiers--tangiers-noir",
       "name": "Static Starlight",
       "nameOriginal": "Статик Старлайт",
-      "strength": 9,
+      "strength": 7,
       "profile": [
         "Роза",
         "Виноград",
@@ -10709,7 +10734,7 @@
       "manufacturerId": "tangiers",
       "lineId": "tangiers--tangiers-noir",
       "name": "Lemon Blossom",
-      "strength": 5,
+      "strength": 7,
       "profile": [
         "Лимон",
         "Цветочный"
@@ -10722,7 +10747,7 @@
       "lineId": "tangiers--tangiers-noir",
       "name": "Summer Resort",
       "nameOriginal": "Дача",
-      "strength": 9,
+      "strength": 7,
       "profile": [
         "Тыква",
         "Огурец",
@@ -10736,7 +10761,7 @@
       "lineId": "tangiers--tangiers-noir",
       "name": "Lemon Tea",
       "nameOriginal": "Чай с лимоном",
-      "strength": 9,
+      "strength": 7,
       "profile": [
         "Лимон",
         "Черный чай"
@@ -10748,7 +10773,7 @@
       "manufacturerId": "tangiers",
       "lineId": "tangiers--tangiers-noir",
       "name": "Strawberry Lemongrass",
-      "strength": 5,
+      "strength": 7,
       "profile": [
         "Клубника",
         "Лемонграсс"
@@ -10774,7 +10799,7 @@
       "manufacturerId": "tangiers",
       "lineId": "tangiers--tangiers-noir",
       "name": "Sour Grape",
-      "strength": 5,
+      "strength": 7,
       "profile": [
         "Виноград"
       ],
@@ -10795,7 +10820,7 @@
       "manufacturerId": "tangiers",
       "lineId": "tangiers--tangiers-noir",
       "name": "Spearmint",
-      "strength": 9,
+      "strength": 7,
       "profile": [
         "Мята"
       ],
@@ -10807,7 +10832,7 @@
       "lineId": "tangiers--tangiers-noir",
       "name": "Pear Watermelon",
       "nameOriginal": "Груша арбуз",
-      "strength": 5,
+      "strength": 7,
       "profile": [
         "Груша",
         "Арбуз"
@@ -10853,7 +10878,7 @@
       "manufacturerId": "tangiers",
       "lineId": "tangiers--tangiers-noir",
       "name": "Pink Grapefruit",
-      "strength": 5,
+      "strength": 7,
       "profile": [
         "Грейпфрут"
       ],
@@ -10877,6 +10902,7 @@
       "lineId": "tangiers--tangiers-noir",
       "name": "Experimint",
       "nameOriginal": "Экспериминт",
+      "strength": 7,
       "profile": [
         "Мята"
       ],
@@ -10899,7 +10925,7 @@
       "manufacturerId": "tangiers",
       "lineId": "tangiers--tangiers-noir",
       "name": "Appricot",
-      "strength": 5,
+      "strength": 7,
       "profile": [
         "Абрикос"
       ],
@@ -10946,7 +10972,7 @@
       "lineId": "tangiers--tangiers-noir",
       "name": "Raspberry Iced Tea",
       "nameOriginal": "Малиновый чай",
-      "strength": 5,
+      "strength": 7,
       "profile": [
         "Чай",
         "Малина",
@@ -10983,6 +11009,7 @@
       "lineId": "tangiers--tangiers-noir",
       "name": "Cherry Limeade",
       "nameOriginal": "Вишневый лимонад",
+      "strength": 7,
       "profile": [
         "Лимон",
         "Газировка",
@@ -11031,6 +11058,7 @@
       "manufacturerId": "tangiers",
       "lineId": "tangiers--tangiers-noir",
       "name": "Guanabana",
+      "strength": 7,
       "profile": [
         "Гуанабана"
       ],
@@ -11041,7 +11069,7 @@
       "manufacturerId": "tangiers",
       "lineId": "tangiers--tangiers-noir",
       "name": "Tuscan Cantaloupe",
-      "strength": 5,
+      "strength": 7,
       "profile": [
         "Дыня"
       ],
@@ -11064,6 +11092,7 @@
       "manufacturerId": "tangiers",
       "lineId": "tangiers--tangiers-noir",
       "name": "Dark Plum",
+      "strength": 7,
       "profile": [
         "Слива"
       ],
@@ -11074,7 +11103,7 @@
       "manufacturerId": "tangiers",
       "lineId": "tangiers--tangiers-noir",
       "name": "Tangiers  Cucumber Lavender",
-      "strength": 5,
+      "strength": 7,
       "profile": [
         "Огурец",
         "Лаванда"
@@ -11086,7 +11115,7 @@
       "manufacturerId": "tangiers",
       "lineId": "tangiers--tangiers-noir",
       "name": "Watermelon",
-      "strength": 5,
+      "strength": 7,
       "profile": [
         "Арбуз"
       ],
@@ -11097,7 +11126,7 @@
       "manufacturerId": "tangiers",
       "lineId": "tangiers--tangiers-noir",
       "name": "Dark cherry",
-      "strength": 5,
+      "strength": 7,
       "profile": [
         "Вишня"
       ],
@@ -11108,7 +11137,7 @@
       "manufacturerId": "tangiers",
       "lineId": "tangiers--tangiers-noir",
       "name": "Juicy Peach",
-      "strength": 5,
+      "strength": 7,
       "profile": [
         "Персик"
       ],
@@ -11120,7 +11149,7 @@
       "lineId": "tangiers--tangiers-noir",
       "name": "Forbidden Fruit",
       "nameOriginal": "Запретный плод",
-      "strength": 5,
+      "strength": 7,
       "profile": [
         "Яблоко",
         "Цветочный"
@@ -11132,7 +11161,7 @@
       "manufacturerId": "tangiers",
       "lineId": "tangiers--tangiers-noir",
       "name": "Chai",
-      "strength": 5,
+      "strength": 7,
       "profile": [
         "Специи",
         "Чай",
@@ -11156,6 +11185,7 @@
       "manufacturerId": "tangiers",
       "lineId": "tangiers--tangiers-noir",
       "name": "Koke",
+      "strength": 7,
       "profile": [
         "Кола"
       ],
@@ -11192,7 +11222,7 @@
       "manufacturerId": "tangiers",
       "lineId": "tangiers--tangiers-noir",
       "name": "Lemon",
-      "strength": 2,
+      "strength": 7,
       "profile": [
         "Лимон"
       ],
@@ -11228,7 +11258,7 @@
       "lineId": "tangiers--tangiers-noir",
       "name": "Mixed fruit with whipped cream",
       "nameOriginal": "Мультифрукт со взбитыми сливками",
-      "strength": 5,
+      "strength": 7,
       "profile": [
         "Фрукты",
         "Сливочный"
@@ -11241,6 +11271,7 @@
       "lineId": "tangiers--tangiers-noir",
       "name": "Lemongrass",
       "nameOriginal": "Лемонграс",
+      "strength": 7,
       "profile": [
         "Лемонграсс"
       ],
@@ -11274,7 +11305,7 @@
       "manufacturerId": "tangiers",
       "lineId": "tangiers--tangiers-noir",
       "name": "Blue Gumball",
-      "strength": 5,
+      "strength": 7,
       "profile": [
         "Черника",
         "Жвачка"
@@ -11287,7 +11318,7 @@
       "lineId": "tangiers--tangiers-noir",
       "name": "Muerte Por Arroz",
       "nameOriginal": "Рисовый пудинг с корицей",
-      "strength": 5,
+      "strength": 7,
       "profile": [
         "Корица",
         "Десерт",
@@ -11325,7 +11356,7 @@
       "manufacturerId": "tangiers",
       "lineId": "tangiers--tangiers-noir",
       "name": "Midnight orchard apple",
-      "strength": 9,
+      "strength": 7,
       "profile": [
         "Яблоко",
         "Анис"
@@ -11337,7 +11368,7 @@
       "manufacturerId": "tangiers",
       "lineId": "tangiers--tangiers-noir",
       "name": "Bug Powder",
-      "strength": 5,
+      "strength": 7,
       "profile": [
         "Мята",
         "Кашмир"
@@ -11349,6 +11380,7 @@
       "manufacturerId": "tangiers",
       "lineId": "tangiers--tangiers-noir",
       "name": "Chocolate Mint",
+      "strength": 7,
       "profile": [
         "Мята",
         "Шоколад"
@@ -11406,7 +11438,7 @@
       "manufacturerId": "tangiers",
       "lineId": "tangiers--tangiers-noir",
       "name": "Kashmir Lemon",
-      "strength": 5,
+      "strength": 7,
       "profile": [
         "Лимон",
         "Кашмир"
@@ -11418,7 +11450,7 @@
       "manufacturerId": "tangiers",
       "lineId": "tangiers--tangiers-noir",
       "name": "Tropical Punch",
-      "strength": 5,
+      "strength": 7,
       "profile": [
         "Фрукты"
       ],
@@ -11439,6 +11471,7 @@
       "manufacturerId": "tangiers",
       "lineId": "tangiers--tangiers-noir",
       "name": "Red Tea",
+      "strength": 7,
       "profile": [
         "Специи",
         "Чай"
@@ -11450,7 +11483,7 @@
       "manufacturerId": "tangiers",
       "lineId": "tangiers--tangiers-noir",
       "name": "Marigold",
-      "strength": 5,
+      "strength": 7,
       "profile": [
         "Цветочный"
       ],
@@ -11461,6 +11494,7 @@
       "manufacturerId": "tangiers",
       "lineId": "tangiers--tangiers-noir",
       "name": "Mixed Fruit #3: Topical Revenge!",
+      "strength": 7,
       "profile": [
         "Фрукты"
       ],
@@ -11472,7 +11506,7 @@
       "lineId": "tangiers--tangiers-noir",
       "name": "Cream Soda",
       "nameOriginal": "Крем сода",
-      "strength": 5,
+      "strength": 7,
       "profile": [
         "Ваниль",
         "Газировка"
@@ -11485,7 +11519,7 @@
       "lineId": "tangiers--tangiers-noir",
       "name": "Refreshing Melon Berry",
       "nameOriginal": "Дыня с ягодами",
-      "strength": 5,
+      "strength": 7,
       "profile": [
         "Дыня",
         "Ягоды"
@@ -11523,7 +11557,7 @@
       "lineId": "tangiers--tangiers-noir",
       "name": "Sour",
       "nameOriginal": "Кислый",
-      "strength": 2,
+      "strength": 7,
       "profile": [
         "Цитрус"
       ],
@@ -11535,7 +11569,7 @@
       "lineId": "tangiers--tangiers-noir",
       "name": "Mixed Fruit",
       "nameOriginal": "Мультифрукт",
-      "strength": 5,
+      "strength": 7,
       "profile": [
         "Фрукты"
       ],
@@ -11547,6 +11581,7 @@
       "lineId": "tangiers--tangiers-noir",
       "name": "Cinnamon",
       "nameOriginal": "Корица",
+      "strength": 7,
       "profile": [
         "Специи"
       ],
@@ -11558,6 +11593,7 @@
       "lineId": "tangiers--tangiers-noir",
       "name": "Cooling",
       "nameOriginal": "Кулер",
+      "strength": 7,
       "profile": [
         "Холодок"
       ],
@@ -11568,6 +11604,7 @@
       "manufacturerId": "tangiers",
       "lineId": "tangiers--tangiers-noir",
       "name": "Panic Punch",
+      "strength": 7,
       "profile": [
         "Лайм",
         "Арбуз"
@@ -11579,6 +11616,7 @@
       "manufacturerId": "tangiers",
       "lineId": "tangiers--tangiers-noir",
       "name": "Sunrise",
+      "strength": 7,
       "profile": [
         "Манго",
         "Киви",
@@ -11788,6 +11826,7 @@
       "manufacturerId": "tangiers",
       "lineId": "tangiers--tangiers-noir",
       "name": "Blackthron",
+      "strength": 7,
       "profile": [
         "Слива"
       ],
@@ -11798,6 +11837,7 @@
       "manufacturerId": "tangiers",
       "lineId": "tangiers--tangiers-noir",
       "name": "Mint",
+      "strength": 7,
       "profile": [
         "Мята"
       ],
@@ -11808,10 +11848,24 @@
       "manufacturerId": "tangiers",
       "lineId": "tangiers--tangiers-noir",
       "name": "Apple",
+      "strength": 7,
       "profile": [
         "Яблоко"
       ],
       "accent": "#E24040"
+    },
+    {
+      "id": "tangiers--tangiers-noir--sage-mint",
+      "manufacturerId": "tangiers",
+      "lineId": "tangiers--tangiers-noir",
+      "name": "Sage Mint",
+      "nameOriginal": "Шалфей и мята",
+      "strength": 7,
+      "profile": [
+        "Шалфей",
+        "Мята"
+      ],
+      "accent": "#01784c"
     },
     {
       "id": "deus--cigar--sumatra",
@@ -16821,6 +16875,7 @@
       "manufacturerId": "sarma",
       "lineId": "sarma--klassicheskaya",
       "name": "Зима",
+      "strength": 3,
       "profile": [
         "Холодок"
       ],
@@ -16853,7 +16908,7 @@
       "manufacturerId": "sarma",
       "lineId": "sarma--klassicheskaya",
       "name": "Черемуха",
-      "strength": 5,
+      "strength": 3,
       "profile": [
         "Ягоды",
         "Цветочный"
@@ -16876,6 +16931,7 @@
       "manufacturerId": "sarma",
       "lineId": "sarma--klassicheskaya",
       "name": "Елка",
+      "strength": 3,
       "profile": [
         "Хвойный"
       ],
@@ -16919,7 +16975,7 @@
       "manufacturerId": "sarma",
       "lineId": "sarma--klassicheskaya",
       "name": "Ореховое молочко",
-      "strength": 5,
+      "strength": 3,
       "profile": [
         "Ваниль",
         "Орех",
@@ -16932,6 +16988,7 @@
       "manufacturerId": "sarma",
       "lineId": "sarma--klassicheskaya",
       "name": "Грейпфрутовый сок",
+      "strength": 3,
       "profile": [
         "Грейпфрут"
       ],
@@ -16954,6 +17011,7 @@
       "manufacturerId": "sarma",
       "lineId": "sarma--klassicheskaya",
       "name": "Кола",
+      "strength": 3,
       "profile": [
         "Кола"
       ],
@@ -16964,6 +17022,7 @@
       "manufacturerId": "sarma",
       "lineId": "sarma--klassicheskaya",
       "name": "Чабрец Байкальский",
+      "strength": 3,
       "profile": [
         "Чабрец"
       ],
@@ -16997,6 +17056,7 @@
       "manufacturerId": "sarma",
       "lineId": "sarma--klassicheskaya",
       "name": "Лимонад Буратино",
+      "strength": 3,
       "profile": [
         "Газировка"
       ],
@@ -17007,7 +17067,7 @@
       "manufacturerId": "sarma",
       "lineId": "sarma--klassicheskaya",
       "name": "Северная черника",
-      "strength": 5,
+      "strength": 3,
       "profile": [
         "Черника"
       ],
@@ -17030,6 +17090,7 @@
       "manufacturerId": "sarma",
       "lineId": "sarma--klassicheskaya",
       "name": "Курага",
+      "strength": 3,
       "profile": [
         "Абрикос"
       ],
@@ -17040,6 +17101,7 @@
       "manufacturerId": "sarma",
       "lineId": "sarma--klassicheskaya",
       "name": "Розовый персик",
+      "strength": 3,
       "profile": [
         "Персик"
       ],
@@ -17095,7 +17157,7 @@
       "manufacturerId": "sarma",
       "lineId": "sarma--klassicheskaya",
       "name": "Байкальская клубника",
-      "strength": 5,
+      "strength": 3,
       "profile": [
         "Клубника"
       ],
@@ -17106,6 +17168,7 @@
       "manufacturerId": "sarma",
       "lineId": "sarma--klassicheskaya",
       "name": "Ананасовый сок",
+      "strength": 3,
       "profile": [
         "Ананас"
       ],
@@ -17128,6 +17191,7 @@
       "manufacturerId": "sarma",
       "lineId": "sarma--klassicheskaya",
       "name": "Щавель",
+      "strength": 3,
       "profile": [
         "Травяной"
       ],
@@ -17138,6 +17202,7 @@
       "manufacturerId": "sarma",
       "lineId": "sarma--klassicheskaya",
       "name": "Красное яблоко",
+      "strength": 3,
       "profile": [
         "Яблоко"
       ],
@@ -17148,7 +17213,7 @@
       "manufacturerId": "sarma",
       "lineId": "sarma--klassicheskaya",
       "name": "Зеленое яблоко",
-      "strength": 5,
+      "strength": 3,
       "profile": [
         "Яблоко"
       ],
@@ -17159,6 +17224,7 @@
       "manufacturerId": "sarma",
       "lineId": "sarma--klassicheskaya",
       "name": "Лесная малина",
+      "strength": 3,
       "profile": [
         "Малина"
       ],
@@ -17225,6 +17291,7 @@
       "manufacturerId": "sarma",
       "lineId": "sarma--legkaya-sarma-360",
       "name": "Ананас",
+      "strength": 2,
       "profile": [
         "Ананас"
       ],
@@ -17246,6 +17313,7 @@
       "manufacturerId": "sarma",
       "lineId": "sarma--klassicheskaya",
       "name": "Княженика",
+      "strength": 3,
       "profile": [
         "Княженика"
       ],
@@ -17256,6 +17324,7 @@
       "manufacturerId": "sarma",
       "lineId": "sarma--klassicheskaya",
       "name": "Ромашковое варенье",
+      "strength": 3,
       "profile": [
         "Ромашка",
         "Мёд"
@@ -17267,6 +17336,7 @@
       "manufacturerId": "sarma",
       "lineId": "sarma--klassicheskaya",
       "name": "Зеленый крыжовник",
+      "strength": 3,
       "profile": [
         "Крыжовник"
       ],
@@ -17289,6 +17359,7 @@
       "manufacturerId": "sarma",
       "lineId": "sarma--klassicheskaya",
       "name": "Деревенская вишня",
+      "strength": 3,
       "profile": [
         "Вишня"
       ],
@@ -17311,6 +17382,7 @@
       "manufacturerId": "sarma",
       "lineId": "sarma--klassicheskaya",
       "name": "Ирга",
+      "strength": 3,
       "profile": [
         "Ирга"
       ],
@@ -17321,6 +17393,7 @@
       "manufacturerId": "sarma",
       "lineId": "sarma--klassicheskaya",
       "name": "Брусника-клюква",
+      "strength": 3,
       "profile": [
         "Клюква",
         "Брусника"
@@ -17332,6 +17405,7 @@
       "manufacturerId": "sarma",
       "lineId": "sarma--klassicheskaya",
       "name": "Таежный чай",
+      "strength": 3,
       "profile": [
         "Чай",
         "Травяной"
@@ -17343,6 +17417,7 @@
       "manufacturerId": "sarma",
       "lineId": "sarma--legkaya-sarma-360",
       "name": "Смородина",
+      "strength": 2,
       "profile": [
         "Черная смородина"
       ],
@@ -17398,6 +17473,7 @@
       "manufacturerId": "sarma",
       "lineId": "sarma--klassicheskaya",
       "name": "Сирень",
+      "strength": 3,
       "profile": [
         "Цветочный"
       ],
@@ -17408,7 +17484,7 @@
       "manufacturerId": "sarma",
       "lineId": "sarma--klassicheskaya",
       "name": "Гранатовый сок",
-      "strength": 5,
+      "strength": 3,
       "profile": [
         "Гранат"
       ],
@@ -17419,6 +17495,7 @@
       "manufacturerId": "sarma",
       "lineId": "sarma--klassicheskaya",
       "name": "Дачная груша",
+      "strength": 3,
       "profile": [
         "Груша"
       ],
@@ -17429,7 +17506,7 @@
       "manufacturerId": "sarma",
       "lineId": "sarma--klassicheskaya",
       "name": "Облепиха апельсин",
-      "strength": 5,
+      "strength": 3,
       "profile": [
         "Апельсин",
         "Облепиха"
@@ -17453,6 +17530,7 @@
       "manufacturerId": "sarma",
       "lineId": "sarma--klassicheskaya",
       "name": "Лимонный леденец",
+      "strength": 3,
       "profile": [
         "Лайм",
         "Лимон",
@@ -17476,6 +17554,7 @@
       "manufacturerId": "sarma",
       "lineId": "sarma--klassicheskaya",
       "name": "Мандарин",
+      "strength": 3,
       "profile": [
         "Мандарин"
       ],
@@ -17546,6 +17625,7 @@
       "manufacturerId": "sarma",
       "lineId": "sarma--klassicheskaya",
       "name": "Кедровый пломбир",
+      "strength": 3,
       "profile": [
         "Орех",
         "Хвойный",
@@ -17581,6 +17661,7 @@
       "manufacturerId": "sarma",
       "lineId": "sarma--klassicheskaya",
       "name": "Байкал",
+      "strength": 3,
       "profile": [
         "Байкал"
       ],
@@ -17591,6 +17672,7 @@
       "manufacturerId": "sarma",
       "lineId": "sarma--klassicheskaya",
       "name": "Компот из морошки",
+      "strength": 3,
       "profile": [
         "Морошка"
       ],
@@ -17601,6 +17683,7 @@
       "manufacturerId": "sarma",
       "lineId": "sarma--klassicheskaya",
       "name": "Смородиновый морс",
+      "strength": 3,
       "profile": [
         "Черная смородина"
       ],
@@ -17611,6 +17694,7 @@
       "manufacturerId": "sarma",
       "lineId": "sarma--klassicheskaya",
       "name": "Лимонад Тархун",
+      "strength": 3,
       "profile": [
         "Тархун"
       ],
@@ -17621,7 +17705,7 @@
       "manufacturerId": "sarma",
       "lineId": "sarma--klassicheskaya",
       "name": "Земляничное печенье",
-      "strength": 5,
+      "strength": 3,
       "profile": [
         "Земляника",
         "Печенье"
@@ -17644,6 +17728,7 @@
       "manufacturerId": "sarma",
       "lineId": "sarma--klassicheskaya",
       "name": "Холодный чай",
+      "strength": 3,
       "profile": [
         "Цитрус",
         "Мята",
@@ -17704,6 +17789,7 @@
       "manufacturerId": "sarma",
       "lineId": "sarma--klassicheskaya",
       "name": "Фруктовый сорбет",
+      "strength": 3,
       "profile": [
         "Манго",
         "Абрикос",
@@ -17727,6 +17813,7 @@
       "manufacturerId": "sarma",
       "lineId": "sarma--klassicheskaya",
       "name": "Дыня",
+      "strength": 3,
       "profile": [
         "Дыня"
       ],
@@ -17737,7 +17824,7 @@
       "manufacturerId": "sarma",
       "lineId": "sarma--klassicheskaya",
       "name": "Арбузный мармелад",
-      "strength": 5,
+      "strength": 3,
       "profile": [
         "Арбуз",
         "Мармелад"
@@ -17749,6 +17836,7 @@
       "manufacturerId": "sarma",
       "lineId": "sarma--klassicheskaya",
       "name": "Банановое суфле",
+      "strength": 3,
       "profile": [
         "Банан",
         "Десерт"
@@ -17772,6 +17860,7 @@
       "manufacturerId": "sarma",
       "lineId": "sarma--klassicheskaya",
       "name": "Это База",
+      "strength": 3,
       "profile": [
         "Табачный"
       ],
@@ -17794,6 +17883,7 @@
       "manufacturerId": "sarma",
       "lineId": "sarma--klassicheskaya",
       "name": "Виноградный сок",
+      "strength": 3,
       "profile": [
         "Виноград"
       ],
@@ -17828,6 +17918,7 @@
       "manufacturerId": "sarma",
       "lineId": "sarma--klassicheskaya",
       "name": "Торт медовик",
+      "strength": 3,
       "profile": [
         "Мёд",
         "Сливочный",
@@ -28658,7 +28749,7 @@
       "lineId": "darkside--xperience",
       "name": "Multy Fruity",
       "nameOriginal": "Манго, папайя, гуава",
-      "strength": 5,
+      "strength": 3,
       "profile": [
         "Манго",
         "Гуава",
@@ -28672,7 +28763,7 @@
       "lineId": "darkside--xperience",
       "name": "Lime Up",
       "nameOriginal": "Биттер лайм",
-      "strength": 5,
+      "strength": 3,
       "profile": [
         "Лайм",
         "Тоник"
@@ -28731,7 +28822,7 @@
       "manufacturerId": "darkside",
       "lineId": "darkside--xperience",
       "name": "Aperol Speed",
-      "strength": 5,
+      "strength": 3,
       "profile": [
         "Апероль"
       ],
@@ -28816,7 +28907,7 @@
       "lineId": "darkside--xperience",
       "name": "Mintslide",
       "nameOriginal": "Мятная жвачка",
-      "strength": 5,
+      "strength": 3,
       "profile": [
         "Мята",
         "Жвачка"
@@ -28991,7 +29082,7 @@
       "lineId": "darkside--xperience",
       "name": "Aloha Ale",
       "nameOriginal": "Имбирная газировка",
-      "strength": 5,
+      "strength": 3,
       "profile": [
         "Имбирь",
         "Газировка"
@@ -29194,7 +29285,7 @@
       "lineId": "darkside--xperience",
       "name": "Berry Vs",
       "nameOriginal": "Виноград, малина и смородина",
-      "strength": 5,
+      "strength": 3,
       "profile": [
         "Виноград",
         "Малина",
@@ -29316,7 +29407,7 @@
       "manufacturerId": "darkside",
       "lineId": "darkside--xperience",
       "name": "Skittle Street",
-      "strength": 5,
+      "strength": 3,
       "profile": [
         "Ягоды",
         "Леденцы"
@@ -29343,7 +29434,7 @@
       "lineId": "darkside--xperience",
       "name": "Pinkmania",
       "nameOriginal": "Клубника, малина, грейпфрут",
-      "strength": 5,
+      "strength": 3,
       "profile": [
         "Клубника",
         "Малина",
@@ -29534,7 +29625,7 @@
       "lineId": "darkside--xperience",
       "name": "Bana-nascar",
       "nameOriginal": "Банан и клубника",
-      "strength": 5,
+      "strength": 3,
       "profile": [
         "Клубника",
         "Банан"
@@ -29559,7 +29650,7 @@
       "lineId": "darkside--xperience",
       "name": "Citrus Wave",
       "nameOriginal": "Лимон, лайм, клубника",
-      "strength": 5,
+      "strength": 3,
       "profile": [
         "Лайм",
         "Клубника",
@@ -29573,7 +29664,7 @@
       "lineId": "darkside--xperience",
       "name": "Petrol Headz",
       "nameOriginal": "Маракуйя, манго и ананас",
-      "strength": 5,
+      "strength": 3,
       "profile": [
         "Ананас",
         "Манго",
@@ -29599,7 +29690,7 @@
       "lineId": "darkside--xperience",
       "name": "Grape & Furious",
       "nameOriginal": "Виноград и базилик",
-      "strength": 5,
+      "strength": 3,
       "profile": [
         "Виноград",
         "Базилик"
@@ -29675,7 +29766,7 @@
       "lineId": "darkside--xperience",
       "name": "Mohito Yota",
       "nameOriginal": "Мохито и клубника",
-      "strength": 5,
+      "strength": 3,
       "profile": [
         "Мята",
         "Клубника",
@@ -29689,7 +29780,7 @@
       "lineId": "darkside--xperience",
       "name": "Easy Freezy",
       "nameOriginal": "Карамель, мята и мороженое",
-      "strength": 5,
+      "strength": 3,
       "profile": [
         "Мята",
         "Карамель",
@@ -29727,7 +29818,7 @@
       "lineId": "darkside--xperience",
       "name": "Citrus Pro",
       "nameOriginal": "Грейпфрут и малина",
-      "strength": 5,
+      "strength": 3,
       "profile": [
         "Малина",
         "Грейпфрут"
@@ -29763,7 +29854,7 @@
       "manufacturerId": "darkside",
       "lineId": "darkside--xperience",
       "name": "Pine Crime",
-      "strength": 5,
+      "strength": 3,
       "profile": [
         "Ананас"
       ],
@@ -29814,6 +29905,7 @@
       "manufacturerId": "darkside",
       "lineId": "darkside--xperience",
       "name": "Need for Spirit",
+      "strength": 3,
       "profile": [
         "Лайм",
         "Текила"
@@ -29901,7 +29993,7 @@
       "manufacturerId": "darkside",
       "lineId": "darkside--xperience",
       "name": "Urban Gin",
-      "strength": 5,
+      "strength": 3,
       "profile": [
         "Малина",
         "Джин"
@@ -30157,7 +30249,7 @@
       "manufacturerId": "darkside",
       "lineId": "darkside--xperience",
       "name": "Vandal Cola",
-      "strength": 5,
+      "strength": 3,
       "profile": [
         "Кола",
         "Ваниль"
@@ -30222,7 +30314,7 @@
       "lineId": "darkside--xperience",
       "name": "Resident Kiwi",
       "nameOriginal": "Киви и алоэ",
-      "strength": 5,
+      "strength": 3,
       "profile": [
         "Киви",
         "Алоэ"
@@ -30235,7 +30327,7 @@
       "lineId": "darkside--xperience",
       "name": "Ultimate Peach",
       "nameOriginal": "Персик и йогурт",
-      "strength": 5,
+      "strength": 3,
       "profile": [
         "Персик",
         "Йогурт"
@@ -30260,6 +30352,7 @@
       "lineId": "darkside--xperience",
       "name": "Maraschini",
       "nameOriginal": "Вишня, мартини",
+      "strength": 3,
       "profile": [
         "Алкоголь",
         "Вишня"
@@ -30501,7 +30594,7 @@
       "lineId": "darkside--xperience",
       "name": "Battle Apple",
       "nameOriginal": "Яблоко и леденцы",
-      "strength": 5,
+      "strength": 3,
       "profile": [
         "Яблоко",
         "Леденцы"
@@ -30549,6 +30642,7 @@
       "manufacturerId": "darkside",
       "lineId": "darkside--xperience",
       "name": "Energy Drift",
+      "strength": 3,
       "profile": [
         "Энергетик"
       ],
@@ -30571,6 +30665,7 @@
       "manufacturerId": "darkside",
       "lineId": "darkside--xperience",
       "name": "Candy Crew",
+      "strength": 3,
       "profile": [
         "Клубника",
         "Леденцы"
@@ -30746,6 +30841,7 @@
       "manufacturerId": "musthave",
       "lineId": "musthave--osnovnaya",
       "name": "Клубничный сорбет",
+      "strength": 5,
       "profile": [
         "Клубника",
         "Мороженое"
@@ -30770,6 +30866,7 @@
       "lineId": "musthave--osnovnaya",
       "name": "Lemon-Lime",
       "nameOriginal": "Лимон-лайм",
+      "strength": 5,
       "profile": [
         "Лайм",
         "Лимон"
@@ -30821,6 +30918,7 @@
       "lineId": "musthave--osnovnaya",
       "name": "Prosecco",
       "nameOriginal": "Просекко",
+      "strength": 5,
       "profile": [
         "Шампанское"
       ],
@@ -30843,6 +30941,7 @@
       "manufacturerId": "musthave",
       "lineId": "musthave--osnovnaya",
       "name": "Смородина, апельсин и виноград",
+      "strength": 5,
       "profile": [
         "Виноград",
         "Апельсин",
@@ -30856,6 +30955,7 @@
       "lineId": "musthave--osnovnaya",
       "name": "Yolka",
       "nameOriginal": "Елка",
+      "strength": 5,
       "profile": [
         "Хвойный"
       ],
@@ -30880,6 +30980,7 @@
       "lineId": "musthave--osnovnaya",
       "name": "Pinkman",
       "nameOriginal": "Пинкман",
+      "strength": 5,
       "profile": [
         "Клубника",
         "Малина",
@@ -30893,6 +30994,7 @@
       "lineId": "musthave--osnovnaya",
       "name": "Pineapple Rings",
       "nameOriginal": "Ананасовые кольца",
+      "strength": 5,
       "profile": [
         "Ананас"
       ],
@@ -30904,6 +31006,7 @@
       "lineId": "musthave--osnovnaya",
       "name": "Milky Rice",
       "nameOriginal": "Молочный рис",
+      "strength": 5,
       "profile": [
         "Сливочный",
         "Молоко",
@@ -30945,6 +31048,7 @@
       "lineId": "musthave--osnovnaya",
       "name": "Sour Berries",
       "nameOriginal": "Кислые ягоды",
+      "strength": 5,
       "profile": [
         "Ягоды"
       ],
@@ -30956,6 +31060,7 @@
       "lineId": "musthave--osnovnaya",
       "name": "Cinnamon",
       "nameOriginal": "Корица",
+      "strength": 5,
       "profile": [
         "Корица"
       ],
@@ -30993,6 +31098,7 @@
       "lineId": "musthave--osnovnaya",
       "name": "Ice Cream",
       "nameOriginal": "Мороженое",
+      "strength": 5,
       "profile": [
         "Мороженое"
       ],
@@ -31081,6 +31187,7 @@
       "lineId": "musthave--osnovnaya",
       "name": "Honey Holls",
       "nameOriginal": "Медовый холлс",
+      "strength": 5,
       "profile": [
         "Холодок",
         "Мёд"
@@ -31107,6 +31214,7 @@
       "lineId": "musthave--osnovnaya",
       "name": "Burley Base",
       "nameOriginal": "Берли Бейз",
+      "strength": 5,
       "profile": [
         "Табачный"
       ],
@@ -31130,6 +31238,7 @@
       "lineId": "musthave--osnovnaya",
       "name": "Berry Holls",
       "nameOriginal": "Ягодные леденцы",
+      "strength": 5,
       "profile": [
         "Ягоды",
         "Холодок"
@@ -31142,6 +31251,7 @@
       "lineId": "musthave--osnovnaya",
       "name": "Frosty",
       "nameOriginal": "Морозный",
+      "strength": 5,
       "profile": [
         "Холодок"
       ],
@@ -31153,6 +31263,7 @@
       "lineId": "musthave--osnovnaya",
       "name": "Strawberry-Lychee",
       "nameOriginal": "Клубника-личи",
+      "strength": 5,
       "profile": [
         "Личи",
         "Земляника"
@@ -31165,6 +31276,7 @@
       "lineId": "musthave--osnovnaya",
       "name": "Coconut Shake",
       "nameOriginal": "Кокосовый шейк",
+      "strength": 5,
       "profile": [
         "Кокос",
         "Сливочный",
@@ -31178,6 +31290,7 @@
       "lineId": "musthave--osnovnaya",
       "name": "Paradise",
       "nameOriginal": "Рай",
+      "strength": 5,
       "profile": [
         "Кокос",
         "Карамель",
@@ -31191,6 +31304,7 @@
       "lineId": "musthave--osnovnaya",
       "name": "Marula",
       "nameOriginal": "Марула",
+      "strength": 5,
       "profile": [
         "Марула"
       ],
@@ -31202,6 +31316,7 @@
       "lineId": "musthave--osnovnaya",
       "name": "Watermelon",
       "nameOriginal": "Арбуз",
+      "strength": 5,
       "profile": [
         "Арбуз"
       ],
@@ -31238,6 +31353,7 @@
       "lineId": "musthave--osnovnaya",
       "name": "Sour Tropic",
       "nameOriginal": "Кислые тропические фрукты",
+      "strength": 5,
       "profile": [
         "Фрукты"
       ],
@@ -31249,6 +31365,7 @@
       "lineId": "musthave--osnovnaya",
       "name": "Passion Plum",
       "nameOriginal": "Маракуйя и слива",
+      "strength": 5,
       "profile": [
         "Слива",
         "Маракуйя"
@@ -31261,6 +31378,7 @@
       "lineId": "musthave--osnovnaya",
       "name": "Melonade",
       "nameOriginal": "Мелонад",
+      "strength": 5,
       "profile": [
         "Дыня",
         "Барбарис",
@@ -31274,6 +31392,7 @@
       "lineId": "musthave--osnovnaya",
       "name": "Rocketman",
       "nameOriginal": "Ракета",
+      "strength": 5,
       "profile": [
         "Клубника",
         "Киви",
@@ -31301,6 +31420,7 @@
       "lineId": "musthave--osnovnaya",
       "name": "Tropic Juice",
       "nameOriginal": "Тропический сок",
+      "strength": 5,
       "profile": [
         "Ананас",
         "Маракуйя"
@@ -31313,6 +31433,7 @@
       "lineId": "musthave--osnovnaya",
       "name": "Bananamama",
       "nameOriginal": "Бананамама",
+      "strength": 5,
       "profile": [
         "Банан"
       ],
@@ -31324,6 +31445,7 @@
       "lineId": "musthave--osnovnaya",
       "name": "Mango Sling",
       "nameOriginal": "Манго слинг",
+      "strength": 5,
       "profile": [
         "Манго"
       ],
@@ -31347,6 +31469,7 @@
       "lineId": "musthave--osnovnaya",
       "name": "Estragon",
       "nameOriginal": "Эстрагон",
+      "strength": 5,
       "profile": [
         "Тархун"
       ],
@@ -31371,6 +31494,7 @@
       "lineId": "musthave--osnovnaya",
       "name": "Black Currant",
       "nameOriginal": "Черная смородина",
+      "strength": 5,
       "profile": [
         "Черная смородина"
       ],
@@ -31382,6 +31506,7 @@
       "lineId": "musthave--osnovnaya",
       "name": "Berry Mors",
       "nameOriginal": "Ягодный морс",
+      "strength": 5,
       "profile": [
         "Ягоды"
       ],
@@ -31406,6 +31531,7 @@
       "lineId": "musthave--osnovnaya",
       "name": "Cranberry",
       "nameOriginal": "Клюква",
+      "strength": 5,
       "profile": [
         "Клюква"
       ],
@@ -31417,6 +31543,7 @@
       "lineId": "musthave--osnovnaya",
       "name": "Cherry Juice",
       "nameOriginal": "Вишневый сок",
+      "strength": 5,
       "profile": [
         "Вишня"
       ],
@@ -31454,6 +31581,7 @@
       "lineId": "musthave--osnovnaya",
       "name": "Pistachio Cake",
       "nameOriginal": "Фисташковый пирог",
+      "strength": 5,
       "profile": [
         "Фисташки",
         "Пирог",
@@ -31467,6 +31595,7 @@
       "lineId": "musthave--osnovnaya",
       "name": "Kiwi Smoothie",
       "nameOriginal": "Киви смузи",
+      "strength": 5,
       "profile": [
         "Киви",
         "Мята",
@@ -31494,6 +31623,7 @@
       "lineId": "musthave--osnovnaya",
       "name": "Candy Cow",
       "nameOriginal": "Коровка",
+      "strength": 5,
       "profile": [
         "Сливочный",
         "Карамель"
@@ -31506,6 +31636,7 @@
       "lineId": "musthave--osnovnaya",
       "name": "Raspberry",
       "nameOriginal": "Малина",
+      "strength": 5,
       "profile": [
         "Малина"
       ],
@@ -31529,6 +31660,7 @@
       "lineId": "musthave--osnovnaya",
       "name": "Fizzy Dizzy",
       "nameOriginal": "Физи-Дизи",
+      "strength": 5,
       "profile": [
         "Барбарис",
         "Шампанское"
@@ -31555,6 +31687,7 @@
       "lineId": "musthave--osnovnaya",
       "name": "Vanilla Cream",
       "nameOriginal": "Ванильный крем",
+      "strength": 5,
       "profile": [
         "Сливочный",
         "Ваниль"
@@ -31566,6 +31699,7 @@
       "manufacturerId": "musthave",
       "lineId": "musthave--osnovnaya",
       "name": "Киви, яблоко, лайм",
+      "strength": 5,
       "profile": [
         "Лайм",
         "Киви",
@@ -31591,6 +31725,7 @@
       "lineId": "musthave--osnovnaya",
       "name": "Citrus Spritz",
       "nameOriginal": "Цитрусовый коктейль с просеко",
+      "strength": 5,
       "profile": [
         "Цитрус",
         "Апельсин",
@@ -31616,6 +31751,7 @@
       "lineId": "musthave--osnovnaya",
       "name": "Cocoloco",
       "nameOriginal": "Коколоко",
+      "strength": 5,
       "profile": [
         "Кокос",
         "Ягоды",
@@ -31629,6 +31765,7 @@
       "lineId": "musthave--osnovnaya",
       "name": "Apple Drops",
       "nameOriginal": "Яблочные леденцы",
+      "strength": 5,
       "profile": [
         "Яблоко"
       ],
@@ -31640,6 +31777,7 @@
       "lineId": "musthave--osnovnaya",
       "name": "Forest Berries",
       "nameOriginal": "Лесные ягоды",
+      "strength": 5,
       "profile": [
         "Ягоды"
       ],
@@ -31663,6 +31801,7 @@
       "lineId": "musthave--osnovnaya",
       "name": "Sweet Peach",
       "nameOriginal": "Сладкий персик",
+      "strength": 5,
       "profile": [
         "Персик"
       ],
@@ -31686,6 +31825,7 @@
       "lineId": "musthave--osnovnaya",
       "name": "Violet",
       "nameOriginal": "Фиолетовый",
+      "strength": 5,
       "profile": [
         "Дыня",
         "Специи",
@@ -31699,6 +31839,7 @@
       "lineId": "musthave--osnovnaya",
       "name": "Holland Pie",
       "nameOriginal": "Голландский кекс",
+      "strength": 5,
       "profile": [
         "Кекс"
       ],
@@ -31710,6 +31851,7 @@
       "lineId": "musthave--osnovnaya",
       "name": "Mandarin",
       "nameOriginal": "Мандарин",
+      "strength": 5,
       "profile": [
         "Мандарин"
       ],
@@ -31721,6 +31863,7 @@
       "lineId": "musthave--osnovnaya",
       "name": "Sweet Melon",
       "nameOriginal": "Сладкая дыня",
+      "strength": 5,
       "profile": [
         "Дыня"
       ],
@@ -31732,6 +31875,7 @@
       "lineId": "musthave--osnovnaya",
       "name": "Ruby Grape",
       "nameOriginal": "Рубиновый виноград",
+      "strength": 5,
       "profile": [
         "Виноград"
       ],
@@ -31743,6 +31887,7 @@
       "lineId": "musthave--osnovnaya",
       "name": "Red Tea",
       "nameOriginal": "Красный чай",
+      "strength": 5,
       "profile": [
         "Фрукты",
         "Чай"
@@ -31755,6 +31900,7 @@
       "lineId": "musthave--osnovnaya",
       "name": "Quince",
       "nameOriginal": "Айва",
+      "strength": 5,
       "profile": [
         "Анис",
         "Айва"
@@ -31767,6 +31913,7 @@
       "lineId": "musthave--osnovnaya",
       "name": "Gooseberry",
       "nameOriginal": "Крыжовник",
+      "strength": 5,
       "profile": [
         "Крыжовник"
       ],
@@ -31778,6 +31925,7 @@
       "lineId": "musthave--osnovnaya",
       "name": "Cream Soda",
       "nameOriginal": "Крем-сода",
+      "strength": 5,
       "profile": [
         "Сливочный",
         "Газировка"
@@ -31790,6 +31938,7 @@
       "lineId": "musthave--osnovnaya",
       "name": "Lemongrass",
       "nameOriginal": "Лемонграсс",
+      "strength": 5,
       "profile": [
         "Лайм",
         "Лемонграсс",
@@ -31817,6 +31966,7 @@
       "lineId": "musthave--osnovnaya",
       "name": "Cherry-Cola",
       "nameOriginal": "Вишня-кола",
+      "strength": 5,
       "profile": [
         "Кола",
         "Вишня"
@@ -31829,6 +31979,7 @@
       "lineId": "musthave--osnovnaya",
       "name": "Blueberry",
       "nameOriginal": "Черника",
+      "strength": 5,
       "profile": [
         "Черника",
         "Йогурт"
@@ -31855,6 +32006,7 @@
       "lineId": "musthave--osnovnaya",
       "name": "Sour Apple",
       "nameOriginal": "Кислое яблоко",
+      "strength": 5,
       "profile": [
         "Яблоко"
       ],
@@ -31880,6 +32032,7 @@
       "lineId": "musthave--osnovnaya",
       "name": "Nord Star",
       "nameOriginal": "Кисло-сладкая вишня",
+      "strength": 5,
       "profile": [
         "Вишня"
       ],
@@ -31891,6 +32044,7 @@
       "lineId": "musthave--osnovnaya",
       "name": "Pistachio",
       "nameOriginal": "Фисташки",
+      "strength": 5,
       "profile": [
         "Фисташки"
       ],
@@ -31902,6 +32056,7 @@
       "lineId": "musthave--osnovnaya",
       "name": "Blackberry",
       "nameOriginal": "Ежевика",
+      "strength": 5,
       "profile": [
         "Ежевика"
       ],
@@ -31913,6 +32068,7 @@
       "lineId": "musthave--osnovnaya",
       "name": "Red Bomb",
       "nameOriginal": "Гранат",
+      "strength": 5,
       "profile": [
         "Гранат"
       ],
@@ -31924,6 +32080,7 @@
       "lineId": "musthave--osnovnaya",
       "name": "Cola",
       "nameOriginal": "Кола",
+      "strength": 5,
       "profile": [
         "Кола"
       ],
@@ -32813,7 +32970,8 @@
       "nameOriginal": "Сливочная кукуруза",
       "strength": 5,
       "profile": [
-        "Кукуруза"
+        "Кукуруза",
+        "Сливочный"
       ],
       "accent": "#649822"
     },
@@ -33133,9 +33291,9 @@
       "id": "huligan--krepkaya--hard-dino",
       "manufacturerId": "huligan",
       "lineId": "huligan--krepkaya",
-      "name": "Hard Dino",
+      "name": "Dino",
       "nameOriginal": "Дино",
-      "strength": 5,
+      "strength": 3,
       "profile": [
         "Мята",
         "Жвачка"
@@ -33158,9 +33316,9 @@
       "id": "huligan--krepkaya--hard-vera",
       "manufacturerId": "huligan",
       "lineId": "huligan--krepkaya",
-      "name": "Hard Vera",
+      "name": "Vera",
       "nameOriginal": "Вера",
-      "strength": 5,
+      "strength": 3,
       "profile": [
         "Алоэ"
       ],
@@ -33170,9 +33328,9 @@
       "id": "huligan--krepkaya--hard-green-queen",
       "manufacturerId": "huligan",
       "lineId": "huligan--krepkaya",
-      "name": "Hard Green Queen",
+      "name": "Green Queen",
       "nameOriginal": "Зеленая королева",
-      "strength": 5,
+      "strength": 3,
       "profile": [
         "Мята",
         "Мёд",
@@ -33196,9 +33354,9 @@
       "id": "huligan--krepkaya--hard-healthy",
       "manufacturerId": "huligan",
       "lineId": "huligan--krepkaya",
-      "name": "Hard Healthy",
+      "name": "Healthy",
       "nameOriginal": "Хелси",
-      "strength": 5,
+      "strength": 3,
       "profile": [
         "Лимон",
         "Имбирь"
@@ -33258,9 +33416,9 @@
       "id": "huligan--krepkaya--hard-panama",
       "manufacturerId": "huligan",
       "lineId": "huligan--krepkaya",
-      "name": "Hard Panama",
+      "name": "Panama",
       "nameOriginal": "Панама",
-      "strength": 5,
+      "strength": 3,
       "profile": [
         "Фрукты",
         "Папайя"
@@ -33295,9 +33453,9 @@
       "id": "huligan--krepkaya--hard-fifi",
       "manufacturerId": "huligan",
       "lineId": "huligan--krepkaya",
-      "name": "Hard Fifi",
+      "name": "Fifi",
       "nameOriginal": "Фифи",
-      "strength": 5,
+      "strength": 3,
       "profile": [
         "Шоколад",
         "Карамель",
@@ -33309,9 +33467,9 @@
       "id": "huligan--krepkaya--hard-love",
       "manufacturerId": "huligan",
       "lineId": "huligan--krepkaya",
-      "name": "Hard Love",
+      "name": "Love",
       "nameOriginal": "Лав",
-      "strength": 5,
+      "strength": 3,
       "profile": [
         "Черная смородина",
         "Ромашка"
@@ -33322,9 +33480,9 @@
       "id": "huligan--krepkaya--hard-kras",
       "manufacturerId": "huligan",
       "lineId": "huligan--krepkaya",
-      "name": "Hard Kras",
+      "name": "Kras",
       "nameOriginal": "Персиковое вино",
-      "strength": 5,
+      "strength": 3,
       "profile": [
         "Персик",
         "Вино"
@@ -33335,9 +33493,9 @@
       "id": "huligan--krepkaya--hard-og-klub",
       "manufacturerId": "huligan",
       "lineId": "huligan--krepkaya",
-      "name": "Hard OG Клуб",
+      "name": "OG Клуб",
       "nameOriginal": "Оу Джи Клуб",
-      "strength": 5,
+      "strength": 3,
       "profile": [
         "Клубника",
         "Ревень"
@@ -33348,8 +33506,8 @@
       "id": "huligan--krepkaya--hard-2016",
       "manufacturerId": "huligan",
       "lineId": "huligan--krepkaya",
-      "name": "Hard 2016",
-      "strength": 7,
+      "name": "2016",
+      "strength": 3,
       "profile": [
         "Лимон",
         "Пирог"
@@ -33420,9 +33578,9 @@
       "id": "huligan--krepkaya--hard-pink",
       "manufacturerId": "huligan",
       "lineId": "huligan--krepkaya",
-      "name": "Hard Pink",
+      "name": "Pink",
       "nameOriginal": "Розовый",
-      "strength": 5,
+      "strength": 3,
       "profile": [
         "Ягоды",
         "Фрукты"
@@ -33433,9 +33591,9 @@
       "id": "huligan--krepkaya--hard-ban",
       "manufacturerId": "huligan",
       "lineId": "huligan--krepkaya",
-      "name": "Hard Ban",
+      "name": "Ban",
       "nameOriginal": "Бан",
-      "strength": 5,
+      "strength": 3,
       "profile": [
         "Банан",
         "Десерт"
@@ -33446,9 +33604,9 @@
       "id": "huligan--krepkaya--hard-cho",
       "manufacturerId": "huligan",
       "lineId": "huligan--krepkaya",
-      "name": "Hard Cho",
+      "name": "Cho",
       "nameOriginal": "Чо",
-      "strength": 5,
+      "strength": 3,
       "profile": [
         "Апельсин"
       ],
@@ -33470,9 +33628,9 @@
       "id": "huligan--krepkaya--hard-old",
       "manufacturerId": "huligan",
       "lineId": "huligan--krepkaya",
-      "name": "Hard OLD",
+      "name": "OLD",
       "nameOriginal": "Олд",
-      "strength": 5,
+      "strength": 3,
       "profile": [
         "Мята",
         "Лимон"
@@ -33493,9 +33651,9 @@
       "id": "huligan--krepkaya--hard-vita",
       "manufacturerId": "huligan",
       "lineId": "huligan--krepkaya",
-      "name": "Hard Vita",
+      "name": "Vita",
       "nameOriginal": "Вита",
-      "strength": 5,
+      "strength": 3,
       "profile": [
         "Мандарин"
       ],
@@ -33565,9 +33723,9 @@
       "id": "huligan--krepkaya--hard-pool",
       "manufacturerId": "huligan",
       "lineId": "huligan--krepkaya",
-      "name": "HARD POOL",
+      "name": "POOL",
       "nameOriginal": "Пул",
-      "strength": 5,
+      "strength": 3,
       "profile": [
         "Гуава",
         "Лимонад"
@@ -33578,11 +33736,12 @@
       "id": "huligan--krepkaya--hard-vampire",
       "manufacturerId": "huligan",
       "lineId": "huligan--krepkaya",
-      "name": "Hard Vampire",
+      "name": "Vampire",
       "nameOriginal": "Вампир",
-      "strength": 5,
+      "strength": 3,
       "profile": [
-        "Ягоды"
+        "Ягоды",
+        "Кисель"
       ],
       "accent": "#dd283a"
     },
@@ -33590,9 +33749,9 @@
       "id": "huligan--krepkaya--hard-ba",
       "manufacturerId": "huligan",
       "lineId": "huligan--krepkaya",
-      "name": "HARD BA",
+      "name": "BA",
       "nameOriginal": "Ромовая баба",
-      "strength": 5,
+      "strength": 3,
       "profile": [
         "Выпечка",
         "Ром"
@@ -33603,8 +33762,8 @@
       "id": "huligan--krepkaya--hard-club",
       "manufacturerId": "huligan",
       "lineId": "huligan--krepkaya",
-      "name": "Hard Club",
-      "strength": 5,
+      "name": "Club",
+      "strength": 3,
       "profile": [
         "Клубника",
         "Газировка"
@@ -33627,9 +33786,9 @@
       "id": "huligan--krepkaya--hard-black",
       "manufacturerId": "huligan",
       "lineId": "huligan--krepkaya",
-      "name": "Hard Black",
+      "name": "Black",
       "nameOriginal": "Черные ягоды",
-      "strength": 5,
+      "strength": 3,
       "profile": [
         "Черника",
         "Виноград",
@@ -33675,8 +33834,8 @@
       "id": "huligan--krepkaya--hard-suuuuu",
       "manufacturerId": "huligan",
       "lineId": "huligan--krepkaya",
-      "name": "Hard SUUUUU",
-      "strength": 5,
+      "name": "SUUUUU",
+      "strength": 3,
       "profile": [
         "Апельсин",
         "Персик"
@@ -33721,9 +33880,9 @@
       "id": "huligan--krepkaya--hard-lova-lova",
       "manufacturerId": "huligan",
       "lineId": "huligan--krepkaya",
-      "name": "Hard Lova Lova",
+      "name": "Lova Lova",
       "nameOriginal": "Манговый чизкейк",
-      "strength": 5,
+      "strength": 3,
       "profile": [
         "Фрукты",
         "Десерт"
@@ -33734,9 +33893,9 @@
       "id": "huligan--krepkaya--hard-ogo",
       "manufacturerId": "huligan",
       "lineId": "huligan--krepkaya",
-      "name": "Hard Ogo!",
+      "name": "Ogo!",
       "nameOriginal": "Ого!",
-      "strength": 5,
+      "strength": 3,
       "profile": [
         "Маракуйя",
         "Цветочный",
@@ -33760,9 +33919,9 @@
       "id": "huligan--krepkaya--hard-koko",
       "manufacturerId": "huligan",
       "lineId": "huligan--krepkaya",
-      "name": "Hard Koko",
+      "name": "Koko",
       "nameOriginal": "Мятный кокос",
-      "strength": 5,
+      "strength": 3,
       "profile": [
         "Кокос",
         "Мята"
@@ -33812,7 +33971,8 @@
       "name": "Vampire",
       "nameOriginal": "Вампир",
       "profile": [
-        "Ягоды"
+        "Ягоды",
+        "Кисель"
       ],
       "accent": "#dd283a"
     },
@@ -33820,9 +33980,9 @@
       "id": "huligan--krepkaya--hard-jorik",
       "manufacturerId": "huligan",
       "lineId": "huligan--krepkaya",
-      "name": "Hard Jorik",
+      "name": "Jorik",
       "nameOriginal": "Жорик",
-      "strength": 5,
+      "strength": 3,
       "profile": [
         "Грейпфрут",
         "Крыжовник"
@@ -33845,9 +34005,9 @@
       "id": "huligan--krepkaya--hard-sila",
       "manufacturerId": "huligan",
       "lineId": "huligan--krepkaya",
-      "name": "Hard Sila",
+      "name": "Sila",
       "nameOriginal": "Сила",
-      "strength": 5,
+      "strength": 3,
       "profile": [
         "Виноград",
         "Огурец"
@@ -33870,9 +34030,9 @@
       "id": "huligan--krepkaya--hard-bar",
       "manufacturerId": "huligan",
       "lineId": "huligan--krepkaya",
-      "name": "Hard Bar",
+      "name": "Bar",
       "nameOriginal": "Бар",
-      "strength": 5,
+      "strength": 3,
       "profile": [
         "Барбарис"
       ],
@@ -33894,8 +34054,8 @@
       "id": "huligan--krepkaya--hard-bella",
       "manufacturerId": "huligan",
       "lineId": "huligan--krepkaya",
-      "name": "Hard Белла",
-      "strength": 5,
+      "name": "Белла",
+      "strength": 3,
       "profile": [
         "Виноград"
       ],
@@ -33917,9 +34077,9 @@
       "id": "huligan--krepkaya--hard-tano-s",
       "manufacturerId": "huligan",
       "lineId": "huligan--krepkaya",
-      "name": "Hard Tano's",
+      "name": "Tano's",
       "nameOriginal": "Танос",
-      "strength": 5,
+      "strength": 3,
       "profile": [
         "Слива"
       ],
@@ -33941,9 +34101,9 @@
       "id": "huligan--krepkaya--hard-911",
       "manufacturerId": "huligan",
       "lineId": "huligan--krepkaya",
-      "name": "Hard 911",
+      "name": "911",
       "nameOriginal": "Перец и шоколад",
-      "strength": 5,
+      "strength": 3,
       "profile": [
         "Шоколад",
         "Перец"
@@ -34002,9 +34162,9 @@
       "id": "huligan--krepkaya--hard-sonik",
       "manufacturerId": "huligan",
       "lineId": "huligan--krepkaya",
-      "name": "Hard Sonik",
+      "name": "Sonik",
       "nameOriginal": "Соник",
-      "strength": 5,
+      "strength": 3,
       "profile": [
         "Кукуруза",
         "Фрукты"
@@ -34027,9 +34187,9 @@
       "id": "huligan--krepkaya--hard-rap-rose",
       "manufacturerId": "huligan",
       "lineId": "huligan--krepkaya",
-      "name": "Hard Rap Rose",
+      "name": "Rap Rose",
       "nameOriginal": "Рэп-роза",
-      "strength": 5,
+      "strength": 3,
       "profile": [
         "Малина",
         "Роза"
@@ -34040,9 +34200,9 @@
       "id": "huligan--krepkaya--hard-sir",
       "manufacturerId": "huligan",
       "lineId": "huligan--krepkaya",
-      "name": "Hard Sir",
+      "name": "Sir",
       "nameOriginal": "Сэр",
-      "strength": 5,
+      "strength": 3,
       "profile": [
         "Рис"
       ],
@@ -34052,9 +34212,9 @@
       "id": "huligan--krepkaya--hard-chudo",
       "manufacturerId": "huligan",
       "lineId": "huligan--krepkaya",
-      "name": "Hard Chudo",
+      "name": "Chudo",
       "nameOriginal": "Чудо",
-      "strength": 5,
+      "strength": 3,
       "profile": [
         "Абрикос",
         "Йогурт"
@@ -34089,9 +34249,9 @@
       "id": "huligan--krepkaya--hard-mystic",
       "manufacturerId": "huligan",
       "lineId": "huligan--krepkaya",
-      "name": "Hard Mystic",
+      "name": "Mystic",
       "nameOriginal": "Мистик",
-      "strength": 5,
+      "strength": 3,
       "profile": [
         "Черника"
       ],
@@ -34101,9 +34261,9 @@
       "id": "huligan--krepkaya--hard-young-b",
       "manufacturerId": "huligan",
       "lineId": "huligan--krepkaya",
-      "name": "Hard Young B",
+      "name": "Young B",
       "nameOriginal": "Кола со льдом",
-      "strength": 5,
+      "strength": 3,
       "profile": [
         "Кола",
         "Холодок"
@@ -34114,9 +34274,9 @@
       "id": "huligan--krepkaya--hard-daa",
       "manufacturerId": "huligan",
       "lineId": "huligan--krepkaya",
-      "name": "Hard Daa",
+      "name": "Daa",
       "nameOriginal": "Даа",
-      "strength": 5,
+      "strength": 3,
       "profile": [
         "Манго",
         "Эвкалипт"
@@ -34127,9 +34287,9 @@
       "id": "huligan--krepkaya--hard-begemot",
       "manufacturerId": "huligan",
       "lineId": "huligan--krepkaya",
-      "name": "Hard Begemot",
+      "name": "Begemot",
       "nameOriginal": "Бегемот",
-      "strength": 5,
+      "strength": 3,
       "profile": [
         "Бергамот",
         "Мандарин"
@@ -34140,9 +34300,9 @@
       "id": "huligan--krepkaya--hard-boss",
       "manufacturerId": "huligan",
       "lineId": "huligan--krepkaya",
-      "name": "Hard Boss",
+      "name": "Boss",
       "nameOriginal": "Босс",
-      "strength": 5,
+      "strength": 3,
       "profile": [
         "Цветочный",
         "Виски"
@@ -34190,9 +34350,9 @@
       "id": "huligan--krepkaya--hard-juicy",
       "manufacturerId": "huligan",
       "lineId": "huligan--krepkaya",
-      "name": "Hard Juicy",
+      "name": "Juicy",
       "nameOriginal": "Джуси",
-      "strength": 5,
+      "strength": 3,
       "profile": [
         "Жвачка",
         "Фрукты"
@@ -34214,9 +34374,9 @@
       "id": "huligan--krepkaya--hard-boo",
       "manufacturerId": "huligan",
       "lineId": "huligan--krepkaya",
-      "name": "Hard Boo",
+      "name": "Boo",
       "nameOriginal": "Бу!",
-      "strength": 5,
+      "strength": 3,
       "profile": [
         "Яблоко",
         "Гранат"
@@ -34227,9 +34387,9 @@
       "id": "huligan--krepkaya--hard-true",
       "manufacturerId": "huligan",
       "lineId": "huligan--krepkaya",
-      "name": "Hard True",
+      "name": "True",
       "nameOriginal": "Правда",
-      "strength": 7,
+      "strength": 3,
       "profile": [
         "Табачный"
       ],
@@ -34252,9 +34412,9 @@
       "id": "huligan--krepkaya--hard-berry-ninja",
       "manufacturerId": "huligan",
       "lineId": "huligan--krepkaya",
-      "name": "Hard Berry Ninja",
+      "name": "Berry Ninja",
       "nameOriginal": "Ягодный ниндзя",
-      "strength": 5,
+      "strength": 3,
       "profile": [
         "Ягоды"
       ],
@@ -34312,9 +34472,9 @@
       "id": "huligan--krepkaya--hard-mex",
       "manufacturerId": "huligan",
       "lineId": "huligan--krepkaya",
-      "name": "Hard Mex",
+      "name": "Mex",
       "nameOriginal": "Ежевичная маргарита",
-      "strength": 5,
+      "strength": 3,
       "profile": [
         "Ежевика",
         "Маргарита"
@@ -34371,9 +34531,9 @@
       "id": "huligan--krepkaya--hard-turbo",
       "manufacturerId": "huligan",
       "lineId": "huligan--krepkaya",
-      "name": "Hard Turbo",
+      "name": "Turbo",
       "nameOriginal": "Турбо",
-      "strength": 5,
+      "strength": 3,
       "profile": [
         "Дыня",
         "Жвачка",
@@ -34385,9 +34545,9 @@
       "id": "huligan--krepkaya--hard-bear",
       "manufacturerId": "huligan",
       "lineId": "huligan--krepkaya",
-      "name": "Hard Bear",
+      "name": "Bear",
       "nameOriginal": "Медведь",
-      "strength": 5,
+      "strength": 3,
       "profile": [
         "Клубника",
         "Хвойный"
@@ -34421,9 +34581,9 @@
       "id": "huligan--krepkaya--hard-cherry-boom",
       "manufacturerId": "huligan",
       "lineId": "huligan--krepkaya",
-      "name": "Hard Cherry Boom",
+      "name": "Cherry Boom",
       "nameOriginal": "Кислая вишня",
-      "strength": 5,
+      "strength": 3,
       "profile": [
         "Вишня"
       ],
@@ -34456,9 +34616,9 @@
       "id": "huligan--krepkaya--hard-bali",
       "manufacturerId": "huligan",
       "lineId": "huligan--krepkaya",
-      "name": "Hard Bali",
+      "name": "Bali",
       "nameOriginal": "Дыня манго смузи",
-      "strength": 5,
+      "strength": 3,
       "profile": [
         "Дыня",
         "Манго"
@@ -35097,6 +35257,31 @@
         "Парфюм"
       ],
       "accent": "#f98500"
+    },
+    {
+      "id": "overdose--de-parfum--imperskaya-kola",
+      "manufacturerId": "overdose",
+      "lineId": "overdose--de-parfum",
+      "name": "Имперская кола",
+      "strength": 5,
+      "profile": [
+        "Кола",
+        "Грейпфрут",
+        "Сандал"
+      ],
+      "accent": "#942C2C"
+    },
+    {
+      "id": "overdose--de-parfum--chernaya-vanil",
+      "manufacturerId": "overdose",
+      "lineId": "overdose--de-parfum",
+      "name": "Чёрная ваниль",
+      "strength": 5,
+      "profile": [
+        "Ваниль",
+        "Парфюм"
+      ],
+      "accent": "#FEE17D"
     },
     {
       "id": "overdose--osnovnaya--tarhun",
@@ -58761,6 +58946,323 @@
       "lineId": "aircraft--cigar-blend",
       "name": "Nicaragua Base",
       "nameOriginal": "Базовый сигарный бленд",
+      "profile": [
+        "Табачный"
+      ],
+      "accent": "#a44d3b"
+    },
+    {
+      "id": "baza--polegche--mineralnaya-voda",
+      "manufacturerId": "baza",
+      "lineId": "baza--polegche",
+      "name": "Минеральная вода",
+      "nameOriginal": "mineral water",
+      "strength": 3,
+      "accent": "#a9d5ff"
+    },
+    {
+      "id": "baza--pokrepche--zamsha",
+      "manufacturerId": "baza",
+      "lineId": "baza--pokrepche",
+      "name": "Замша",
+      "strength": 5,
+      "profile": [
+        "Парфюм"
+      ],
+      "accent": "#0a0a0a"
+    },
+    {
+      "id": "baza--polegche--oduvanchik",
+      "manufacturerId": "baza",
+      "lineId": "baza--polegche",
+      "name": "Одуванчик",
+      "strength": 3,
+      "profile": [
+        "Цветочный"
+      ],
+      "accent": "#5fc38a"
+    },
+    {
+      "id": "baza--pokrepche--kardamon",
+      "manufacturerId": "baza",
+      "lineId": "baza--pokrepche",
+      "name": "Кардамон",
+      "strength": 5,
+      "profile": [
+        "Кардамон"
+      ],
+      "accent": "#9a874b"
+    },
+    {
+      "id": "baza--pokrepche--pion",
+      "manufacturerId": "baza",
+      "lineId": "baza--pokrepche",
+      "name": "Пион",
+      "strength": 5,
+      "profile": [
+        "Цветочный"
+      ],
+      "accent": "#5fc38a"
+    },
+    {
+      "id": "baza--pokrepche--roza",
+      "manufacturerId": "baza",
+      "lineId": "baza--pokrepche",
+      "name": "Роза",
+      "strength": 3,
+      "profile": [
+        "Роза"
+      ],
+      "accent": "#f37f7c"
+    },
+    {
+      "id": "baza--polegche--slivochnoe-maslo",
+      "manufacturerId": "baza",
+      "lineId": "baza--polegche",
+      "name": "Сливочное масло",
+      "strength": 3,
+      "profile": [
+        "Сливочный"
+      ],
+      "accent": "#fed396"
+    },
+    {
+      "id": "baza--pokrepche--kashmir",
+      "manufacturerId": "baza",
+      "lineId": "baza--pokrepche",
+      "name": "Кашмир",
+      "strength": 5,
+      "profile": [
+        "Кашмир"
+      ],
+      "accent": "#e9866b"
+    },
+    {
+      "id": "baza--pokrepche--pihta",
+      "manufacturerId": "baza",
+      "lineId": "baza--pokrepche",
+      "name": "Пихта",
+      "strength": 5,
+      "profile": [
+        "Хвойный"
+      ],
+      "accent": "#77c2a4"
+    },
+    {
+      "id": "baza--polegche--moloko",
+      "manufacturerId": "baza",
+      "lineId": "baza--polegche",
+      "name": "Молоко",
+      "strength": 3,
+      "profile": [
+        "Молоко"
+      ],
+      "accent": "#4695fa"
+    },
+    {
+      "id": "baza--polegche--belyy-chay",
+      "manufacturerId": "baza",
+      "lineId": "baza--polegche",
+      "name": "Белый чай",
+      "strength": 3,
+      "profile": [
+        "Чай"
+      ],
+      "accent": "#D77D41"
+    },
+    {
+      "id": "baza--pokrepche--muskus",
+      "manufacturerId": "baza",
+      "lineId": "baza--pokrepche",
+      "name": "Мускус",
+      "strength": 3,
+      "profile": [
+        "Специи"
+      ],
+      "accent": "#e33341"
+    },
+    {
+      "id": "baza--pokrepche--fistashka",
+      "manufacturerId": "baza",
+      "lineId": "baza--pokrepche",
+      "name": "Фисташка",
+      "strength": 5,
+      "profile": [
+        "Фисташки"
+      ],
+      "accent": "#a2d061"
+    },
+    {
+      "id": "baza--polegche--pan",
+      "manufacturerId": "baza",
+      "lineId": "baza--polegche",
+      "name": "Пан",
+      "strength": 3,
+      "profile": [
+        "Специи"
+      ],
+      "accent": "#e33341"
+    },
+    {
+      "id": "baza--polegche--bombey",
+      "manufacturerId": "baza",
+      "lineId": "baza--polegche",
+      "name": "Бомбей",
+      "strength": 3,
+      "profile": [
+        "Специи"
+      ],
+      "accent": "#e33341"
+    },
+    {
+      "id": "baza--pokrepche--pudra",
+      "manufacturerId": "baza",
+      "lineId": "baza--pokrepche",
+      "name": "Пудра",
+      "strength": 5,
+      "profile": [
+        "Ягоды",
+        "Цветочный"
+      ],
+      "accent": "#dd283a"
+    },
+    {
+      "id": "baza--polegche--feyhoa",
+      "manufacturerId": "baza",
+      "lineId": "baza--polegche",
+      "name": "Фейхоа",
+      "strength": 3,
+      "profile": [
+        "Фейхоа"
+      ],
+      "accent": "#67ca42"
+    },
+    {
+      "id": "baza--pokrepche--belyy-chay",
+      "manufacturerId": "baza",
+      "lineId": "baza--pokrepche",
+      "name": "Белый чай",
+      "strength": 5,
+      "profile": [
+        "Чай"
+      ],
+      "accent": "#D77D41"
+    },
+    {
+      "id": "baza--polegche--molochnyy-shokolad",
+      "manufacturerId": "baza",
+      "lineId": "baza--polegche",
+      "name": "Молочный шоколад",
+      "strength": 3,
+      "profile": [
+        "Шоколад"
+      ],
+      "accent": "#964C3F"
+    },
+    {
+      "id": "baza--polegche--tarhun",
+      "manufacturerId": "baza",
+      "lineId": "baza--polegche",
+      "name": "Тархун",
+      "strength": 3,
+      "profile": [
+        "Тархун"
+      ],
+      "accent": "#5DAE37"
+    },
+    {
+      "id": "baza--polegche--popkorn",
+      "manufacturerId": "baza",
+      "lineId": "baza--polegche",
+      "name": "Попкорн",
+      "strength": 3,
+      "profile": [
+        "Попкорн"
+      ],
+      "accent": "#e1b772"
+    },
+    {
+      "id": "baza--polegche--mango",
+      "manufacturerId": "baza",
+      "lineId": "baza--polegche",
+      "name": "Манго",
+      "strength": 3,
+      "profile": [
+        "Манго"
+      ],
+      "accent": "#ffaa60"
+    },
+    {
+      "id": "baza--pokrepche--apelsin",
+      "manufacturerId": "baza",
+      "lineId": "baza--pokrepche",
+      "name": "Апельсин",
+      "strength": 5,
+      "profile": [
+        "Апельсин"
+      ],
+      "accent": "#e28b14"
+    },
+    {
+      "id": "baza--pokrepche--orehi",
+      "manufacturerId": "baza",
+      "lineId": "baza--pokrepche",
+      "name": "Орехи",
+      "strength": 5,
+      "profile": [
+        "Орех"
+      ],
+      "accent": "#E28B5B"
+    },
+    {
+      "id": "baza--polegche--cvety-grushi",
+      "manufacturerId": "baza",
+      "lineId": "baza--polegche",
+      "name": "Цветы груши",
+      "strength": 3,
+      "profile": [
+        "Груша",
+        "Цветочный"
+      ],
+      "accent": "#96cf54"
+    },
+    {
+      "id": "baza--pokrepche--shafran",
+      "manufacturerId": "baza",
+      "lineId": "baza--pokrepche",
+      "name": "Шафран",
+      "profile": [
+        "Шафран"
+      ],
+      "accent": "#D897C9"
+    },
+    {
+      "id": "baza--polegche--banan",
+      "manufacturerId": "baza",
+      "lineId": "baza--polegche",
+      "name": "Банан",
+      "profile": [
+        "Банан"
+      ],
+      "accent": "#FFD367"
+    },
+    {
+      "id": "overdose--no-aroma--toscana",
+      "manufacturerId": "overdose",
+      "lineId": "overdose--no-aroma",
+      "name": "Toscana",
+      "strength": 9,
+      "profile": [
+        "Табачный"
+      ],
+      "accent": "#a44d3b"
+    },
+    {
+      "id": "overdose--no-aroma--carolina",
+      "manufacturerId": "overdose",
+      "lineId": "overdose--no-aroma",
+      "name": "Carolina",
+      "strength": 7,
       "profile": [
         "Табачный"
       ],

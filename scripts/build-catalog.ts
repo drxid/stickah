@@ -1,4 +1,4 @@
-// Оффлайн-сборка каталога: адаптер -> нормализация -> валидация -> public/data/catalog.json
+// Оффлайн-сборка каталога: адаптер -> нормализация -> ручные поправки -> валидация -> public/data/catalog.json
 // Запуск: npm run catalog:build [adapterId]
 
 import { writeFile } from 'node:fs/promises'
@@ -7,6 +7,7 @@ import { dirname, join } from 'node:path'
 import { sampleAdapter } from './adapters/sample'
 import { htreviewsAdapter } from './adapters/htreviews'
 import { normalize } from './normalize'
+import { applyOverrides } from './overrides'
 import { validateCatalog } from './validate'
 import type { SourceAdapter } from './adapters/types'
 
@@ -30,7 +31,8 @@ async function main() {
   const raw = await adapter.fetchAll()
   console.log(`[catalog] сырых записей: ${raw.length}`)
 
-  const catalog = normalize(raw)
+  const { catalog, changed } = applyOverrides(normalize(raw))
+  if (changed) console.log(`[catalog] ручных поправок: ${changed}`)
   const errors = validateCatalog(catalog)
   if (errors.length) {
     console.error('[catalog] ошибки валидации:')

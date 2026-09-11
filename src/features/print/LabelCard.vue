@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed } from 'vue'
+import GroveFace from './GroveFace.vue'
 import type { SizePreset } from '@/data/sizes'
 import type { DesignId } from '@/data/designs'
 import type { LabelOptions } from '@/stores/template'
@@ -46,17 +47,20 @@ const tags = computed(() =>
 
 <template>
   <div class="label" :class="[`label--${design}`, `label--${size.shape}`]" :style="rootStyle">
-    <div v-if="design === 'holo'" class="label__sheen" aria-hidden="true" />
-    <div class="label__inner">
-      <div class="label__name" :style="{ fontSize: `${nameFontMm}mm` }">
-        {{ flavor.name }}
+    <GroveFace v-if="design === 'grove'" :flavor="flavor" :options="options" />
+    <template v-else>
+      <div v-if="design === 'holo'" class="label__sheen" aria-hidden="true" />
+      <div class="label__inner">
+        <div class="label__name" :style="{ fontSize: `${nameFontMm}mm` }">
+          {{ flavor.name }}
+        </div>
+        <div v-if="metaText" class="label__meta">{{ metaText }}</div>
+        <div v-if="tags.length" class="label__tags">
+          <span v-for="t in tags" :key="t" class="label__tag">{{ t }}</span>
+        </div>
+        <div v-if="showStrength" class="label__strength">{{ flavor.strength }}</div>
       </div>
-      <div v-if="metaText" class="label__meta">{{ metaText }}</div>
-      <div v-if="tags.length" class="label__tags">
-        <span v-for="t in tags" :key="t" class="label__tag">{{ t }}</span>
-      </div>
-      <div v-if="showStrength" class="label__strength">{{ flavor.strength }}</div>
-    </div>
+    </template>
   </div>
 </template>
 
@@ -256,5 +260,14 @@ const tags = computed(() =>
 .label--onyx .label__strength {
   background: var(--accent);
   color: #15151a;
+}
+
+/* --- GROVE (тёмный + гравюра ветвей; разметка в GroveFace.vue) --- */
+.label--grove {
+  background: #141414;
+  color: #fff;
+}
+.label--grove.label--rect {
+  border-radius: 2.7mm;
 }
 </style>

@@ -14,7 +14,7 @@ const TRANSLIT: Record<string, string> = {
   ъ: '', ы: 'y', ь: '', э: 'e', ю: 'yu', я: 'ya',
 }
 
-function slugify(input: string): string {
+export function slugify(input: string): string {
   const lower = input.trim().toLowerCase()
   let out = ''
   for (const ch of lower) {

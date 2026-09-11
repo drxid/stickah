@@ -50,6 +50,8 @@ const STRENGTH: Record<string, number> = {
   'ниже средней': 3,
   'лёгкая-средняя': 3,
   'легкая-средняя': 3,
+  'средне-лёгкая': 3,
+  'средне-легкая': 3,
   'средняя': 5,
   'выше средней': 7,
   'средне-крепкая': 7,
@@ -72,12 +74,17 @@ async function fetchJson(url: string, init?: RequestInit, tries = 3): Promise<un
   throw lastErr
 }
 
+async function getBrandsPage(offset: number): Promise<BrandRow[]> {
+  const url = `${BASE}/getData?r=position&s=rating&d=desc&o=${offset}&action=brands`
+  const arr = (await fetchJson(url, { headers: HEADERS })) as BrandRow[]
+  return Array.isArray(arr) ? arr : []
+}
+
 async function getBrands(limit: number): Promise<BrandRow[]> {
   const out: BrandRow[] = []
   for (let o = 0; o < 1000; o += 20) {
-    const url = `${BASE}/getData?r=position&s=rating&d=desc&o=${o}&action=brands`
-    const arr = (await fetchJson(url, { headers: HEADERS })) as BrandRow[]
-    if (!Array.isArray(arr) || arr.length === 0) break
+    const arr = await getBrandsPage(o)
+    if (arr.length === 0) break
     out.push(...arr)
     if (out.length >= limit) break
     await sleep(DELAY_MS)
@@ -106,9 +113,58 @@ async function getFlavors(brandId: string): Promise<FlavorRow[]> {
   return all
 }
 
+/** Значения крепости, которых нет в STRENGTH, — чтобы не терять их молча. */
+const unknownStrength = new Set<string>()
+
 function mapStrength(s?: string | null): number | undefined {
   if (!s) return undefined
-  return STRENGTH[s.trim().toLowerCase()]
+  const value = STRENGTH[s.trim().toLowerCase()]
+  if (value === undefined) unknownStrength.add(s.trim())
+  return value
+}
+
+function warnUnknownStrength() {
+  if (!unknownStrength.size) return
+  console.warn(`[htreviews] ! неизвестная крепость (добавь в STRENGTH): ${[...unknownStrength].join(', ')}`)
+}
+
+/** Вкусы бренда с сайта → сырые записи конвейера. */
+function toRaw(b: BrandRow, flavors: FlavorRow[]): RawTobacco[] {
+  const out: RawTobacco[] = []
+  for (const f of flavors) {
+    const name = (f.name ?? '').trim()
+    if (!name) continue
+    const tags = (f.tags ?? []).map((t) => t.name?.trim()).filter((n): n is string => !!n)
+    const alt = f.alt_name?.trim()
+    out.push({
+      manufacturer: b.name,
+      line: (f.line && f.line.trim()) || 'Прочее',
+      flavor: name,
+      nameOriginal: alt && alt !== name ? alt : undefined,
+      strength: mapStrength(f.strength),
+      profile: tags.length ? [...new Set(tags)].slice(0, 3) : undefined,
+      accent: f.tags?.[0]?.bg0,
+    })
+  }
+  return out
+}
+
+/** Один бренд по slug из адреса сайта (htreviews.org/tobaccos/<slug>) — для точечного добавления. */
+export async function fetchBrandBySlug(slug: string): Promise<RawTobacco[]> {
+  let brand: BrandRow | undefined
+  for (let o = 0; o < 5000 && !brand; o += 20) {
+    const arr = await getBrandsPage(o)
+    if (arr.length === 0) break
+    brand = arr.find((b) => b.slug === slug)
+    if (!brand) await sleep(DELAY_MS)
+  }
+  if (!brand) throw new Error(`бренд "${slug}" не найден на htreviews`)
+
+  const flavors = await getFlavors(brand.id)
+  console.log(`[htreviews] ${brand.name}: ${flavors.length} вкусов`)
+  const raw = toRaw(brand, flavors)
+  warnUnknownStrength()
+  return raw
 }
 
 export const htreviewsAdapter: SourceAdapter = {
@@ -128,26 +184,12 @@ export const htreviewsAdapter: SourceAdapter = {
         console.warn(`[htreviews]   ! ${b.name}: ${(e as Error).message} — пропускаю`)
         continue
       }
-
-      for (const f of flavors) {
-        const name = (f.name ?? '').trim()
-        if (!name) continue
-        const tags = (f.tags ?? []).map((t) => t.name?.trim()).filter((n): n is string => !!n)
-        const alt = f.alt_name?.trim()
-        out.push({
-          manufacturer: b.name,
-          line: (f.line && f.line.trim()) || 'Прочее',
-          flavor: name,
-          nameOriginal: alt && alt !== name ? alt : undefined,
-          strength: mapStrength(f.strength),
-          profile: tags.length ? [...new Set(tags)].slice(0, 3) : undefined,
-          accent: f.tags?.[0]?.bg0,
-        })
-      }
+      out.push(...toRaw(b, flavors))
       console.log(`[htreviews] ${i}/${brands.length} ${b.name}: ${flavors.length} вкусов`)
       await sleep(DELAY_MS)
     }
 
+    warnUnknownStrength()
     return out
   },
 }

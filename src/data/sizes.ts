@@ -20,6 +20,7 @@ export const SIZE_PRESETS: SizePreset[] = [
   { id: 'round-60', label: 'Круг 60 мм', shape: 'round', width: 60, height: 60, description: 'Крышка большой банки' },
   { id: 'rect-50x30', label: 'Прямоуг. 50×30 мм', shape: 'rect', width: 50, height: 30, description: 'Боковая наклейка' },
   { id: 'rect-70x40', label: 'Прямоуг. 70×40 мм', shape: 'rect', width: 70, height: 40, description: 'Боковая, длинные названия' },
+  { id: 'rect-120x45', label: 'Прямоуг. 120×45 мм', shape: 'rect', width: 120, height: 45, description: 'Широкая боковая, дизайн Grove' },
 ]
 
 export const DEFAULT_SIZE_ID = 'round-50'
