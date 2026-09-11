@@ -1,10 +1,34 @@
 import { defineStore } from 'pinia'
-import Fuse from 'fuse.js'
+import MiniSearch from 'minisearch'
+import { foldTerm, swapLayout } from '@/features/search/fold'
 import type { Catalog, Flavor, FlavorDisplay, Line, Manufacturer } from '@/types/catalog'
 
-// Fuse держим вне реактивного состояния — это тяжёлый индекс, реактивность ему не нужна.
-let fuse: Fuse<FlavorDisplay> | null = null
+// Индекс держим вне реактивного состояния — он тяжёлый, реактивность ему не нужна.
+let index: MiniSearch<FlavorDisplay> | null = null
 let searchable: FlavorDisplay[] = []
+let byId = new Map<string, FlavorDisplay>()
+
+function buildIndex(flavors: FlavorDisplay[]): MiniSearch<FlavorDisplay> {
+  const ms = new MiniSearch<FlavorDisplay>({
+    fields: ['name', 'nameOriginal', 'manufacturerName', 'lineName', 'profile'],
+    extractField: (doc, field) => {
+      const value = doc[field as keyof FlavorDisplay]
+      return Array.isArray(value) ? value.join(' ') : value
+    },
+    processTerm: foldTerm,
+    searchOptions: {
+      // name и nameOriginal равноценны: основное название в каталоге бывает и русским, и английским.
+      boost: { name: 3, nameOriginal: 3, manufacturerName: 1.5, lineName: 1, profile: 0.5 },
+      // Каждое слово запроса должно найтись в любом из полей: «musthave клубника» = бренд + вкус.
+      combineWith: 'AND',
+      // Ищем по мере набора, а опечатки прощаем только словам от 4 букв — короткие дают шум.
+      prefix: true,
+      fuzzy: (term) => term.length >= 4 && 0.2,
+    },
+  })
+  ms.addAll(flavors)
+  return ms
+}
 
 interface CatalogState {
   schemaVersion: number
@@ -62,18 +86,8 @@ export const useCatalogStore = defineStore('catalog', {
           manufacturerName: this.manufacturerName(f.manufacturerId),
           lineName: this.lineName(f.lineId),
         }))
-        fuse = new Fuse(searchable, {
-          keys: [
-            { name: 'name', weight: 3 },
-            { name: 'nameOriginal', weight: 2 },
-            { name: 'manufacturerName', weight: 1 },
-            { name: 'lineName', weight: 1 },
-            { name: 'profile', weight: 0.5 },
-          ],
-          threshold: 0.4,
-          ignoreLocation: true,
-          minMatchCharLength: 2,
-        })
+        byId = new Map(searchable.map((f) => [f.id, f]))
+        index = buildIndex(searchable)
 
         this.loaded = true
       } catch (e) {
@@ -84,12 +98,15 @@ export const useCatalogStore = defineStore('catalog', {
       }
     },
 
-    /** Поиск вкусов. Пустой запрос возвращает весь каталог. */
+    /** Поиск вкусов по названию, бренду, линейке и тегам. Пустой запрос возвращает весь каталог. */
     search(query: string): FlavorDisplay[] {
       const q = query.trim()
       if (!q) return searchable
-      if (!fuse) return []
-      return fuse.search(q).map((r) => r.item)
+      if (!index) return []
+      let hits = index.search(q)
+      // Ничего не нашлось — возможно, набрали не в той раскладке.
+      if (!hits.length) hits = index.search(swapLayout(q))
+      return hits.map((h) => byId.get(h.id)).filter((f): f is FlavorDisplay => !!f)
     },
 
     /** Вкус с подставленными именами производителя и линейки. */

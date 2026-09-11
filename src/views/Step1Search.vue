@@ -3,6 +3,7 @@ import { computed, ref } from 'vue'
 import { useRouter } from 'vue-router'
 import FlavorChip from '@/features/search/FlavorChip.vue'
 import SelectionTray from '@/features/selection/SelectionTray.vue'
+import { vScrollFade } from '@/directives/scrollFade'
 import { useCatalogStore } from '@/stores/catalog'
 import { useSelectionStore } from '@/stores/selection'
 
@@ -25,7 +26,7 @@ const shown = computed(() => results.value.slice(0, 60))
           v-model="query"
           type="search"
           class="searchbar__input"
-          placeholder="Найди вкус — например, «двойное яблоко» или «mint»"
+          placeholder="Вкус или бренд — например, «musthave клубника» или «mint»"
           aria-label="Поиск вкуса"
         />
       </div>
@@ -36,7 +37,7 @@ const shown = computed(() => results.value.slice(0, 60))
         Ничего не нашлось по «{{ query }}». Попробуй другое написание.
       </p>
 
-      <div v-else class="results">
+      <div v-else v-scroll-fade class="results">
         <FlavorChip
           v-for="f in shown"
           :key="f.id"
@@ -100,7 +101,7 @@ const shown = computed(() => results.value.slice(0, 60))
   padding: 4px 18px;
 }
 .searchbar:focus-within {
-  border-color: var(--butter);
+  border-color: var(--focus-ring);
 }
 .searchbar__icon {
   font-size: 20px;
@@ -139,7 +140,7 @@ const shown = computed(() => results.value.slice(0, 60))
   padding: 24px 6px;
 }
 .state--error {
-  color: #ff9b9b;
+  color: var(--danger);
 }
 
 .step__footer {

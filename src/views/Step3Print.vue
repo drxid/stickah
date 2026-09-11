@@ -54,7 +54,8 @@ function print() {
         <span class="info__big">{{ pages }}</span>
         <span class="info__small">
           лист(ов) A4 · {{ selection.totalLabels }} наклеек ·
-          {{ layout.cols }}×{{ layout.rows }} на листе
+          {{ layout.perPage }} на листе<template v-if="layout.rotatedCount">
+          (из них {{ layout.rotatedCount }} повёрнуты)</template>
         </span>
       </div>
       <p class="info__hint mono">{{ template.size.label }} · {{ template.design.label }}</p>
@@ -115,7 +116,8 @@ function print() {
 .preview-stage {
   overflow: auto;
   min-height: 0;
-  background: repeating-conic-gradient(#202026 0% 25%, #191920 0% 50%) 50% / 28px 28px;
+  background: repeating-conic-gradient(var(--checker-a) 0% 25%, var(--checker-b) 0% 50%) 50% /
+    28px 28px;
   border: 1px solid var(--ink-line);
   border-radius: var(--r-lg);
   padding: 22px;

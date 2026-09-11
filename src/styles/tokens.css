@@ -1,7 +1,9 @@
 /* Дизайн-токены Stickah (см. SPEC.md §9). Палитра выведена из reference/. */
 
 :root {
-  /* Холст и поверхности (тёмная тема приложения) */
+  color-scheme: dark;
+
+  /* Холст и поверхности (тёмная тема приложения; светлая — ниже, [data-theme='light']) */
   --ink: #141416;
   --ink-soft: #1d1d22;
   --ink-soft-2: #26262e;
@@ -46,13 +48,14 @@
   );
 
   /* Типографика */
-  /* Все шрифты с поддержкой кириллицы (кроме лого — латинское «Stickah»). */
-  --font-logo: 'Bagel Fat One', 'Unbounded', system-ui, sans-serif;
+  /* Все шрифты с поддержкой кириллицы. */
   --font-display: 'Unbounded', 'Manrope', system-ui, sans-serif;
   --font-body: 'Manrope', system-ui, -apple-system, 'Segoe UI', sans-serif;
   --font-mono: 'JetBrains Mono', ui-monospace, 'Cascadia Code', monospace;
   /* Элегантный serif для тёмных наклеек (вариант Noir). */
   --font-serif: 'Spectral', 'Georgia', 'Times New Roman', serif;
+  /* Гротеск дизайна Grove — как в макете. */
+  --font-grove: 'Montserrat', 'Manrope', system-ui, sans-serif;
 
   /* Радиусы */
   --r-sm: 8px;
@@ -68,4 +71,49 @@
   /* Раскладка */
   --gap: 16px;
   --maxw: 1200px;
+
+  /* Служебные цвета интерфейса */
+  --focus-ring: var(--butter);
+  --danger: #ff9b9b;
+  /* Шахматка под превью наклейки и листа */
+  --checker-a: #2a2a32;
+  --checker-b: #232329;
+
+  /* Логотипы производителей нарисованы белыми — в светлой теме их инвертируем. */
+  --brand-logo-filter: none;
+  /* Лого Stickah нарисовано тёмным под светлый фон — в тёмной теме цвета инвертированы:
+     плашка и «ah» бумажные, буквы «Stick» прорезаны до фона, отгиб — изнанка наклейки. */
+  --logo-fg: var(--paper);
+  --logo-fold: color-mix(in srgb, var(--paper) 78%, var(--ink));
+  --logo-edge: var(--ink);
+}
+
+/* Светлая тема. Бумажные токены (--paper, --on-paper, --holo) не трогаем —
+   это цвета наклеек, печать от темы не зависит. */
+:root[data-theme='light'] {
+  color-scheme: light;
+
+  --ink: #f3f1ec;
+  --ink-soft: #ffffff;
+  --ink-soft-2: #e8e4dc;
+  --ink-line: #dcd7cd;
+
+  --acid-lime: #2e9612;
+
+  --text: #1a1a1e;
+  --text-muted: #5c5b63;
+  --text-faint: #8a8891;
+
+  --shadow-chip: 0 6px 18px rgba(0, 0, 0, 0.08), 0 1px 0 rgba(255, 255, 255, 0.6) inset;
+  --shadow-card: 0 12px 40px rgba(0, 0, 0, 0.12);
+
+  --focus-ring: #c48a00;
+  --danger: #c43d3d;
+  --checker-a: #e9e6e0;
+  --checker-b: #f4f2ee;
+
+  --brand-logo-filter: invert(1);
+  --logo-fg: #141414;
+  --logo-fold: #333333;
+  --logo-edge: #141414;
 }

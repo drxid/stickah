@@ -1,10 +1,16 @@
 <script setup lang="ts">
 import { computed, onMounted } from 'vue'
-import { useRoute } from 'vue-router'
+import { useRoute, useRouter } from 'vue-router'
+import AboutPopover from '@/features/shell/AboutPopover.vue'
+import ThemeToggle from '@/features/shell/ThemeToggle.vue'
 import { useCatalogStore } from '@/stores/catalog'
+import { useSelectionStore } from '@/stores/selection'
+import logoSvg from '@/assets/logo.svg?raw'
 
 const route = useRoute()
+const router = useRouter()
 const catalog = useCatalogStore()
+const selection = useSelectionStore()
 
 const steps = [
   { name: 'search', label: 'Набор' },
@@ -12,6 +18,8 @@ const steps = [
   { name: 'print', label: 'Печать' },
 ]
 const activeIndex = computed(() => steps.findIndex((s) => s.name === route.name))
+// Как и в роутере: шаблон и печать недоступны с пустым набором.
+const isLocked = (i: number) => i > 0 && selection.count === 0
 
 onMounted(() => catalog.load())
 </script>
@@ -20,24 +28,31 @@ onMounted(() => catalog.load())
   <div class="app-shell">
     <header class="app-header no-print">
       <div class="brand">
-        <span class="brand__logo">Stickah</span>
+        <span class="brand__logo" role="img" aria-label="Stickah" v-html="logoSvg" />
+        <AboutPopover />
         <span class="brand__tag mono">наклейки для табаков</span>
       </div>
 
-      <nav class="stepper" aria-label="Шаги">
-        <span
-          v-for="(s, i) in steps"
-          :key="s.name"
-          class="stepper__item"
-          :class="{
-            'stepper__item--active': i === activeIndex,
-            'stepper__item--done': i < activeIndex,
-          }"
-        >
-          <span class="stepper__num">{{ i + 1 }}</span>
-          <span class="stepper__label">{{ s.label }}</span>
-        </span>
-      </nav>
+      <div class="header-actions">
+        <nav class="stepper" aria-label="Шаги">
+          <button
+            v-for="(s, i) in steps"
+            :key="s.name"
+            class="stepper__item"
+            :class="{
+              'stepper__item--active': i === activeIndex,
+              'stepper__item--done': i < activeIndex,
+            }"
+            :aria-current="i === activeIndex ? 'step' : undefined"
+            :disabled="isLocked(i)"
+            @click="router.push({ name: s.name })"
+          >
+            <span class="stepper__num">{{ i + 1 }}</span>
+            <span class="stepper__label">{{ s.label }}</span>
+          </button>
+        </nav>
+        <ThemeToggle />
+      </div>
     </header>
 
     <main class="app-main">
@@ -67,24 +82,38 @@ onMounted(() => catalog.load())
   margin-bottom: 22px;
 }
 .brand {
+  position: relative; /* от него позиционируется панель «О проекте» */
   display: flex;
-  align-items: baseline;
-  gap: 12px;
+  align-items: center;
+  gap: 14px;
 }
+/* Цвета лого — из токенов --logo-* (см. tokens.css): в тёмной теме они инвертированы. */
 .brand__logo {
-  font-family: var(--font-logo);
-  font-size: 34px;
-  line-height: 1;
-  background: var(--holo);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  letter-spacing: 0.01em;
+  display: block;
+  height: 44px;
+}
+.brand__logo :deep(svg) {
+  display: block;
+  width: auto;
+  height: 100%;
+}
+.brand__logo :deep([fill='#141414']),
+.brand__logo :deep([fill='black']) {
+  fill: var(--logo-fg);
+}
+.brand__logo :deep([fill='#333333']) {
+  fill: var(--logo-fold);
+  stroke: var(--logo-edge);
 }
 .brand__tag {
   color: var(--text-faint);
 }
 
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
 .stepper {
   display: flex;
   align-items: center;
@@ -101,11 +130,21 @@ onMounted(() => catalog.load())
   color: var(--text-muted);
   font-size: 14px;
   font-weight: 600;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+.stepper__item:not(:disabled):not(.stepper__item--active):hover {
+  color: var(--text);
+  border-color: var(--text-faint);
+}
+.stepper__item:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
 }
 .stepper__item--active {
   color: #1a1505;
   background: var(--butter);
   border-color: transparent;
+  cursor: default;
 }
 .stepper__item--done {
   color: var(--acid-lime);

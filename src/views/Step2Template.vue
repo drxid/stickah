@@ -1,7 +1,8 @@
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
 import { useRouter } from 'vue-router'
 import LabelCard from '@/features/print/LabelCard.vue'
+import { vScrollFade } from '@/directives/scrollFade'
 import { SIZE_PRESETS } from '@/data/sizes'
 import { DESIGNS } from '@/data/designs'
 import { useCatalogStore } from '@/stores/catalog'
@@ -19,6 +20,32 @@ const previewFlavor = computed(() => {
   return id ? catalog.display(id) : undefined
 })
 
+// Размер, зафиксированный выбранным дизайном (Grove — только 120×45).
+const lockedSizeId = computed(() => template.design.sizeId)
+
+// Широкие наклейки не влезают в колонку превью — вписываем по ширине.
+const PX_PER_MM = 96 / 25.4
+const previewBox = ref<HTMLElement | null>(null)
+const previewWidth = ref(0)
+const previewScale = computed(() => {
+  const labelPx = template.size.width * PX_PER_MM
+  return previewWidth.value ? Math.min(1, previewWidth.value / labelPx) : 1
+})
+const previewFitStyle = computed(() => ({
+  width: `${template.size.width * PX_PER_MM * previewScale.value}px`,
+  height: `${template.size.height * PX_PER_MM * previewScale.value}px`,
+}))
+
+let ro: ResizeObserver | null = null
+onMounted(() => {
+  if (!previewBox.value) return
+  ro = new ResizeObserver((entries) => {
+    previewWidth.value = entries[0].contentRect.width
+  })
+  ro.observe(previewBox.value)
+})
+onBeforeUnmount(() => ro?.disconnect())
+
 const optionList = [
   { key: 'showManufacturer', label: 'Производитель' },
   { key: 'showLine', label: 'Линейка' },
@@ -30,7 +57,7 @@ const optionList = [
 
 <template>
   <section class="step step2">
-    <div class="step2__controls">
+    <div v-scroll-fade class="step2__controls">
       <div class="block">
         <h2 class="block__title">Размер</h2>
         <div class="grid-sizes">
@@ -39,6 +66,7 @@ const optionList = [
             :key="s.id"
             class="opt"
             :class="{ 'opt--on': template.sizeId === s.id }"
+            :disabled="!!lockedSizeId && lockedSizeId !== s.id"
             @click="template.setSize(s.id)"
           >
             <span class="opt__shape" :class="`opt__shape--${s.shape}`" aria-hidden="true" />
@@ -46,6 +74,9 @@ const optionList = [
             <span class="opt__desc">{{ s.description }}</span>
           </button>
         </div>
+        <p v-if="lockedSizeId" class="block__note">
+          Дизайн {{ template.design.label }} рассчитан на один размер — {{ template.size.label }}.
+        </p>
       </div>
 
       <div class="block">
@@ -85,14 +116,17 @@ const optionList = [
 
     <div class="step2__preview">
       <h2 class="block__title">Превью</h2>
-      <div class="preview-card">
-        <LabelCard
-          v-if="previewFlavor"
-          :flavor="previewFlavor"
-          :size="template.size"
-          :design="template.designId"
-          :options="template.options"
-        />
+      <div ref="previewBox" class="preview-card">
+        <div class="preview-fit" :style="previewFitStyle">
+          <LabelCard
+            v-if="previewFlavor"
+            :flavor="previewFlavor"
+            :size="template.size"
+            :design="template.designId"
+            :options="template.options"
+            :style="{ transform: `scale(${previewScale})`, transformOrigin: 'top left' }"
+          />
+        </div>
       </div>
       <p class="preview-meta mono">
         {{ template.size.label }} · {{ template.design.label }}
@@ -110,7 +144,7 @@ const optionList = [
 <style scoped>
 .step2 {
   display: grid;
-  grid-template-columns: 1fr 320px;
+  grid-template-columns: minmax(0, 1fr) clamp(320px, 38%, 480px);
   grid-template-rows: 1fr auto;
   gap: var(--gap);
   min-height: 0;
@@ -139,6 +173,11 @@ const optionList = [
   font-size: 18px;
   margin-bottom: 12px;
 }
+.block__note {
+  margin-top: 10px;
+  font-size: 12.5px;
+  color: var(--text-faint);
+}
 
 .grid-sizes {
   display: grid;
@@ -159,6 +198,11 @@ const optionList = [
 }
 .opt:hover {
   border-color: var(--ink-soft-2);
+}
+.opt:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  border-color: var(--ink-line);
 }
 .opt--on {
   border-color: var(--butter);
@@ -235,6 +279,24 @@ const optionList = [
   background: #15151a;
   border: 2px solid #3a3a44;
 }
+.design__swatch--grove {
+  position: relative;
+  background:
+    repeating-linear-gradient(45deg, #454545 0 1px, transparent 1px 7px),
+    repeating-linear-gradient(-45deg, #454545 0 1px, transparent 1px 7px),
+    #141414;
+}
+.design__swatch--grove::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 28px;
+  height: 10px;
+  transform: translate(-50%, -50%);
+  border: 1px solid #fff;
+  border-radius: 999px;
+}
 .design__body {
   display: flex;
   flex-direction: column;
@@ -284,10 +346,14 @@ const optionList = [
   flex: 1;
   display: grid;
   place-items: center;
-  background: repeating-conic-gradient(#2a2a32 0% 25%, #232329 0% 50%) 50% / 24px 24px;
+  background: repeating-conic-gradient(var(--checker-a) 0% 25%, var(--checker-b) 0% 50%) 50% /
+    24px 24px;
   border: 1px solid var(--ink-line);
   border-radius: var(--r-lg);
   padding: 20px;
+}
+.preview-fit {
+  flex: none;
 }
 .preview-meta {
   color: var(--text-faint);

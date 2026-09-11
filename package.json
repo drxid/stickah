@@ -9,10 +9,12 @@
     "preview": "vite preview",
     "typecheck": "vue-tsc --noEmit",
     "catalog:build": "tsx scripts/build-catalog.ts",
-    "catalog:validate": "tsx scripts/validate-file.ts"
+    "catalog:validate": "tsx scripts/validate-file.ts",
+    "catalog:overrides": "tsx scripts/apply-overrides.ts",
+    "catalog:add-brand": "tsx scripts/add-brand.ts"
   },
   "dependencies": {
-    "fuse.js": "^7.0.0",
+    "minisearch": "^7.2.0",
     "pinia": "^2.2.0",
     "vue": "^3.5.0",
     "vue-router": "^4.4.0"

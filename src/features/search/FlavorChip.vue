@@ -1,5 +1,12 @@
 <script setup lang="ts">
+import { computed } from 'vue'
+import { findLogo } from '@/data/logos'
 import type { FlavorDisplay } from '@/types/catalog'
+
+/** Площадь логотипа, px². Логотипы выравниваем по площади, как на наклейке Grove,
+ *  чтобы широкие и почти квадратные знаки весили одинаково. */
+const LOGO_AREA = 900
+const LOGO_MAX_H = 16
 
 const props = defineProps<{
   flavor: FlavorDisplay
@@ -14,6 +21,13 @@ const emit = defineEmits<{
   setCopies: [id: string, copies: number]
 }>()
 
+const logo = computed(() => findLogo(props.flavor.manufacturerId, props.flavor.manufacturerName))
+const logoStyle = computed(() => {
+  const a = logo.value?.aspect ?? 1
+  const h = Math.min(Math.sqrt(LOGO_AREA / a), LOGO_MAX_H)
+  return { height: `${h}px`, width: `${h * a}px` }
+})
+
 function bump(delta: number) {
   emit('setCopies', props.flavor.id, (props.copies ?? 1) + delta)
 }
@@ -25,7 +39,18 @@ function bump(delta: number) {
 
     <span class="chip__text">
       <span class="chip__name">{{ flavor.name }}</span>
-      <span class="chip__meta">{{ flavor.manufacturerName }} · {{ flavor.lineName }}</span>
+      <span class="chip__meta">
+        <img
+          v-if="logo"
+          class="chip__logo"
+          :src="logo.src"
+          :alt="flavor.manufacturerName"
+          :style="logoStyle"
+        />
+        <span v-else>{{ flavor.manufacturerName }}</span>
+        <span aria-hidden="true">·</span>
+        <span class="chip__line">{{ flavor.lineName }}</span>
+      </span>
     </span>
 
     <template v-if="mode === 'result'">
@@ -111,8 +136,23 @@ function bump(delta: number) {
   text-overflow: ellipsis;
 }
 .chip__meta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 18px;
   font-size: 12px;
   color: var(--text-muted);
+  white-space: nowrap;
+}
+.chip__logo {
+  flex: none;
+  display: block;
+  opacity: 0.85;
+  filter: var(--brand-logo-filter);
+}
+.chip__line {
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .chip__action {

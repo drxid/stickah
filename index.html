@@ -6,10 +6,24 @@
     <title>Stickah — наклейки для табаков</title>
     <meta name="description" content="Генератор наклеек для банок с табаком: ищи вкусы, выбирай шаблон, печатай лист A4." />
 
+    <script>
+      // Тему ставим до отрисовки, чтобы экран не мигал: сохранённый выбор, иначе системная.
+      // Ключ общий с ThemeToggle.vue.
+      try {
+        const saved = localStorage.getItem('stickah:theme')
+        document.documentElement.dataset.theme =
+          saved === 'light' || saved === 'dark'
+            ? saved
+            : matchMedia('(prefers-color-scheme: light)').matches
+              ? 'light'
+              : 'dark'
+      } catch {}
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@600;700;800&family=Spectral:wght@500;600;700&family=JetBrains+Mono:wght@400;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@600;700;800&family=Spectral:wght@500;600;700&family=Montserrat:wght@400;600;800&family=JetBrains+Mono:wght@400;700&display=swap"
       rel="stylesheet"
     />
   </head>

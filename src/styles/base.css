@@ -50,7 +50,7 @@ a {
 }
 
 :focus-visible {
-  outline: 2.5px solid var(--butter);
+  outline: 2.5px solid var(--focus-ring);
   outline-offset: 2px;
   border-radius: 4px;
 }
@@ -97,6 +97,41 @@ a {
   font-family: var(--font-mono);
   font-size: 12px;
   letter-spacing: 0.02em;
+}
+
+/* Градиенты по краям прокручиваемых областей (директива v-scroll-fade).
+   Маска растворяет сам контент, поэтому не зависит от фона и темы.
+   @property нужен, чтобы края появлялись плавно, а не скачком. */
+@property --fade-top {
+  syntax: '<length>';
+  inherits: false;
+  initial-value: 0px;
+}
+@property --fade-bottom {
+  syntax: '<length>';
+  inherits: false;
+  initial-value: 0px;
+}
+[data-scroll-fade] {
+  --fade-size: 40px;
+  --fade-mask: linear-gradient(
+    to bottom,
+    transparent,
+    #000 var(--fade-top),
+    #000 calc(100% - var(--fade-bottom)),
+    transparent
+  );
+  -webkit-mask-image: var(--fade-mask);
+  mask-image: var(--fade-mask);
+  transition:
+    --fade-top 0.25s ease,
+    --fade-bottom 0.25s ease;
+}
+[data-scroll-fade][data-fade-top] {
+  --fade-top: var(--fade-size);
+}
+[data-scroll-fade][data-fade-bottom] {
+  --fade-bottom: var(--fade-size);
 }
 
 /* Скроллбар (вебкит) */
