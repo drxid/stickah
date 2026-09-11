@@ -147,8 +147,8 @@ onMounted(() => catalog.load())
   cursor: default;
 }
 .stepper__item--done {
-  color: var(--acid-lime);
-  border-color: color-mix(in srgb, var(--acid-lime) 40%, var(--ink-line));
+  color: var(--done);
+  border-color: color-mix(in srgb, var(--done) 40%, var(--ink-line));
 }
 .stepper__num {
   display: grid;
@@ -171,7 +171,32 @@ onMounted(() => catalog.load())
   flex-direction: column;
 }
 
+/* Телефон: шапка в одну строку — лого меньше, без подписи, шаги кружками. */
 @media (max-width: 620px) {
+  .app-shell {
+    padding-block: 14px 16px;
+  }
+  .app-header {
+    flex-wrap: nowrap;
+    gap: 12px;
+    margin-bottom: 14px;
+  }
+  .brand {
+    gap: 10px;
+  }
+  .brand__logo {
+    height: 36px;
+  }
+  .brand__tag {
+    display: none;
+  }
+  .header-actions {
+    gap: 8px;
+  }
+  .stepper__item {
+    padding: 5px;
+    gap: 0;
+  }
   .stepper__label {
     display: none;
   }

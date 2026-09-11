@@ -1,10 +1,12 @@
 <script setup lang="ts">
 import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
 import { useRouter } from 'vue-router'
+import { ArrowLeft, Printer } from '@lucide/vue'
 import PrintDocument from '@/features/print/PrintDocument.vue'
 import { computeLayout, pageCount, A4 } from '@/features/print/labelLayout'
 import { useSelectionStore } from '@/stores/selection'
 import { useTemplateStore } from '@/stores/template'
+import { plural } from '@/utils/plural'
 
 const router = useRouter()
 const selection = useSelectionStore()
@@ -25,9 +27,14 @@ const scale = computed(() => {
   return Math.min(1, stageWidth.value / sheetPx)
 })
 
-const framedHeight = computed(() => {
+// Рамка занимает место уменьшенного листа: иначе в узкой сцене лист шириной 210 мм
+// не центрируется и уезжает вправо.
+const frameStyle = computed(() => {
   const naturalMm = pages.value * A4.height + Math.max(0, pages.value - 1) * SHEET_GAP_MM
-  return `${naturalMm * PX_PER_MM * scale.value}px`
+  return {
+    width: `${A4.width * PX_PER_MM * scale.value}px`,
+    height: `${naturalMm * PX_PER_MM * scale.value}px`,
+  }
 })
 
 let ro: ResizeObserver | null = null
@@ -53,19 +60,21 @@ function print() {
       <div class="info">
         <span class="info__big">{{ pages }}</span>
         <span class="info__small">
-          лист(ов) A4 · {{ selection.totalLabels }} наклеек ·
+          {{ plural(pages, ['лист', 'листа', 'листов']) }} A4 · {{ selection.totalLabels }}
+          {{ plural(selection.totalLabels, ['наклейка', 'наклейки', 'наклеек']) }} ·
           {{ layout.perPage }} на листе<template v-if="layout.rotatedCount">
-          (из них {{ layout.rotatedCount }} повёрнуты)</template>
+          (из них {{ layout.rotatedCount }}
+          {{ plural(layout.rotatedCount, ['повёрнута', 'повёрнуты', 'повёрнуты']) }})</template>
         </span>
       </div>
       <p class="info__hint mono">{{ template.size.label }} · {{ template.design.label }}</p>
     </div>
 
     <div ref="stage" class="preview-stage">
-      <div class="preview-frame" :style="{ height: framedHeight }">
+      <div class="preview-frame" :style="frameStyle">
         <div
           class="preview-scaler"
-          :style="{ transform: `scale(${scale})`, transformOrigin: 'top center' }"
+          :style="{ transform: `scale(${scale})`, transformOrigin: 'top left' }"
         >
           <PrintDocument />
         </div>
@@ -73,9 +82,16 @@ function print() {
     </div>
 
     <footer class="step__footer no-print">
-      <button class="btn btn--ghost" @click="router.push('/template')">← Назад</button>
+      <button class="btn btn--ghost" @click="router.push('/template')">
+        <ArrowLeft :size="18" aria-hidden="true" />
+        Назад
+      </button>
       <span class="step__hint">Шаг 3 из 3 · в диалоге печати выбери «Сохранить как PDF» или принтер</span>
-      <button class="btn btn--primary" @click="print">⎙ Печать / Сохранить PDF</button>
+      <button class="btn btn--primary" @click="print">
+        <Printer :size="18" aria-hidden="true" />
+        <span class="print-label--long">Печать / Сохранить PDF</span>
+        <span class="print-label--short">Печать / PDF</span>
+      </button>
     </footer>
   </section>
 </template>
@@ -124,10 +140,10 @@ function print() {
 }
 .preview-frame {
   position: relative;
+  margin: 0 auto;
 }
 .preview-scaler {
   width: 210mm;
-  margin: 0 auto;
 }
 
 .step__footer {
@@ -139,5 +155,27 @@ function print() {
 .step__hint {
   color: var(--text-faint);
   font-size: 13px;
+}
+.print-label--short {
+  display: none;
+}
+
+@media (max-width: 620px) {
+  .step3__bar {
+    flex-wrap: wrap;
+    gap: 4px 16px;
+  }
+  .info__big {
+    font-size: 32px;
+  }
+  .preview-stage {
+    padding: 12px;
+  }
+  .print-label--long {
+    display: none;
+  }
+  .print-label--short {
+    display: inline;
+  }
 }
 </style>

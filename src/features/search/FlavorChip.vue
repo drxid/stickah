@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed } from 'vue'
+import { Minus, Plus, X } from '@lucide/vue'
 import { findLogo } from '@/data/logos'
 import type { FlavorDisplay } from '@/types/catalog'
 
@@ -60,23 +61,27 @@ function bump(delta: number) {
         :aria-label="`Добавить ${flavor.name}`"
         @click="emit('add', flavor.id)"
       >
-        +
+        <Plus :size="18" aria-hidden="true" />
       </button>
       <span v-else class="chip__badge">в наборе</span>
     </template>
 
     <template v-else>
       <span class="stepper">
-        <button class="stepper__btn" aria-label="Меньше копий" @click="bump(-1)">−</button>
+        <button class="stepper__btn" aria-label="Меньше копий" @click="bump(-1)">
+          <Minus :size="16" aria-hidden="true" />
+        </button>
         <span class="stepper__val mono">{{ copies }}</span>
-        <button class="stepper__btn" aria-label="Больше копий" @click="bump(1)">+</button>
+        <button class="stepper__btn" aria-label="Больше копий" @click="bump(1)">
+          <Plus :size="16" aria-hidden="true" />
+        </button>
       </span>
       <button
         class="chip__action chip__remove"
         :aria-label="`Убрать ${flavor.name}`"
         @click="emit('remove', flavor.id)"
       >
-        ✕
+        <X :size="18" aria-hidden="true" />
       </button>
     </template>
   </div>
@@ -93,12 +98,15 @@ function bump(delta: number) {
   border-radius: var(--r-md);
   transition: border-color 0.15s ease, transform 0.12s ease, background 0.15s ease;
 }
-.chip:hover {
-  border-color: var(--ink-soft-2);
-  transform: translateY(-1px);
+/* На тач-экранах hover «залипает» после тапа — подъём только для мыши. */
+@media (hover: hover) {
+  .chip:hover {
+    border-color: var(--ink-soft-2);
+    transform: translateY(-1px);
+  }
 }
 .chip--added {
-  border-color: color-mix(in srgb, var(--acid-lime) 45%, var(--ink-line));
+  border-color: color-mix(in srgb, var(--done) 45%, var(--ink-line));
 }
 
 .chip__swatch {
@@ -186,7 +194,7 @@ function bump(delta: number) {
   flex: none;
   font-size: 11px;
   font-weight: 700;
-  color: var(--acid-lime);
+  color: var(--done);
   text-transform: uppercase;
   letter-spacing: 0.04em;
 }
@@ -201,14 +209,15 @@ function bump(delta: number) {
   padding: 3px;
 }
 .stepper__btn {
+  display: grid;
+  place-items: center;
   width: 26px;
   height: 26px;
+  padding: 0;
   border-radius: 50%;
   border: none;
   background: transparent;
   color: var(--text);
-  font-size: 17px;
-  line-height: 1;
 }
 .stepper__btn:hover {
   background: var(--ink-line);
@@ -217,5 +226,17 @@ function bump(delta: number) {
   min-width: 20px;
   text-align: center;
   font-size: 13px;
+}
+
+/* Крупнее кнопки под палец. */
+@media (pointer: coarse) {
+  .chip__action {
+    width: 38px;
+    height: 38px;
+  }
+  .stepper__btn {
+    width: 32px;
+    height: 32px;
+  }
 }
 </style>

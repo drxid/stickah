@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
 import { useRouter } from 'vue-router'
+import { ArrowLeft, ArrowRight, Flame } from '@lucide/vue'
 import LabelCard from '@/features/print/LabelCard.vue'
 import { vScrollFade } from '@/directives/scrollFade'
 import { SIZE_PRESETS } from '@/data/sizes'
@@ -91,7 +92,10 @@ const optionList = [
           >
             <span class="design__swatch" :class="`design__swatch--${d.id}`" aria-hidden="true" />
             <span class="design__body">
-              <span class="design__label">{{ d.label }}</span>
+              <span class="design__label">
+                {{ d.label }}
+                <Flame v-if="d.featured" class="design__flame" :size="16" aria-hidden="true" />
+              </span>
               <span class="design__desc">{{ d.description }}</span>
               <span v-if="d.printNote" class="design__note">{{ d.printNote }}</span>
             </span>
@@ -134,9 +138,15 @@ const optionList = [
     </div>
 
     <footer class="step__footer no-print">
-      <button class="btn btn--ghost" @click="router.push('/')">← Назад</button>
+      <button class="btn btn--ghost" @click="router.push('/')">
+        <ArrowLeft :size="18" aria-hidden="true" />
+        Назад
+      </button>
       <span class="step__hint">Шаг 2 из 3 · один размер и дизайн на лист</span>
-      <button class="btn btn--primary" @click="router.push('/print')">Далее →</button>
+      <button class="btn btn--primary" @click="router.push('/print')">
+        Далее
+        <ArrowRight :size="18" aria-hidden="true" />
+      </button>
     </footer>
   </section>
 </template>
@@ -303,7 +313,15 @@ const optionList = [
   gap: 3px;
 }
 .design__label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   font-weight: 700;
+}
+.design__flame {
+  color: var(--butter-deep);
+  fill: currentColor;
+  fill-opacity: 0.25;
 }
 .design__desc {
   font-size: 12.5px;
@@ -360,9 +378,33 @@ const optionList = [
   text-align: center;
 }
 
+/* Одна колонка: компактное превью сверху, настройки прокручиваются под ним.
+   minmax(0, …) и min-width: 0 дают колонке сжаться — иначе широкая наклейка
+   распирает её и превью не уменьшается. */
 @media (max-width: 860px) {
   .step2 {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto minmax(0, 1fr) auto;
+    gap: 12px;
+  }
+  .step2__preview {
+    grid-row: 1;
+    min-width: 0;
+    gap: 6px;
+  }
+  .step2__preview .block__title {
+    display: none;
+  }
+  .preview-card {
+    flex: none;
+    min-width: 0;
+    padding: 12px;
+  }
+  .step2__controls {
+    grid-row: 2;
+  }
+  .step__footer {
+    grid-row: 3;
   }
 }
 </style>

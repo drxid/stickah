@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
 import { useRouter } from 'vue-router'
+import { ArrowRight, Search } from '@lucide/vue'
 import FlavorChip from '@/features/search/FlavorChip.vue'
 import SelectionTray from '@/features/selection/SelectionTray.vue'
 import { vScrollFade } from '@/directives/scrollFade'
@@ -12,21 +13,37 @@ const catalog = useCatalogStore()
 const selection = useSelectionStore()
 
 const query = ref('')
+/** На телефоне поиск и набор не помещаются рядом — показываем по очереди. */
+const tab = ref<'search' | 'tray'>('search')
 
 const results = computed(() => (catalog.loaded ? catalog.search(query.value) : []))
 const shown = computed(() => results.value.slice(0, 60))
 </script>
 
 <template>
-  <section class="step step1">
+  <section class="step step1" :class="{ 'step1--tray': tab === 'tray' }">
+    <div class="step1__tabs" role="tablist" aria-label="Разделы">
+      <button
+        role="tab"
+        class="step1__tab"
+        :aria-selected="tab === 'search'"
+        @click="tab = 'search'"
+      >
+        Поиск
+      </button>
+      <button role="tab" class="step1__tab" :aria-selected="tab === 'tray'" @click="tab = 'tray'">
+        Набор <span class="step1__badge mono">{{ selection.count }}</span>
+      </button>
+    </div>
+
     <div class="step1__search">
       <div class="searchbar">
-        <span class="searchbar__icon" aria-hidden="true">⌕</span>
+        <Search class="searchbar__icon" :size="20" aria-hidden="true" />
         <input
           v-model="query"
           type="search"
           class="searchbar__input"
-          placeholder="Вкус или бренд — например, «musthave клубника» или «mint»"
+          placeholder="Например: musthave клубника"
           aria-label="Поиск вкуса"
         />
       </div>
@@ -61,7 +78,8 @@ const shown = computed(() => results.value.slice(0, 60))
         :disabled="selection.count === 0"
         @click="router.push('/template')"
       >
-        Далее →
+        Далее
+        <ArrowRight :size="18" aria-hidden="true" />
       </button>
     </footer>
   </section>
@@ -70,7 +88,7 @@ const shown = computed(() => results.value.slice(0, 60))
 <style scoped>
 .step1 {
   display: grid;
-  grid-template-columns: 1fr 380px;
+  grid-template-columns: minmax(0, 1fr) 440px;
   grid-template-rows: 1fr auto;
   gap: var(--gap);
   min-height: 0;
@@ -104,7 +122,7 @@ const shown = computed(() => results.value.slice(0, 60))
   border-color: var(--focus-ring);
 }
 .searchbar__icon {
-  font-size: 20px;
+  flex: none;
   color: var(--text-muted);
 }
 .searchbar__input {
@@ -154,12 +172,62 @@ const shown = computed(() => results.value.slice(0, 60))
   font-size: 13px;
 }
 
+.step1__tabs {
+  display: none;
+}
+.step1__tab {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 9px 12px;
+  border: none;
+  border-radius: var(--r-pill);
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 14px;
+  font-weight: 700;
+}
+.step1__tab[aria-selected='true'] {
+  background: var(--butter);
+  color: #1a1505;
+}
+.step1__badge {
+  min-width: 22px;
+  padding: 2px 6px;
+  border-radius: var(--r-pill);
+  background: rgba(0, 0, 0, 0.12);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+/* Одна колонка: вкладки «Поиск | Набор», видна одна из панелей. */
 @media (max-width: 860px) {
   .step1 {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto minmax(0, 1fr) auto;
+    gap: 12px;
   }
+  .step1__tabs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4px;
+    padding: 4px;
+    background: var(--ink-soft);
+    border: 1px solid var(--ink-line);
+    border-radius: var(--r-pill);
+  }
+  .step1__search,
   .step1__tray {
-    grid-row: auto;
+    grid-column: 1;
+    grid-row: 2;
+  }
+  .step__footer {
+    grid-row: 3;
+  }
+  .step1--tray .step1__search,
+  .step1:not(.step1--tray) .step1__tray {
+    display: none;
   }
 }
 </style>

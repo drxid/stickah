@@ -3,6 +3,7 @@
 // имя вкуса увеличено до 7 мм, теги — до 2.6 мм. Вкус, теги и крепость — чуть выше центра,
 // производитель — внизу.
 import { computed } from 'vue'
+import StrengthDots from './StrengthDots.vue'
 import ornamentUrl from '@/assets/grove-ornament.svg'
 import { findLogo } from '@/data/logos'
 import type { LabelOptions } from '@/stores/template'
@@ -40,18 +41,9 @@ const nameFontMm = computed(() => {
 const tags = computed(() =>
   props.options.showProfile ? props.flavor.profile?.slice(0, 3) ?? [] : [],
 )
-/** Крепость каталога → закрашенные точки из трёх с шагом 0.5; 0 — не показываем.
- *  лёгкая (2) → 1, лёгкая-средняя (3) → 1.5, средняя (5) → 2,
- *  выше средней (7) → 2.5, крепкая (9–10) → 3. */
-const strengthDots = computed(() => {
-  const s = props.flavor.strength
-  if (!props.options.showStrength || typeof s !== 'number') return 0
-  if (s <= 2) return 1
-  if (s <= 4) return 1.5
-  if (s <= 6) return 2
-  if (s <= 8) return 2.5
-  return 3
-})
+const showStrength = computed(
+  () => props.options.showStrength && typeof props.flavor.strength === 'number',
+)
 const lineText = computed(() =>
   props.options.showLine && !MAIN_LINE.test(props.flavor.lineName.trim())
     ? props.flavor.lineName
@@ -76,22 +68,7 @@ const logoStyle = computed(() => {
       <div v-if="tags.length" class="grove__tags">
         <span v-for="t in tags" :key="t" class="grove__tag">{{ t }}</span>
       </div>
-      <div
-        v-if="strengthDots"
-        class="grove__strength"
-        role="img"
-        :aria-label="`Крепость ${String(strengthDots).replace('.', ',')} из 3`"
-      >
-        <span
-          v-for="i in 3"
-          :key="i"
-          class="grove__dot"
-          :class="{
-            'grove__dot--on': i <= strengthDots,
-            'grove__dot--half': i - 0.5 === strengthDots,
-          }"
-        />
-      </div>
+      <StrengthDots v-if="showStrength" class="grove__strength" :strength="flavor.strength ?? 0" />
     </div>
     <div v-if="options.showManufacturer || lineText" class="grove__maker">
       <template v-if="options.showManufacturer">
@@ -168,29 +145,9 @@ const logoStyle = computed(() => {
   line-height: 1;
   white-space: nowrap;
 }
-/* Крепость: три точки под тегами, обводка той же толщины, что у тегов. */
+/* Крепость: три точки под тегами (StrengthDots), обводка той же толщины, что у тегов. */
 .grove__strength {
-  display: flex;
-  gap: 1.2mm;
   margin-top: -1.2mm;
-}
-.grove__dot {
-  position: relative;
-  overflow: hidden;
-  width: 1.6mm;
-  height: 1.6mm;
-  border: 0.15mm solid #fff;
-  border-radius: 50%;
-}
-.grove__dot--on {
-  background: #fff;
-}
-/* Половинка — левая часть круга; отдельный слой, а не градиент: надёжнее в печати. */
-.grove__dot--half::before {
-  content: '';
-  position: absolute;
-  inset: 0 50% 0 0;
-  background: #fff;
 }
 .grove__maker {
   position: absolute;

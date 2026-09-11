@@ -11,6 +11,12 @@ body,
 #app {
   height: 100%;
 }
+/* На телефоне 100% — это высота без панелей браузера, и нижние кнопки уезжают под них. */
+@supports (height: 100dvh) {
+  #app {
+    height: 100dvh;
+  }
+}
 
 body {
   margin: 0;
@@ -39,6 +45,7 @@ p {
 button {
   font-family: inherit;
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 }
 
 input {
@@ -55,6 +62,13 @@ a {
   border-radius: 4px;
 }
 
+/* Шаг мастера занимает всю высоту под шапкой — иначе при коротком содержимом
+   (пара вкусов в наборе на телефоне) нижние кнопки поднимаются к середине экрана. */
+.step {
+  flex: 1;
+  min-height: 0;
+}
+
 /* Кнопки */
 .btn {
   display: inline-flex;
@@ -67,6 +81,7 @@ a {
   font-size: 15px;
   font-weight: 700;
   line-height: 1;
+  white-space: nowrap;
   transition: transform 0.12s ease, filter 0.15s ease, background 0.15s ease;
 }
 .btn:active {
@@ -90,6 +105,21 @@ a {
 }
 .btn--ghost:not(:disabled):hover {
   background: var(--ink-soft);
+}
+
+/* Нижняя панель шагов на телефоне: только кнопки во всю ширину, подсказку прячем —
+   номер шага и так виден в шапке. */
+@media (max-width: 620px) {
+  .step__hint {
+    display: none;
+  }
+  .step__footer {
+    gap: 10px;
+  }
+  .step__footer .btn {
+    flex: 1 1 auto;
+    padding-inline: 16px;
+  }
 }
 
 /* Утилита: моноширинный «системный» текст */
@@ -123,9 +153,11 @@ a {
   );
   -webkit-mask-image: var(--fade-mask);
   mask-image: var(--fade-mask);
+  /* --sb-thumb — чтобы не потерять плавный цвет скроллбара из общего правила ниже. */
   transition:
     --fade-top 0.25s ease,
-    --fade-bottom 0.25s ease;
+    --fade-bottom 0.25s ease,
+    --sb-thumb 0.2s ease;
 }
 [data-scroll-fade][data-fade-top] {
   --fade-top: var(--fade-size);
@@ -134,14 +166,47 @@ a {
   --fade-bottom: var(--fade-size);
 }
 
-/* Скроллбар (вебкит) */
+/* Скроллбар: тонкий и приглушённый, чуть ярче — когда курсор над прокручиваемой областью.
+   Псевдоэлементы скроллбара сами transition не умеют, поэтому цвет ползунка берётся из
+   зарегистрированного свойства --sb-thumb элемента — его смена анимируется плавно. */
+@property --sb-thumb {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: transparent;
+}
+* {
+  --sb-thumb: var(--sb-idle);
+  transition: --sb-thumb 0.2s ease;
+}
+*:hover {
+  --sb-thumb: var(--sb-hover);
+}
 *::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
+  width: 8px;
+  height: 8px;
+}
+*::-webkit-scrollbar-track {
+  background: transparent;
 }
 *::-webkit-scrollbar-thumb {
-  background: var(--ink-soft-2);
+  background: var(--sb-thumb);
   border-radius: 999px;
+}
+/* Наведение и перетаскивание самого ползунка браузер переключает без перехода —
+   поэтому шаг цвета здесь маленький. */
+*::-webkit-scrollbar-thumb:hover {
+  background: var(--sb-thumb-hover);
+}
+*::-webkit-scrollbar-thumb:active {
+  background: var(--sb-active);
+}
+/* Firefox не знает ::-webkit-scrollbar — там стандартные свойства. Только для него:
+   новый Chrome, увидев scrollbar-color, перестаёт применять стили выше. */
+@supports not selector(::-webkit-scrollbar) {
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--sb-thumb) transparent;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

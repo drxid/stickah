@@ -11,9 +11,19 @@ export interface DesignVariant {
   printNote?: string
   /** Дизайн свёрстан под один размер — при выборе размер фиксируется. */
   sizeId?: string
+  /** Лучший дизайн — в списке помечен огоньком. */
+  featured?: boolean
 }
 
 export const DESIGNS: DesignVariant[] = [
+  {
+    id: 'grove',
+    label: 'Grove',
+    description: 'Тёмный фон с гравюрой табачного листа, большие теги вкуса и логотипы брендов.',
+    printNote: 'Только 120×45 мм. Тёмный фон расходует много чернил при печати.',
+    sizeId: 'rect-120x45',
+    featured: true,
+  },
   {
     id: 'clean',
     label: 'Clean',
@@ -43,13 +53,6 @@ export const DESIGNS: DesignVariant[] = [
     label: 'Onyx',
     description: 'Тёмный фон, строгий гротеск, акцентная подпись капсом. Минимализм.',
     printNote: 'Тёмный фон расходует много чернил при печати.',
-  },
-  {
-    id: 'grove',
-    label: 'Grove',
-    description: 'Тёмный фон с гравюрой ветвей, теги вкуса в пилюлях и логотип бренда.',
-    printNote: 'Только 120×45 мм. Тёмный фон расходует много чернил при печати.',
-    sizeId: 'rect-120x45',
   },
 ]
 

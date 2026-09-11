@@ -14,9 +14,9 @@
   --paper-dim: #e7e3da;
 
   /* Акценты (взяты прямо из SVG-логотипов) */
-  --butter: #fec640; /* основной CTA */
-  --butter-deep: #e9ad22;
-  --acid-lime: #4fc928; /* успех / активное */
+  --butter: #e0aa59; /* основной CTA; приглушённый — яркий жёлтый на тёмном слишком резок */
+  --butter-deep: #c8914a;
+  --done: #c4c2ca; /* пройденный шаг, вкус уже в наборе */
 
   /* Текст */
   --text: #f4f2ee;
@@ -78,6 +78,11 @@
   /* Шахматка под превью наклейки и листа */
   --checker-a: #2a2a32;
   --checker-b: #232329;
+  /* Ползунок скроллбара: в покое → курсор над областью → над ползунком → зажат */
+  --sb-idle: #3b3b45;
+  --sb-hover: #4b4b56;
+  --sb-thumb-hover: #565661;
+  --sb-active: #62626d;
 
   /* Логотипы производителей нарисованы белыми — в светлой теме их инвертируем. */
   --brand-logo-filter: none;
@@ -98,7 +103,9 @@
   --ink-soft-2: #e8e4dc;
   --ink-line: #dcd7cd;
 
-  --acid-lime: #2e9612;
+  --butter: #fec640;
+  --butter-deep: #e9ad22;
+  --done: #55545c;
 
   --text: #1a1a1e;
   --text-muted: #5c5b63;
@@ -111,6 +118,10 @@
   --danger: #c43d3d;
   --checker-a: #e9e6e0;
   --checker-b: #f4f2ee;
+  --sb-idle: #d5d0c6;
+  --sb-hover: #c6c1b7;
+  --sb-thumb-hover: #bab5ab;
+  --sb-active: #aea99f;
 
   --brand-logo-filter: invert(1);
   --logo-fg: #141414;

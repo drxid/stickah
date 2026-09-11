@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import GroveFace from './GroveFace.vue'
+import StrengthDots from './StrengthDots.vue'
 import type { SizePreset } from '@/data/sizes'
 import type { DesignId } from '@/data/designs'
 import type { LabelOptions } from '@/stores/template'
@@ -54,11 +55,11 @@ const tags = computed(() =>
         <div class="label__name" :style="{ fontSize: `${nameFontMm}mm` }">
           {{ flavor.name }}
         </div>
-        <div v-if="metaText" class="label__meta">{{ metaText }}</div>
         <div v-if="tags.length" class="label__tags">
           <span v-for="t in tags" :key="t" class="label__tag">{{ t }}</span>
         </div>
-        <div v-if="showStrength" class="label__strength">{{ flavor.strength }}</div>
+        <StrengthDots v-if="showStrength" class="label__strength" :strength="flavor.strength ?? 0" />
+        <div v-if="metaText" class="label__meta">{{ metaText }}</div>
       </div>
     </template>
   </div>
@@ -107,6 +108,7 @@ const tags = computed(() =>
   overflow: hidden;
 }
 .label__meta {
+  margin-top: 1mm;
   font-size: 2.4mm;
   font-weight: 600;
   letter-spacing: 0.01em;
@@ -128,21 +130,9 @@ const tags = computed(() =>
   background: rgba(0, 0, 0, 0.07);
   color: var(--on-paper-muted);
 }
+/* Крепость — точки под текстом, как на Grove (StrengthDots); цвет — от текста дизайна. */
 .label__strength {
-  position: absolute;
-  top: 1.6mm;
-  right: 2mm;
-  z-index: 3;
-  font-family: var(--font-mono);
-  font-size: 2.3mm;
-  font-weight: 700;
-  padding: 0.4mm 1.4mm;
-  border-radius: 999px;
-  background: var(--accent);
-  color: #1a1a1e;
-}
-.label--round .label__strength {
-  top: 4mm;
+  margin-top: 0.6mm;
 }
 
 /* --- CLEAN --- */
@@ -199,9 +189,8 @@ const tags = computed(() =>
   filter: brightness(0.8);
 }
 .label--mono .label__strength {
-  background: transparent;
-  border: 0.3mm solid var(--accent);
-  color: #161616;
+  color: var(--accent);
+  filter: brightness(0.8);
 }
 
 /* --- NOIR (тёмный + serif) --- */
@@ -229,10 +218,6 @@ const tags = computed(() =>
   background: rgba(255, 255, 255, 0.07);
   color: #cdc6b7;
 }
-.label--noir .label__strength {
-  background: var(--accent);
-  color: #15120c;
-}
 
 /* --- ONYX (тёмный + строгий гротеск) --- */
 .label--onyx {
@@ -256,10 +241,6 @@ const tags = computed(() =>
   background: transparent;
   border: 0.2mm solid #3a3a44;
   color: #b8b8c0;
-}
-.label--onyx .label__strength {
-  background: var(--accent);
-  color: #15151a;
 }
 
 /* --- GROVE (тёмный + гравюра ветвей; разметка в GroveFace.vue) --- */

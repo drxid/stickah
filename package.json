@@ -14,6 +14,7 @@
     "catalog:add-brand": "tsx scripts/add-brand.ts"
   },
   "dependencies": {
+    "@lucide/vue": "^1.45.0",
     "minisearch": "^7.2.0",
     "pinia": "^2.2.0",
     "vue": "^3.5.0",
