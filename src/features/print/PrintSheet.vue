@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import LabelCard from './LabelCard.vue'
+import { A4 } from './labelLayout'
 import type { SheetLayout, Slot } from './labelLayout'
 import type { SizePreset } from '@/data/sizes'
 import type { DesignId } from '@/data/designs'
@@ -15,11 +16,17 @@ const props = defineProps<{
   options: LabelOptions
 }>()
 
+/** Область листа без полей. На печати поля даёт @page (print.css), а не отступ листа. */
+const areaStyle = computed(() => ({
+  width: `${A4.width - 2 * props.layout.margin}mm`,
+  height: `${A4.height - 2 * props.layout.margin}mm`,
+}))
+
 function slotStyle(slot: Slot) {
   const { width, height } = props.size
   return {
-    left: `${props.layout.margin + slot.x}mm`,
-    top: `${props.layout.margin + slot.y}mm`,
+    left: `${slot.x}mm`,
+    top: `${slot.y}mm`,
     width: `${slot.rotated ? height : width}mm`,
     height: `${slot.rotated ? width : height}mm`,
   }
@@ -32,21 +39,23 @@ const rotatedLabelStyle = computed(() => ({
 </script>
 
 <template>
-  <div class="print-sheet">
-    <div
-      v-for="(flavor, i) in items"
-      :key="i"
-      class="slot"
-      :class="{ 'slot--cut': options.cutGuides }"
-      :style="slotStyle(layout.slots[i])"
-    >
-      <LabelCard
-        :flavor="flavor"
-        :size="size"
-        :design="design"
-        :options="options"
-        :style="layout.slots[i].rotated ? rotatedLabelStyle : undefined"
-      />
+  <div class="print-sheet" :style="{ padding: `${layout.margin}mm` }">
+    <div class="print-area" :style="areaStyle">
+      <div
+        v-for="(flavor, i) in items"
+        :key="i"
+        class="slot"
+        :class="{ 'slot--cut': options.cutGuides }"
+        :style="slotStyle(layout.slots[i])"
+      >
+        <LabelCard
+          :flavor="flavor"
+          :size="size"
+          :design="design"
+          :options="options"
+          :style="layout.slots[i].rotated ? rotatedLabelStyle : undefined"
+        />
+      </div>
     </div>
   </div>
 </template>
@@ -56,9 +65,11 @@ const rotatedLabelStyle = computed(() => ({
   width: 210mm;
   height: 297mm;
   background: #fff;
-  position: relative;
   box-shadow: var(--shadow-card);
   flex: none;
+}
+.print-area {
+  position: relative;
 }
 .slot {
   position: absolute;

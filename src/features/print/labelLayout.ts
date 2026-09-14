@@ -13,6 +13,7 @@ export interface LayoutConfig {
   gutter: number
 }
 
+/** margin повторён в @page (styles/print.css): на печати поля листа задаёт страница. */
 export const DEFAULT_LAYOUT: LayoutConfig = { margin: 9, gutter: 4 }
 
 /** Сколько раз лист можно разрезать на полосы разной ориентации при переборе. */
