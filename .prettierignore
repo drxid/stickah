@@ -1,0 +1,7 @@
+dist
+package-lock.json
+
+# Сгенерированный каталог (~1.5 МБ) и локальные материалы
+public/data
+reference
+SPEC.md

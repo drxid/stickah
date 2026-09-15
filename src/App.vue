@@ -28,6 +28,7 @@ onMounted(() => catalog.load())
   <div class="app-shell">
     <header class="app-header no-print">
       <div class="brand">
+        <!-- eslint-disable-next-line vue/no-v-html -- логотип берётся из локального файла, а не из данных -->
         <span class="brand__logo" role="img" aria-label="Stickah" v-html="logoSvg" />
         <AboutPopover />
         <span class="brand__tag mono">наклейки для табаков</span>

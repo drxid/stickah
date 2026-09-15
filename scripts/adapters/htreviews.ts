@@ -177,7 +177,7 @@ export const htreviewsAdapter: SourceAdapter = {
     let i = 0
     for (const b of brands) {
       i++
-      let flavors: FlavorRow[] = []
+      let flavors: FlavorRow[]
       try {
         flavors = await getFlavors(b.id)
       } catch (e) {
