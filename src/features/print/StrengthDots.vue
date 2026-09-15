@@ -1,21 +1,21 @@
 <script setup lang="ts">
 // Крепость на наклейке — три точки. Цвет — currentColor, размеры по умолчанию сняты с Grove;
 // дизайн может переопределить их через --dot-size / --dot-gap / --dot-border.
-import { computed } from 'vue'
+import { computed } from 'vue';
 
-const props = defineProps<{ strength: number }>()
+const props = defineProps<{ strength: number }>();
 
 /** Крепость каталога → закрашенные точки из трёх с шагом 0.5:
  *  лёгкая (2) → 1, лёгкая-средняя (3) → 1.5, средняя (5) → 2,
  *  выше средней (7) → 2.5, крепкая (9–10) → 3. */
 const dots = computed(() => {
-  const s = props.strength
-  if (s <= 2) return 1
-  if (s <= 4) return 1.5
-  if (s <= 6) return 2
-  if (s <= 8) return 2.5
-  return 3
-})
+  const s = props.strength;
+  if (s <= 2) return 1;
+  if (s <= 4) return 1.5;
+  if (s <= 6) return 2;
+  if (s <= 8) return 2.5;
+  return 3;
+});
 </script>
 
 <template>

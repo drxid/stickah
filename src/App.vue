@@ -1,27 +1,27 @@
 <script setup lang="ts">
-import { computed, onMounted } from 'vue'
-import { useRoute, useRouter } from 'vue-router'
-import AboutPopover from '@/features/shell/AboutPopover.vue'
-import ThemeToggle from '@/features/shell/ThemeToggle.vue'
-import { useCatalogStore } from '@/stores/catalog'
-import { useSelectionStore } from '@/stores/selection'
-import logoSvg from '@/assets/logo.svg?raw'
+import { computed, onMounted } from 'vue';
+import { useRoute, useRouter } from 'vue-router';
+import AboutPopover from '@/features/shell/AboutPopover.vue';
+import ThemeToggle from '@/features/shell/ThemeToggle.vue';
+import { useCatalogStore } from '@/stores/catalog';
+import { useSelectionStore } from '@/stores/selection';
+import logoSvg from '@/assets/logo.svg?raw';
 
-const route = useRoute()
-const router = useRouter()
-const catalog = useCatalogStore()
-const selection = useSelectionStore()
+const route = useRoute();
+const router = useRouter();
+const catalog = useCatalogStore();
+const selection = useSelectionStore();
 
 const steps = [
   { name: 'search', label: 'Набор' },
   { name: 'template', label: 'Шаблон' },
   { name: 'print', label: 'Печать' },
-]
-const activeIndex = computed(() => steps.findIndex((s) => s.name === route.name))
+];
+const activeIndex = computed(() => steps.findIndex((s) => s.name === route.name));
 // Как и в роутере: шаблон и печать недоступны с пустым набором.
-const isLocked = (i: number) => i > 0 && selection.count === 0
+const isLocked = (i: number) => i > 0 && selection.count === 0;
 
-onMounted(() => catalog.load())
+onMounted(() => catalog.load());
 </script>
 
 <template>
@@ -131,7 +131,9 @@ onMounted(() => catalog.load())
   color: var(--text-muted);
   font-size: 14px;
   font-weight: 600;
-  transition: color 0.15s ease, border-color 0.15s ease;
+  transition:
+    color 0.15s ease,
+    border-color 0.15s ease;
 }
 .stepper__item:not(:disabled):not(.stepper__item--active):hover {
   color: var(--text);

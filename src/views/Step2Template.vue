@@ -1,51 +1,51 @@
 <script setup lang="ts">
-import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
-import { useRouter } from 'vue-router'
-import { ArrowLeft, ArrowRight, Flame } from '@lucide/vue'
-import LabelCard from '@/features/print/LabelCard.vue'
-import { vScrollFade } from '@/directives/scrollFade'
-import { SIZE_PRESETS } from '@/data/sizes'
-import { DESIGNS } from '@/data/designs'
-import { useCatalogStore } from '@/stores/catalog'
-import { useSelectionStore } from '@/stores/selection'
-import { useTemplateStore } from '@/stores/template'
+import { computed, onBeforeUnmount, onMounted, ref } from 'vue';
+import { useRouter } from 'vue-router';
+import { ArrowLeft, ArrowRight, Flame } from '@lucide/vue';
+import LabelCard from '@/features/print/LabelCard.vue';
+import { vScrollFade } from '@/directives/scrollFade';
+import { SIZE_PRESETS } from '@/data/sizes';
+import { DESIGNS } from '@/data/designs';
+import { useCatalogStore } from '@/stores/catalog';
+import { useSelectionStore } from '@/stores/selection';
+import { useTemplateStore } from '@/stores/template';
 
-const router = useRouter()
-const catalog = useCatalogStore()
-const selection = useSelectionStore()
-const template = useTemplateStore()
+const router = useRouter();
+const catalog = useCatalogStore();
+const selection = useSelectionStore();
+const template = useTemplateStore();
 
 // Вкус для превью: первый из набора, иначе первый из каталога.
 const previewFlavor = computed(() => {
-  const id = selection.items[0]?.flavorId ?? catalog.flavors[0]?.id
-  return id ? catalog.display(id) : undefined
-})
+  const id = selection.items[0]?.flavorId ?? catalog.flavors[0]?.id;
+  return id ? catalog.display(id) : undefined;
+});
 
 // Размер, зафиксированный выбранным дизайном (Grove — только 120×45).
-const lockedSizeId = computed(() => template.design.sizeId)
+const lockedSizeId = computed(() => template.design.sizeId);
 
 // Широкие наклейки не влезают в колонку превью — вписываем по ширине.
-const PX_PER_MM = 96 / 25.4
-const previewBox = ref<HTMLElement | null>(null)
-const previewWidth = ref(0)
+const PX_PER_MM = 96 / 25.4;
+const previewBox = ref<HTMLElement | null>(null);
+const previewWidth = ref(0);
 const previewScale = computed(() => {
-  const labelPx = template.size.width * PX_PER_MM
-  return previewWidth.value ? Math.min(1, previewWidth.value / labelPx) : 1
-})
+  const labelPx = template.size.width * PX_PER_MM;
+  return previewWidth.value ? Math.min(1, previewWidth.value / labelPx) : 1;
+});
 const previewFitStyle = computed(() => ({
   width: `${template.size.width * PX_PER_MM * previewScale.value}px`,
   height: `${template.size.height * PX_PER_MM * previewScale.value}px`,
-}))
+}));
 
-let ro: ResizeObserver | null = null
+let ro: ResizeObserver | null = null;
 onMounted(() => {
-  if (!previewBox.value) return
+  if (!previewBox.value) return;
   ro = new ResizeObserver((entries) => {
-    previewWidth.value = entries[0].contentRect.width
-  })
-  ro.observe(previewBox.value)
-})
-onBeforeUnmount(() => ro?.disconnect())
+    previewWidth.value = entries[0].contentRect.width;
+  });
+  ro.observe(previewBox.value);
+});
+onBeforeUnmount(() => ro?.disconnect());
 
 const optionList = [
   { key: 'showManufacturer', label: 'Производитель' },
@@ -53,7 +53,7 @@ const optionList = [
   { key: 'showStrength', label: 'Крепость' },
   { key: 'showProfile', label: 'Теги вкуса' },
   { key: 'cutGuides', label: 'Линии реза' },
-] as const
+] as const;
 </script>
 
 <template>
@@ -107,11 +107,7 @@ const optionList = [
         <h2 class="block__title">Показывать на наклейке</h2>
         <div class="toggles">
           <label v-for="o in optionList" :key="o.key" class="toggle">
-            <input
-              v-model="template.options[o.key]"
-              type="checkbox"
-              @change="template.persist()"
-            />
+            <input v-model="template.options[o.key]" type="checkbox" @change="template.persist()" />
             <span>{{ o.label }}</span>
           </label>
         </div>
@@ -132,9 +128,7 @@ const optionList = [
           />
         </div>
       </div>
-      <p class="preview-meta mono">
-        {{ template.size.label }} · {{ template.design.label }}
-      </p>
+      <p class="preview-meta mono">{{ template.size.label }} · {{ template.design.label }}</p>
     </div>
 
     <footer class="step__footer no-print">
@@ -293,8 +287,7 @@ const optionList = [
   position: relative;
   background:
     repeating-linear-gradient(45deg, #454545 0 1px, transparent 1px 7px),
-    repeating-linear-gradient(-45deg, #454545 0 1px, transparent 1px 7px),
-    #141414;
+    repeating-linear-gradient(-45deg, #454545 0 1px, transparent 1px 7px), #141414;
 }
 .design__swatch--grove::after {
   content: '';
@@ -364,8 +357,8 @@ const optionList = [
   flex: 1;
   display: grid;
   place-items: center;
-  background: repeating-conic-gradient(var(--checker-a) 0% 25%, var(--checker-b) 0% 50%) 50% /
-    24px 24px;
+  background: repeating-conic-gradient(var(--checker-a) 0% 25%, var(--checker-b) 0% 50%) 50% / 24px
+    24px;
   border: 1px solid var(--ink-line);
   border-radius: var(--r-lg);
   padding: 20px;

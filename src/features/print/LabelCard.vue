@@ -1,49 +1,47 @@
 <script setup lang="ts">
-import { computed } from 'vue'
-import GroveFace from './GroveFace.vue'
-import StrengthDots from './StrengthDots.vue'
-import type { SizePreset } from '@/data/sizes'
-import type { DesignId } from '@/data/designs'
-import type { LabelOptions } from '@/stores/template'
-import type { FlavorDisplay } from '@/types/catalog'
+import { computed } from 'vue';
+import GroveFace from './GroveFace.vue';
+import StrengthDots from './StrengthDots.vue';
+import type { SizePreset } from '@/data/sizes';
+import type { DesignId } from '@/data/designs';
+import type { LabelOptions } from '@/stores/template';
+import type { FlavorDisplay } from '@/types/catalog';
 
 const props = defineProps<{
-  flavor: FlavorDisplay
-  size: SizePreset
-  design: DesignId
-  options: LabelOptions
-}>()
+  flavor: FlavorDisplay;
+  size: SizePreset;
+  design: DesignId;
+  options: LabelOptions;
+}>();
 
 const rootStyle = computed(() => ({
   width: `${props.size.width}mm`,
   height: `${props.size.height}mm`,
   '--accent': props.flavor.accent ?? '#9be8e0',
-}))
+}));
 
 /** Подбор кегля имени, мм — ужимаем длинные слова, чтобы не вылезали за край. */
 const nameFontMm = computed(() => {
-  const base = Math.min(props.size.width, props.size.height)
-  const longest = props.flavor.name
-    .split(/\s+/)
-    .reduce((m, w) => Math.max(m, w.length), 0)
-  let fs = base * 0.2
-  if (longest > 6) fs *= 6 / longest
-  return Math.max(base * 0.085, Math.min(fs, base * 0.22))
-})
+  const base = Math.min(props.size.width, props.size.height);
+  const longest = props.flavor.name.split(/\s+/).reduce((m, w) => Math.max(m, w.length), 0);
+  let fs = base * 0.2;
+  if (longest > 6) fs *= 6 / longest;
+  return Math.max(base * 0.085, Math.min(fs, base * 0.22));
+});
 
 const metaText = computed(() => {
-  const parts: string[] = []
-  if (props.options.showManufacturer) parts.push(props.flavor.manufacturerName)
-  if (props.options.showLine) parts.push(props.flavor.lineName)
-  return parts.join(' · ')
-})
+  const parts: string[] = [];
+  if (props.options.showManufacturer) parts.push(props.flavor.manufacturerName);
+  if (props.options.showLine) parts.push(props.flavor.lineName);
+  return parts.join(' · ');
+});
 
 const showStrength = computed(
   () => props.options.showStrength && typeof props.flavor.strength === 'number',
-)
+);
 const tags = computed(() =>
-  props.options.showProfile ? props.flavor.profile?.slice(0, 3) ?? [] : [],
-)
+  props.options.showProfile ? (props.flavor.profile?.slice(0, 3) ?? []) : [],
+);
 </script>
 
 <template>
@@ -58,7 +56,11 @@ const tags = computed(() =>
         <div v-if="tags.length" class="label__tags">
           <span v-for="t in tags" :key="t" class="label__tag">{{ t }}</span>
         </div>
-        <StrengthDots v-if="showStrength" class="label__strength" :strength="flavor.strength ?? 0" />
+        <StrengthDots
+          v-if="showStrength"
+          class="label__strength"
+          :strength="flavor.strength ?? 0"
+        />
         <div v-if="metaText" class="label__meta">{{ metaText }}</div>
       </div>
     </template>

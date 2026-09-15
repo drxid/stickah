@@ -1,42 +1,46 @@
 <script setup lang="ts">
-import { computed } from 'vue'
-import { Minus, Plus, X } from '@lucide/vue'
-import { findLogo } from '@/data/logos'
-import type { FlavorDisplay } from '@/types/catalog'
+import { computed } from 'vue';
+import { Minus, Plus, X } from '@lucide/vue';
+import { findLogo } from '@/data/logos';
+import type { FlavorDisplay } from '@/types/catalog';
 
 /** Площадь логотипа, px². Логотипы выравниваем по площади, как на наклейке Grove,
  *  чтобы широкие и почти квадратные знаки весили одинаково. */
-const LOGO_AREA = 900
-const LOGO_MAX_H = 16
+const LOGO_AREA = 900;
+const LOGO_MAX_H = 16;
 
 const props = defineProps<{
-  flavor: FlavorDisplay
-  mode: 'result' | 'selected'
-  added?: boolean
-  copies?: number
-}>()
+  flavor: FlavorDisplay;
+  mode: 'result' | 'selected';
+  added?: boolean;
+  copies?: number;
+}>();
 
 const emit = defineEmits<{
-  add: [id: string]
-  remove: [id: string]
-  setCopies: [id: string, copies: number]
-}>()
+  add: [id: string];
+  remove: [id: string];
+  setCopies: [id: string, copies: number];
+}>();
 
-const logo = computed(() => findLogo(props.flavor.manufacturerId, props.flavor.manufacturerName))
+const logo = computed(() => findLogo(props.flavor.manufacturerId, props.flavor.manufacturerName));
 const logoStyle = computed(() => {
-  const a = logo.value?.aspect ?? 1
-  const h = Math.min(Math.sqrt(LOGO_AREA / a), LOGO_MAX_H)
-  return { height: `${h}px`, width: `${h * a}px` }
-})
+  const a = logo.value?.aspect ?? 1;
+  const h = Math.min(Math.sqrt(LOGO_AREA / a), LOGO_MAX_H);
+  return { height: `${h}px`, width: `${h * a}px` };
+});
 
 function bump(delta: number) {
-  emit('setCopies', props.flavor.id, (props.copies ?? 1) + delta)
+  emit('setCopies', props.flavor.id, (props.copies ?? 1) + delta);
 }
 </script>
 
 <template>
   <div class="chip" :class="{ 'chip--added': added }">
-    <span class="chip__swatch" :style="{ '--accent': flavor.accent ?? '#9be8e0' }" aria-hidden="true" />
+    <span
+      class="chip__swatch"
+      :style="{ '--accent': flavor.accent ?? '#9be8e0' }"
+      aria-hidden="true"
+    />
 
     <span class="chip__text">
       <span class="chip__name">{{ flavor.name }}</span>
@@ -96,7 +100,10 @@ function bump(delta: number) {
   background: var(--ink-soft);
   border: 1px solid var(--ink-line);
   border-radius: var(--r-md);
-  transition: border-color 0.15s ease, transform 0.12s ease, background 0.15s ease;
+  transition:
+    border-color 0.15s ease,
+    transform 0.12s ease,
+    background 0.15s ease;
 }
 /* На тач-экранах hover «залипает» после тапа — подъём только для мыши. */
 @media (hover: hover) {
@@ -175,7 +182,9 @@ function bump(delta: number) {
   line-height: 1;
   display: grid;
   place-items: center;
-  transition: background 0.15s ease, transform 0.1s ease;
+  transition:
+    background 0.15s ease,
+    transform 0.1s ease;
 }
 .chip__action:hover {
   background: var(--ink-line);

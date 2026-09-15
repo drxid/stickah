@@ -1,34 +1,34 @@
 <script setup lang="ts">
 // Кнопка «i» рядом с лого: о проекте и авторе. Панель позиционируется от ближайшего
 // positioned-предка (блок .brand в шапке), чтобы на узком экране не вылезать за край.
-import { onBeforeUnmount, ref, watch } from 'vue'
-import { Info } from '@lucide/vue'
+import { onBeforeUnmount, ref, watch } from 'vue';
+import { Info } from '@lucide/vue';
 
-const open = ref(false)
-const root = ref<HTMLElement | null>(null)
-const button = ref<HTMLButtonElement | null>(null)
+const open = ref(false);
+const root = ref<HTMLElement | null>(null);
+const button = ref<HTMLButtonElement | null>(null);
 
 function onPointerDown(e: PointerEvent) {
-  if (!root.value?.contains(e.target as Node)) open.value = false
+  if (!root.value?.contains(e.target as Node)) open.value = false;
 }
 function onKeyDown(e: KeyboardEvent) {
-  if (e.key !== 'Escape') return
-  open.value = false
-  button.value?.focus()
+  if (e.key !== 'Escape') return;
+  open.value = false;
+  button.value?.focus();
 }
 
 // Слушатели документа нужны только пока панель открыта.
 function listen(on: boolean) {
   if (on) {
-    document.addEventListener('pointerdown', onPointerDown)
-    document.addEventListener('keydown', onKeyDown)
+    document.addEventListener('pointerdown', onPointerDown);
+    document.addEventListener('keydown', onKeyDown);
   } else {
-    document.removeEventListener('pointerdown', onPointerDown)
-    document.removeEventListener('keydown', onKeyDown)
+    document.removeEventListener('pointerdown', onPointerDown);
+    document.removeEventListener('keydown', onKeyDown);
   }
 }
-watch(open, listen)
-onBeforeUnmount(() => listen(false))
+watch(open, listen);
+onBeforeUnmount(() => listen(false));
 </script>
 
 <template>
@@ -48,8 +48,8 @@ onBeforeUnmount(() => listen(false))
 
     <div v-if="open" id="about-panel" class="about__panel" role="dialog" aria-label="О проекте">
       <p class="about__lead">
-        <strong>Stickah</strong> — генератор наклеек для банок с табаком: найди вкусы, выбери
-        дизайн и распечатай лист A4.
+        <strong>Stickah</strong> — генератор наклеек для банок с табаком: найди вкусы, выбери дизайн
+        и распечатай лист A4.
       </p>
       <dl class="about__list">
         <dt class="mono">Автор</dt>
@@ -84,7 +84,9 @@ onBeforeUnmount(() => listen(false))
   border-radius: 50%;
   background: transparent;
   color: var(--text-muted);
-  transition: color 0.15s ease, background 0.15s ease;
+  transition:
+    color 0.15s ease,
+    background 0.15s ease;
 }
 .about__btn:hover,
 .about__btn--on {

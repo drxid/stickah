@@ -82,7 +82,10 @@ a {
   font-weight: 700;
   line-height: 1;
   white-space: nowrap;
-  transition: transform 0.12s ease, filter 0.15s ease, background 0.15s ease;
+  transition:
+    transform 0.12s ease,
+    filter 0.15s ease,
+    background 0.15s ease;
 }
 .btn:active {
   transform: translateY(1px);

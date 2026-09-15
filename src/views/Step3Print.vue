@@ -1,56 +1,56 @@
 <script setup lang="ts">
-import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
-import { useRouter } from 'vue-router'
-import { ArrowLeft, Printer } from '@lucide/vue'
-import PrintDocument from '@/features/print/PrintDocument.vue'
-import { computeLayout, pageCount, A4 } from '@/features/print/labelLayout'
-import { useSelectionStore } from '@/stores/selection'
-import { useTemplateStore } from '@/stores/template'
-import { plural } from '@/utils/plural'
+import { computed, onBeforeUnmount, onMounted, ref } from 'vue';
+import { useRouter } from 'vue-router';
+import { ArrowLeft, Printer } from '@lucide/vue';
+import PrintDocument from '@/features/print/PrintDocument.vue';
+import { computeLayout, pageCount, A4 } from '@/features/print/labelLayout';
+import { useSelectionStore } from '@/stores/selection';
+import { useTemplateStore } from '@/stores/template';
+import { plural } from '@/utils/plural';
 
-const router = useRouter()
-const selection = useSelectionStore()
-const template = useTemplateStore()
+const router = useRouter();
+const selection = useSelectionStore();
+const template = useTemplateStore();
 
-const PX_PER_MM = 96 / 25.4
-const SHEET_GAP_MM = 12
+const PX_PER_MM = 96 / 25.4;
+const SHEET_GAP_MM = 12;
 
-const layout = computed(() => computeLayout(template.size))
-const pages = computed(() => pageCount(selection.totalLabels, layout.value))
+const layout = computed(() => computeLayout(template.size));
+const pages = computed(() => pageCount(selection.totalLabels, layout.value));
 
-const stage = ref<HTMLElement | null>(null)
-const stageWidth = ref(0)
+const stage = ref<HTMLElement | null>(null);
+const stageWidth = ref(0);
 
 const scale = computed(() => {
-  const sheetPx = A4.width * PX_PER_MM
-  if (!stageWidth.value) return 1
-  return Math.min(1, stageWidth.value / sheetPx)
-})
+  const sheetPx = A4.width * PX_PER_MM;
+  if (!stageWidth.value) return 1;
+  return Math.min(1, stageWidth.value / sheetPx);
+});
 
 // Рамка занимает место уменьшенного листа: иначе в узкой сцене лист шириной 210 мм
 // не центрируется и уезжает вправо.
 const frameStyle = computed(() => {
-  const naturalMm = pages.value * A4.height + Math.max(0, pages.value - 1) * SHEET_GAP_MM
+  const naturalMm = pages.value * A4.height + Math.max(0, pages.value - 1) * SHEET_GAP_MM;
   return {
     width: `${A4.width * PX_PER_MM * scale.value}px`,
     height: `${naturalMm * PX_PER_MM * scale.value}px`,
-  }
-})
+  };
+});
 
-let ro: ResizeObserver | null = null
+let ro: ResizeObserver | null = null;
 onMounted(() => {
   if (stage.value) {
-    stageWidth.value = stage.value.clientWidth
+    stageWidth.value = stage.value.clientWidth;
     ro = new ResizeObserver((entries) => {
-      stageWidth.value = entries[0].contentRect.width
-    })
-    ro.observe(stage.value)
+      stageWidth.value = entries[0].contentRect.width;
+    });
+    ro.observe(stage.value);
   }
-})
-onBeforeUnmount(() => ro?.disconnect())
+});
+onBeforeUnmount(() => ro?.disconnect());
 
 function print() {
-  window.print()
+  window.print();
 }
 </script>
 
@@ -63,8 +63,9 @@ function print() {
           {{ plural(pages, ['лист', 'листа', 'листов']) }} A4 · {{ selection.totalLabels }}
           {{ plural(selection.totalLabels, ['наклейка', 'наклейки', 'наклеек']) }} ·
           {{ layout.perPage }} на листе<template v-if="layout.rotatedCount">
-          (из них {{ layout.rotatedCount }}
-          {{ plural(layout.rotatedCount, ['повёрнута', 'повёрнуты', 'повёрнуты']) }})</template>
+            (из них {{ layout.rotatedCount }}
+            {{ plural(layout.rotatedCount, ['повёрнута', 'повёрнуты', 'повёрнуты']) }})</template
+          >
         </span>
       </div>
       <p class="info__hint mono">{{ template.size.label }} · {{ template.design.label }}</p>
@@ -86,7 +87,9 @@ function print() {
         <ArrowLeft :size="18" aria-hidden="true" />
         Назад
       </button>
-      <span class="step__hint">Шаг 3 из 3 · в диалоге печати выбери «Сохранить как PDF» или принтер</span>
+      <span class="step__hint"
+        >Шаг 3 из 3 · в диалоге печати выбери «Сохранить как PDF» или принтер</span
+      >
       <button class="btn btn--primary" @click="print">
         <Printer :size="18" aria-hidden="true" />
         <span class="print-label--long">Печать / Сохранить PDF</span>
@@ -132,8 +135,8 @@ function print() {
 .preview-stage {
   overflow: auto;
   min-height: 0;
-  background: repeating-conic-gradient(var(--checker-a) 0% 25%, var(--checker-b) 0% 50%) 50% /
-    28px 28px;
+  background: repeating-conic-gradient(var(--checker-a) 0% 25%, var(--checker-b) 0% 50%) 50% / 28px
+    28px;
   border: 1px solid var(--ink-line);
   border-radius: var(--r-lg);
   padding: 22px;

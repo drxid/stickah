@@ -1,18 +1,18 @@
 // Реестр дизайн-вариантов наклейки (см. SPEC.md §8.2).
 // Дизайн — это данные/стратегия: один вариант на всю генерацию.
 
-export type DesignId = 'clean' | 'holo' | 'mono' | 'noir' | 'onyx' | 'grove'
+export type DesignId = 'clean' | 'holo' | 'mono' | 'noir' | 'onyx' | 'grove';
 
 export interface DesignVariant {
-  id: DesignId
-  label: string
-  description: string
+  id: DesignId;
+  label: string;
+  description: string;
   /** Заметка про печать, показывается в UI выбора. */
-  printNote?: string
+  printNote?: string;
   /** Дизайн свёрстан под один размер — при выборе размер фиксируется. */
-  sizeId?: string
+  sizeId?: string;
   /** Лучший дизайн — в списке помечен огоньком. */
-  featured?: boolean
+  featured?: boolean;
 }
 
 export const DESIGNS: DesignVariant[] = [
@@ -54,10 +54,10 @@ export const DESIGNS: DesignVariant[] = [
     description: 'Тёмный фон, строгий гротеск, акцентная подпись капсом. Минимализм.',
     printNote: 'Тёмный фон расходует много чернил при печати.',
   },
-]
+];
 
-export const DEFAULT_DESIGN_ID: DesignId = 'clean'
+export const DEFAULT_DESIGN_ID: DesignId = 'clean';
 
 export function getDesign(id: DesignId): DesignVariant {
-  return DESIGNS.find((d) => d.id === id) ?? DESIGNS[0]
+  return DESIGNS.find((d) => d.id === id) ?? DESIGNS[0];
 }

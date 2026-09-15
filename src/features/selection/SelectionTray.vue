@@ -1,64 +1,61 @@
 <script setup lang="ts">
-import { computed, nextTick, ref, watch } from 'vue'
-import { Leaf, Sticker, Trash2 } from '@lucide/vue'
-import FlavorChip from '@/features/search/FlavorChip.vue'
-import { vScrollFade } from '@/directives/scrollFade'
-import { useCatalogStore } from '@/stores/catalog'
-import { useSelectionStore } from '@/stores/selection'
-import { plural } from '@/utils/plural'
+import { computed, nextTick, ref, watch } from 'vue';
+import { Leaf, Sticker, Trash2 } from '@lucide/vue';
+import FlavorChip from '@/features/search/FlavorChip.vue';
+import { vScrollFade } from '@/directives/scrollFade';
+import { useCatalogStore } from '@/stores/catalog';
+import { useSelectionStore } from '@/stores/selection';
+import { plural } from '@/utils/plural';
 
-const catalog = useCatalogStore()
-const selection = useSelectionStore()
+const catalog = useCatalogStore();
+const selection = useSelectionStore();
 
 const rows = computed(() =>
   selection.items
     .map((i) => ({ display: catalog.display(i.flavorId), copies: i.copies }))
-    .filter((r): r is { display: NonNullable<ReturnType<typeof catalog.display>>; copies: number } =>
-      Boolean(r.display),
+    .filter(
+      (r): r is { display: NonNullable<ReturnType<typeof catalog.display>>; copies: number } =>
+        Boolean(r.display),
     ),
-)
+);
 
 // Новые вкусы добавляются в конец набора — прокручиваем к ним, чтобы добавление было видно.
 // Если список сейчас скрыт (на телефоне открыта вкладка «Поиск»), прокрутим, когда он появится.
-const list = ref<HTMLElement | null>(null)
-let scrollPending = false
+const list = ref<HTMLElement | null>(null);
+let scrollPending = false;
 
 function scrollToEnd(): boolean {
-  const el = list.value
-  if (!el || !el.clientHeight) return false
-  const smooth = !matchMedia('(prefers-reduced-motion: reduce)').matches
-  el.scrollTo({ top: el.scrollHeight, behavior: smooth ? 'smooth' : 'auto' })
-  return true
+  const el = list.value;
+  if (!el || !el.clientHeight) return false;
+  const smooth = !matchMedia('(prefers-reduced-motion: reduce)').matches;
+  el.scrollTo({ top: el.scrollHeight, behavior: smooth ? 'smooth' : 'auto' });
+  return true;
 }
 
 watch(
   () => selection.count,
   async (count, prev) => {
-    if (count <= prev) return
-    await nextTick()
-    scrollPending = !scrollToEnd()
+    if (count <= prev) return;
+    await nextTick();
+    scrollPending = !scrollToEnd();
   },
-)
+);
 
 watch(list, (el, _prev, onCleanup) => {
-  if (!el) return
+  if (!el) return;
   const ro = new ResizeObserver(() => {
-    if (scrollPending) scrollPending = !scrollToEnd()
-  })
-  ro.observe(el)
-  onCleanup(() => ro.disconnect())
-})
+    if (scrollPending) scrollPending = !scrollToEnd();
+  });
+  ro.observe(el);
+  onCleanup(() => ro.disconnect());
+});
 </script>
 
 <template>
   <aside class="tray">
     <header class="tray__head">
       <h2 class="tray__title">Набор</h2>
-      <button
-        v-if="selection.count"
-        class="tray__clear"
-        @click="selection.clear()"
-      >
+      <button v-if="selection.count" class="tray__clear" @click="selection.clear()">
         <Trash2 :size="14" aria-hidden="true" />
         очистить
       </button>

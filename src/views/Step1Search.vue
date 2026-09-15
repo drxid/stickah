@@ -1,23 +1,23 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue'
-import { useRouter } from 'vue-router'
-import { ArrowRight, Search } from '@lucide/vue'
-import FlavorChip from '@/features/search/FlavorChip.vue'
-import SelectionTray from '@/features/selection/SelectionTray.vue'
-import { vScrollFade } from '@/directives/scrollFade'
-import { useCatalogStore } from '@/stores/catalog'
-import { useSelectionStore } from '@/stores/selection'
+import { computed, ref } from 'vue';
+import { useRouter } from 'vue-router';
+import { ArrowRight, Search } from '@lucide/vue';
+import FlavorChip from '@/features/search/FlavorChip.vue';
+import SelectionTray from '@/features/selection/SelectionTray.vue';
+import { vScrollFade } from '@/directives/scrollFade';
+import { useCatalogStore } from '@/stores/catalog';
+import { useSelectionStore } from '@/stores/selection';
 
-const router = useRouter()
-const catalog = useCatalogStore()
-const selection = useSelectionStore()
+const router = useRouter();
+const catalog = useCatalogStore();
+const selection = useSelectionStore();
 
-const query = ref('')
+const query = ref('');
 /** На телефоне поиск и набор не помещаются рядом — показываем по очереди. */
-const tab = ref<'search' | 'tray'>('search')
+const tab = ref<'search' | 'tray'>('search');
 
-const results = computed(() => (catalog.loaded ? catalog.search(query.value) : []))
-const shown = computed(() => results.value.slice(0, 60))
+const results = computed(() => (catalog.loaded ? catalog.search(query.value) : []));
+const shown = computed(() => results.value.slice(0, 60));
 </script>
 
 <template>

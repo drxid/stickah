@@ -1,41 +1,41 @@
 <script setup lang="ts">
-import { computed } from 'vue'
-import LabelCard from './LabelCard.vue'
-import { A4 } from './labelLayout'
-import type { SheetLayout, Slot } from './labelLayout'
-import type { SizePreset } from '@/data/sizes'
-import type { DesignId } from '@/data/designs'
-import type { LabelOptions } from '@/stores/template'
-import type { FlavorDisplay } from '@/types/catalog'
+import { computed } from 'vue';
+import LabelCard from './LabelCard.vue';
+import { A4 } from './labelLayout';
+import type { SheetLayout, Slot } from './labelLayout';
+import type { SizePreset } from '@/data/sizes';
+import type { DesignId } from '@/data/designs';
+import type { LabelOptions } from '@/stores/template';
+import type { FlavorDisplay } from '@/types/catalog';
 
 const props = defineProps<{
-  items: FlavorDisplay[]
-  layout: SheetLayout
-  size: SizePreset
-  design: DesignId
-  options: LabelOptions
-}>()
+  items: FlavorDisplay[];
+  layout: SheetLayout;
+  size: SizePreset;
+  design: DesignId;
+  options: LabelOptions;
+}>();
 
 /** Область листа без полей. На печати поля даёт @page (print.css), а не отступ листа. */
 const areaStyle = computed(() => ({
   width: `${A4.width - 2 * props.layout.margin}mm`,
   height: `${A4.height - 2 * props.layout.margin}mm`,
-}))
+}));
 
 function slotStyle(slot: Slot) {
-  const { width, height } = props.size
+  const { width, height } = props.size;
   return {
     left: `${slot.x}mm`,
     top: `${slot.y}mm`,
     width: `${slot.rotated ? height : width}mm`,
     height: `${slot.rotated ? width : height}mm`,
-  }
+  };
 }
 
 /** Повёрнутая наклейка: rotate(90°) вокруг левого верхнего угла и сдвиг вправо на её высоту. */
 const rotatedLabelStyle = computed(() => ({
   transform: `translateX(${props.size.height}mm) rotate(90deg)`,
-}))
+}));
 </script>
 
 <template>

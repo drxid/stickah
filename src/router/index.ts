@@ -1,5 +1,5 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import { useSelectionStore } from '@/stores/selection'
+import { createRouter, createWebHistory } from 'vue-router';
+import { useSelectionStore } from '@/stores/selection';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -9,15 +9,15 @@ const router = createRouter({
     { path: '/print', name: 'print', component: () => import('@/views/Step3Print.vue') },
     { path: '/:pathMatch(.*)*', redirect: '/' },
   ],
-})
+});
 
 // Шаги 2 и 3 недоступны с пустым набором.
 router.beforeEach((to) => {
-  const selection = useSelectionStore()
+  const selection = useSelectionStore();
   if ((to.name === 'template' || to.name === 'print') && selection.count === 0) {
-    return { name: 'search' }
+    return { name: 'search' };
   }
-  return true
-})
+  return true;
+});
 
-export default router
+export default router;

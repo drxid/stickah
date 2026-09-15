@@ -1,20 +1,20 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue'
-import { Moon, Sun } from '@lucide/vue'
+import { computed, ref } from 'vue';
+import { Moon, Sun } from '@lucide/vue';
 
-type Theme = 'light' | 'dark'
+type Theme = 'light' | 'dark';
 
 // Ключ читает и inline-скрипт в index.html — он ставит тему до отрисовки.
-const STORAGE_KEY = 'stickah:theme'
+const STORAGE_KEY = 'stickah:theme';
 
-const theme = ref<Theme>(document.documentElement.dataset.theme === 'light' ? 'light' : 'dark')
-const label = computed(() => (theme.value === 'dark' ? 'Светлая тема' : 'Тёмная тема'))
+const theme = ref<Theme>(document.documentElement.dataset.theme === 'light' ? 'light' : 'dark');
+const label = computed(() => (theme.value === 'dark' ? 'Светлая тема' : 'Тёмная тема'));
 
 function toggle() {
-  theme.value = theme.value === 'dark' ? 'light' : 'dark'
-  document.documentElement.dataset.theme = theme.value
+  theme.value = theme.value === 'dark' ? 'light' : 'dark';
+  document.documentElement.dataset.theme = theme.value;
   try {
-    localStorage.setItem(STORAGE_KEY, theme.value)
+    localStorage.setItem(STORAGE_KEY, theme.value);
   } catch {
     /* noop */
   }
@@ -38,7 +38,9 @@ function toggle() {
   background: var(--ink-soft);
   border: 1px solid var(--ink-line);
   color: var(--text-muted);
-  transition: color 0.15s ease, border-color 0.15s ease;
+  transition:
+    color 0.15s ease,
+    border-color 0.15s ease;
 }
 .theme-toggle:hover {
   color: var(--text);

@@ -5,19 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Stickah — наклейки для табаков</title>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="description" content="Генератор наклеек для банок с табаком: ищи вкусы, выбирай шаблон, печатай лист A4." />
+    <meta
+      name="description"
+      content="Генератор наклеек для банок с табаком: ищи вкусы, выбирай шаблон, печатай лист A4."
+    />
 
     <script>
       // Тему ставим до отрисовки, чтобы экран не мигал: сохранённый выбор, иначе системная.
       // Ключ общий с ThemeToggle.vue.
       try {
-        const saved = localStorage.getItem('stickah:theme')
+        const saved = localStorage.getItem('stickah:theme');
         document.documentElement.dataset.theme =
           saved === 'light' || saved === 'dark'
             ? saved
             : matchMedia('(prefers-color-scheme: light)').matches
               ? 'light'
-              : 'dark'
+              : 'dark';
       } catch {}
     </script>
 
